@@ -1173,7 +1173,7 @@ QPushButton[cssClass="btn-check"]:checked {
 
 QPushButton[cssClass="btn-check"]:checked:hover {
   border: 1px solid #009dff;
-  background-color: #009dff;
+  background-color: #3a4360;
   font-size: 18px;
   padding: 4px;
   color: #ffffff;
@@ -1209,7 +1209,7 @@ QPushButton[cssClass="btn-primary"] {
 
 QPushButton[cssClass="btn-primary"]:hover {
   border: 1px solid #009dff;
-  background-color: #009dff;
+  background-color: #3a4360;
   font-size: 18px;
   padding: 4px 10px;
   color: #ffffff;
@@ -1236,7 +1236,7 @@ QPushButton[cssClass="btn-secundary"] {
 
 QPushButton[cssClass="btn-secundary"]:hover {
   border: 1px solid #009dff;
-  background-color: #009dff;
+  background-color: #3a4360;
   font-size: 18px;
   padding: 4px 10px;
   color: #ffffff;

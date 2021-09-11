@@ -9,12 +9,12 @@ COIN_PATH='/usr/local/bin/'
 COIN_TGZ=`curl -s https://api.github.com/repos/sappcoin-com/SAPP/releases/latest | grep "browser_download_url.*Linux\\.zip" | cut -d : -f 2,3 | tr -d \" | xargs`
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='sapphire'
-COIN_PORT=45328
-RPC_PORT=45329
+COIN_PORT=20434
+RPC_PORT=51473
 
 BLUE="\033[0;34m"
 YELLOW="\033[0;33m"
-CYAN="\033[0;36m" 
+CYAN="\033[0;36m"
 PURPLE="\033[0;35m"
 RED='\033[0;31m'
 GREEN="\033[0;32m"
@@ -188,7 +188,7 @@ function get_ip() {
   else
     NODEIP=${NODE_IPS[0]}
   fi
-  
+
   if [[ -z "$NODEIP" ]]; then
       #Couldn't determine IP, most likely icanhazip.com is timed out
       echo -e "${RED}Failed to determine IP address. Please wait a couple minutes and rerun script. If this continues, ask for assistance in discord.${NC}"
@@ -262,7 +262,7 @@ function important_information() {
  echo -e "${GREEN}$COIN_CLI getmasternodestatus${NC}"
  echo -e "${GREEN}$COIN_CLI getinfo${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
- 
+
  }
 
 function setup_node() {

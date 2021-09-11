@@ -19,10 +19,10 @@
 class CBaseMainParams : public CBaseChainParams
 {
 public:
-    CBaseMainParams() 
+    CBaseMainParams()
     {
         networkID = CBaseChainParams::MAIN;
-        nRPCPort = 45329;
+        nRPCPort = 51473;
     }
 };
 static CBaseMainParams mainParams;

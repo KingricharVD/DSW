@@ -95,11 +95,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>选择发送SAPP coin的地址</translation>
+        <translation>选择发送EGG coin的地址</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>选择接收SAPP coin的地址</translation>
+        <translation>选择接收EGG coin的地址</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -114,12 +114,12 @@
         <translation>接收地址</translation>
     </message>
     <message>
-        <source>These are your SAPP addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>这是用于发送SAPP的地址。在发送SAPP之前，请认真核查发送金额和接收地址。</translation>
+        <source>These are your EGG addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>这是用于发送EGG的地址。在发送EGG之前，请认真核查发送金额和接收地址。</translation>
     </message>
     <message>
-        <source>These are your SAPP addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>这是用于接收SAPP的钱包地址。建议每一笔交易都使用一个新的钱包地址。</translation>
+        <source>These are your EGG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>这是用于接收EGG的钱包地址。建议每一笔交易都使用一个新的钱包地址。</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -348,8 +348,8 @@ for staking</source>
         <translation>删除</translation>
     </message>
     <message>
-        <source>SAPP will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your SAPPs from being stolen by malware infecting your computer.</source>
-        <translation>SAPP将关闭以完成加密过程。但是，仅仅加密您的钱包是不够的，因为它并不能阻止恶意软件从您的电脑里面偷取SAPPs。</translation>
+        <source>EGG will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your EGGs from being stolen by malware infecting your computer.</source>
+        <translation>EGG将关闭以完成加密过程。但是，仅仅加密您的钱包是不够的，因为它并不能阻止恶意软件从您的电脑里面偷取EGGs。</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -433,8 +433,8 @@ for staking</source>
         <translation>币选择</translation>
     </message>
     <message>
-        <source>Select SAPP Outputs to Spend</source>
-        <translation>选择SAPP支出花费</translation>
+        <source>Select EGG Outputs to Spend</source>
+        <translation>选择EGG支出花费</translation>
     </message>
     <message>
         <source>Dust:</source>
@@ -461,8 +461,8 @@ for staking</source>
         <translation>金额</translation>
     </message>
     <message>
-        <source>0.00 SAPP</source>
-        <translation>0.00 SAPP</translation>
+        <source>0.00 EGG</source>
+        <translation>0.00 EGG</translation>
     </message>
     <message>
         <source>0</source>
@@ -703,8 +703,8 @@ for staking</source>
         <translation>过滤</translation>
     </message>
     <message>
-        <source>Amount of SAPP and zSAPP staked.</source>
-        <translation>已加注的SAPP 和 zSAPP 金额</translation>
+        <source>Amount of EGG and zEGG staked.</source>
+        <translation>已加注的EGG 和 zEGG 金额</translation>
     </message>
     <message>
         <source>Please wait until the wallet is fully synced to see your correct balance</source>
@@ -799,8 +799,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>编辑发送地址</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid SAPP address.</source>
-        <translation>所输入的地址“%1”不是有效的SAPP地址。</translation>
+        <source>The entered address "%1" is not a valid EGG address.</source>
+        <translation>所输入的地址“%1”不是有效的EGG地址。</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -852,16 +852,16 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>版本</translation>
     </message>
     <message>
-        <source>Sapphire</source>
-        <translation>Sapphire</translation>
+        <source>NestEGG</source>
+        <translation>NestEGG</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-位)</translation>
     </message>
     <message>
-        <source>About Sapphire</source>
-        <translation>关于Sapphire</translation>
+        <source>About NestEGG</source>
+        <translation>关于NestEGG</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -915,16 +915,16 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>欢迎</translation>
     </message>
     <message>
-        <source>Welcome to Sapphire.</source>
-        <translation>欢迎使用 Sapphire</translation>
+        <source>Welcome to NestEGG.</source>
+        <translation>欢迎使用 NestEGG</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Sapphire will store its data.</source>
-        <translation>由于这是该程序第一次启动，您可以选择存储Sapphire 数据的位置。</translation>
+        <source>As this is the first time the program is launched, you can choose where NestEGG will store its data.</source>
+        <translation>由于这是该程序第一次启动，您可以选择存储NestEGG 数据的位置。</translation>
     </message>
     <message>
-        <source>Sapphire will download and store a copy of the SAPP block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Sapphire将下载并存储SAPP区块链副本。 至少 %1 GB的数据将存储在此目录中，并且会随着时间的推移而增长。 钱包也将存储在此目录中。</translation>
+        <source>NestEGG will download and store a copy of the EGG block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>NestEGG将下载并存储EGG区块链副本。 至少 %1 GB的数据将存储在此目录中，并且会随着时间的推移而增长。 钱包也将存储在此目录中。</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -943,8 +943,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>好的</translation>
     </message>
     <message>
-        <source>Sapphire</source>
-        <translation>Sapphire</translation>
+        <source>NestEGG</source>
+        <translation>NestEGG</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1043,8 +1043,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>创建新的主节点控制器</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a SAPP Masternode you must dedicate a collateral amount of SAPP (the unit of SAPP) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;要去创建一个SAPP主节点，你必须奉献10,000 SAPP（SAPP的单位）到网络（但是这些币还是属于你的，一直为你所有）。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;你可以在任何时候关闭该节点并解锁币。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a EGG Masternode you must dedicate a collateral amount of EGG (the unit of EGG) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;要去创建一个EGG主节点，你必须奉献10,000 EGG（EGG的单位）到网络（但是这些币还是属于你的，一直为你所有）。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;你可以在任何时候关闭该节点并解锁币。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Set Masternode Name</source>
@@ -1064,7 +1064,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of collateral amount will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将进行10,000 SAPP的交易&lt;/p&gt;&lt;p&gt;到您的钱包空地址&lt;/p&gt;&lt;p&gt;地址被标记在主节点的名称之下&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将进行10,000 EGG的交易&lt;/p&gt;&lt;p&gt;到您的钱包空地址&lt;/p&gt;&lt;p&gt;地址被标记在主节点的名称之下&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Address of the node that must always be online running the actual master node.</source>
@@ -1440,8 +1440,8 @@ Are you sure?</source>
         <translation>如果您要禁用未经确认发送，在至少有一个确认之前&lt;br/&gt;不能更改。&lt;br/&gt;这也将影响您的余额计算。</translation>
     </message>
     <message>
-        <source>Automatically open the SAPP client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>自动打开路由器上的SAPP钱包使用的端口。 这只有当您的路由器支持UPnP并且该享生效时才有用。</translation>
+        <source>Automatically open the EGG client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>自动打开路由器上的EGG钱包使用的端口。 这只有当您的路由器支持UPnP并且该享生效时才有用。</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1460,12 +1460,12 @@ Are you sure?</source>
         <translation>专家</translation>
     </message>
     <message>
-        <source>Automatically start SAPP after logging in to the system.</source>
-        <translation>登录系统后自动启动SAPP。</translation>
+        <source>Automatically start EGG after logging in to the system.</source>
+        <translation>登录系统后自动启动EGG。</translation>
     </message>
     <message>
-        <source>&amp;Start SAPP on system login</source>
-        <translation>&amp;开机启动SAPP</translation>
+        <source>&amp;Start EGG on system login</source>
+        <translation>&amp;开机启动EGG</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1492,8 +1492,8 @@ Are you sure?</source>
         <translation>&amp;网络</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting SAPP.</source>
-        <translation>可以在这里设置用户界面语言。此设置将在重新启动SAPP后生效。</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting EGG.</source>
+        <translation>可以在这里设置用户界面语言。此设置将在重新启动EGG后生效。</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
@@ -1506,44 +1506,44 @@ Are you sure?</source>
         <translation>端口使用&amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of SAPP units to zSAPP</source>
-        <translation>启动自动铸造SAPP到zSAPP</translation>
+        <source>Enable automatic minting of EGG units to zEGG</source>
+        <translation>启动自动铸造EGG到zEGG</translation>
     </message>
     <message>
-        <source>Enable zSAPP Automint</source>
-        <translation>启动自动铸造zSAPP</translation>
+        <source>Enable zEGG Automint</source>
+        <translation>启动自动铸造zEGG</translation>
     </message>
     <message>
-        <source>Enable automatic zSAPP minting from specific addresses</source>
-        <translation>启用从特定地址自动生成zSAPP</translation>
+        <source>Enable automatic zEGG minting from specific addresses</source>
+        <translation>启用从特定地址自动生成zEGG</translation>
     </message>
     <message>
         <source>Enable Automint Addresses</source>
         <translation>启动自动铸造地址</translation>
     </message>
     <message>
-        <source>Percentage of incoming SAPP which get automatically converted to zSAPP via Zerocoin Protocol (min: 10%)</source>
-        <translation>通过零币协议自动转换为zSAPP的传入SAPP的百分比(最小:10%)</translation>
+        <source>Percentage of incoming EGG which get automatically converted to zEGG via Zerocoin Protocol (min: 10%)</source>
+        <translation>通过零币协议自动转换为zEGG的传入EGG的百分比(最小:10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zSAPP</source>
-        <translation>自动铸造的zSAPP百分比</translation>
+        <source>Percentage of autominted zEGG</source>
+        <translation>自动铸造的zEGG百分比</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough SAPP for this denomination is available</source>
-        <translation>等待自动转换为零币，直到足够的SAPP为这种面额可用</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough EGG for this denomination is available</source>
+        <translation>等待自动转换为零币，直到足够的EGG为这种面额可用</translation>
     </message>
     <message>
-        <source>Preferred Automint zSAPP Denomination</source>
-        <translation>首选自动铸造zSAPP面额</translation>
+        <source>Preferred Automint zEGG Denomination</source>
+        <translation>首选自动铸造zEGG面额</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
         <translation>股权分割阈值:</translation>
     </message>
     <message>
-        <source>Connect to the SAPP network through a SOCKS5 proxy.</source>
-        <translation>通过SOCKS5代理连接到SAPP网络。</translation>
+        <source>Connect to the EGG network through a SOCKS5 proxy.</source>
+        <translation>通过SOCKS5代理连接到EGG网络。</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1599,7 +1599,7 @@ Are you sure?</source>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>选择显示发送SAPP的默认单位。</translation>
+        <translation>选择显示发送EGG的默认单位。</translation>
     </message>
     <message>
         <source>Decimal digits</source>
@@ -1689,8 +1689,8 @@ Are you sure?</source>
 <context>
     <name>PIVXGUI</name>
     <message>
-        <source>Sapphire</source>
-        <translation>Sapphire</translation>
+        <source>NestEGG</source>
+        <translation>NestEGG</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -1717,8 +1717,8 @@ Are you sure?</source>
         <translation>关闭应用</translation>
     </message>
     <message>
-        <source>Sapphire client</source>
-        <translation>Sapphire 客户端</translation>
+        <source>NestEGG client</source>
+        <translation>NestEGG 客户端</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1788,8 +1788,8 @@ Address: %4
         <translation>无法启动sapphire:点击支付处理程序</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid SAPP address or malformed URI parameters.</source>
-        <translation>URI不能被解析!这可能是由无效的SAPP地址或格式错误的URI参数造成的。</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid EGG address or malformed URI parameters.</source>
+        <translation>URI不能被解析!这可能是由无效的EGG地址或格式错误的URI参数造成的。</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -1874,8 +1874,8 @@ Address: %4
         <translation>金额</translation>
     </message>
     <message>
-        <source>Enter SAPP address (e.g. %1)</source>
-        <translation>输入SAPP a地址(e.g. %1)</translation>
+        <source>Enter EGG address (e.g. %1)</source>
+        <translation>输入EGG a地址(e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1918,12 +1918,12 @@ Address: %4
         <translation>%1 毫秒</translation>
     </message>
     <message>
-        <source>A fatal error occurred. SAPP can no longer continue safely and will quit.</source>
-        <translation>发生了一个致命的错误。SAPP不能继续安全，将退出。</translation>
+        <source>A fatal error occurred. EGG can no longer continue safely and will quit.</source>
+        <translation>发生了一个致命的错误。EGG不能继续安全，将退出。</translation>
     </message>
     <message>
-        <source>Sapphire</source>
-        <translation>Sapphire</translation>
+        <source>NestEGG</source>
+        <translation>NestEGG</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
@@ -1942,8 +1942,8 @@ Address: %4
         <translation>读取主节点配置文件出错:%1</translation>
     </message>
     <message>
-        <source>Sapphire didn't yet exit safely...</source>
-        <translation>Sapphire心尚未安全退出……</translation>
+        <source>NestEGG didn't yet exit safely...</source>
+        <translation>NestEGG心尚未安全退出……</translation>
     </message>
     <message>
         <source>Contact</source>
@@ -2101,8 +2101,8 @@ Address: %4
         <translation>区块链</translation>
     </message>
     <message>
-        <source>Open the SAPP debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>从当前数据目录打开SAPP调试日志文件。对于大型日志文件，这可能需要几秒钟。</translation>
+        <source>Open the EGG debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>从当前数据目录打开EGG调试日志文件。对于大型日志文件，这可能需要几秒钟。</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -2245,8 +2245,8 @@ Address: %4
         <translation>自定义备份路径:</translation>
     </message>
     <message>
-        <source>Custom zSAPP Backup Path:</source>
-        <translation>自定义zSAPP备份路径:</translation>
+        <source>Custom zEGG Backup Path:</source>
+        <translation>自定义zEGG备份路径:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -2325,8 +2325,8 @@ Address: %4
         <translation>出：</translation>
     </message>
     <message>
-        <source>Welcome to the SAPP RPC console.</source>
-        <translation>欢迎访问SAPP RPC控制台</translation>
+        <source>Welcome to the EGG RPC console.</source>
+        <translation>欢迎访问EGG RPC控制台</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -2573,8 +2573,8 @@ Address: %4
         <translation>金额</translation>
     </message>
     <message>
-        <source>SAPP</source>
-        <translation>SAPP</translation>
+        <source>EGG</source>
+        <translation>EGG</translation>
     </message>
     <message>
         <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
@@ -2644,8 +2644,8 @@ Address: %4
         <translation>自定义更改地址</translation>
     </message>
     <message>
-        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" SAPP address</source>
-        <translation>输入值减去输出值所得的值的其余部分归为“更改”SAPP地址</translation>
+        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" EGG address</source>
+        <translation>输入值减去输出值所得的值的其余部分归为“更改”EGG地址</translation>
     </message>
     <message>
         <source>SAVE</source>
@@ -2671,8 +2671,8 @@ Address: %4
         <translation>已推荐</translation>
     </message>
     <message>
-        <source>SAPP/kilobyte</source>
-        <translation>SAPP/k字节</translation>
+        <source>EGG/kilobyte</source>
+        <translation>EGG/k字节</translation>
     </message>
     <message>
         <source>0.00 KB</source>
@@ -2923,8 +2923,8 @@ Do you want to continue?</source>
         <translation>解密钥匙</translation>
     </message>
     <message>
-        <source>SAPP address</source>
-        <translation>SAPP地址</translation>
+        <source>EGG address</source>
+        <translation>EGG地址</translation>
     </message>
     <message>
         <source>Enter address</source>
@@ -3048,8 +3048,8 @@ Verify that you have installed a predetermined text editor.</source>
 确认您已经安装了预定的文本编辑器</translation>
     </message>
     <message>
-        <source>Welcome to the SAPP RPC console.</source>
-        <translation>欢迎访问SAPP RPC控制台</translation>
+        <source>Welcome to the EGG RPC console.</source>
+        <translation>欢迎访问EGG RPC控制台</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
@@ -3233,46 +3233,46 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation>来自</translation>
     </message>
     <message>
-        <source>1) What is SAPP?</source>
-        <translation>1）什么是SAPP?</translation>
+        <source>1) What is EGG?</source>
+        <translation>1）什么是EGG?</translation>
     </message>
     <message>
-        <source>2) Why are my SAPP unspendable?</source>
-        <translation>2) 我的SAPP为什么不能用？</translation>
+        <source>2) Why are my EGG unspendable?</source>
+        <translation>2) 我的EGG为什么不能用？</translation>
     </message>
     <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is SAPP?</source>
-        <translation>SAPP是什么?</translation>
+        <source>What is EGG?</source>
+        <translation>EGG是什么?</translation>
     </message>
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           SAPP is a form of digital online money using blockchain technology
+                           EGG is a form of digital online money using blockchain technology
                            that can be easily transferred globally, instantly, and with near
-                           zero fees.  SAPP incorporates market leading security &amp;
+                           zero fees.  EGG incorporates market leading security &amp;
                            privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement ZeroCoin(zSAPP) and Zerocoin staking.
+                           to implement ZeroCoin(zEGG) and Zerocoin staking.
                            &lt;/p&gt;&lt;p align="justify"&gt;
-                           SAPP utilizes a Proof of Stake (PoS) consensus system algorithm,
-                           allowing all owners of SAPP to participate in earning block rewards
+                           EGG utilizes a Proof of Stake (PoS) consensus system algorithm,
+                           allowing all owners of EGG to participate in earning block rewards
                            while securing the network with full node wallets, as well as to
                            run Masternodes to create and vote on proposals.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-SAPP是一种使用区块链技术的数字在线货币
+EGG是一种使用区块链技术的数字在线货币
 全球范围内快捷交易，即时，基本为
-零的交易费用。SAPP是市场上领先的安全和
+零的交易费用。EGG是市场上领先的安全和
 隐私加密货币，也是第一个PoS(股权证明)加密货币
-实现零币(zSAPP)和零币加注。
+实现零币(zEGG)和零币加注。
 &lt;/p&gt;&lt;p align="justify"&gt;
-SAPP使用了一个股权证明(PoS)一致系统算法，
-允许所有SAPP的所有者参与赚取区块奖励
+EGG使用了一个股权证明(PoS)一致系统算法，
+允许所有EGG的所有者参与赚取区块奖励
 同时保护网络与完整的节点钱包，以及
 运行主节点创建和投票来进行提案。</translation>
     </message>
@@ -3281,25 +3281,25 @@ SAPP使用了一个股权证明(PoS)一致系统算法，
         <translation>2</translation>
     </message>
     <message>
-        <source>Why are my SAPP unspendable?</source>
-        <translation>我的SAPP为什么不能用？</translation>
+        <source>Why are my EGG unspendable?</source>
+        <translation>我的EGG为什么不能用？</translation>
     </message>
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           Newly received SAPP requires 6 confirmations on the network
+                           Newly received EGG requires 6 confirmations on the network
                            to become eligible for spending which can take ~6 minutes.
                            &lt;/p&gt;&lt;p align="justify"&gt;
-                           Your SAPP wallet also needs to be completely synchronized
+                           Your EGG wallet also needs to be completely synchronized
                            to see and spend balances on the network.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-接收到的SAPP需要网络上的6个确认
+接收到的EGG需要网络上的6个确认
 才能成为有资格的花费，可以花~6分钟。
 &lt;/p&gt;&lt;p align="justify"&gt;
-您的SAPP钱包也需要完全同步
+您的EGG钱包也需要完全同步
 查看网络收支余额。
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
 </translation>
@@ -3334,12 +3334,12 @@ SAPP使用了一个股权证明(PoS)一致系统算法，
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the collateral amount can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;主节点控制器钱包是控制器-远程主节点建立期间10,000 SAPP抵押可以驻留的地方。这是一个可以激活远程主节点钱包(s)的钱包，可以让你的抵押币离线但远程主节点保持在线。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;主节点控制器钱包是控制器-远程主节点建立期间10,000 EGG抵押可以驻留的地方。这是一个可以激活远程主节点钱包(s)的钱包，可以让你的抵押币离线但远程主节点保持在线。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           A masternode is a computer running a full node SAPP wallet with a
+                           A masternode is a computer running a full node EGG wallet with a
                            required amount of secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
@@ -3361,10 +3361,10 @@ SAPP使用了一个股权证明(PoS)一致系统算法，
                            Masternode Perks:
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;Participate in SAPP Governance&lt;/li&gt;
+                           &lt;li&gt;Participate in EGG Governance&lt;/li&gt;
                            &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
                            &lt;li&gt;Commodity option for future sale&lt;/li&gt;
-                           &lt;li&gt;Help secure the SAPP network&lt;/li&gt;
+                           &lt;li&gt;Help secure the EGG network&lt;/li&gt;
                            &lt;/ul&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
 
@@ -3380,8 +3380,8 @@ SAPP使用了一个股权证明(PoS)一致系统算法，
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-主节点是运行完整节点SAPP核心钱包的计算机
-需要10,000个SAPP作抵押以提供额外服务
+主节点是运行完整节点EGG核心钱包的计算机
+需要10,000个EGG作抵押以提供额外服务
 到网络，会收到一部分的区块奖励作为定期
 回报
 这些服务包括:
@@ -3402,17 +3402,17 @@ SAPP使用了一个股权证明(PoS)一致系统算法，
 主节点福利：
 &lt;/p&gt;&lt;p align="justify"&gt;
 &lt;ul&gt;
-&lt;li&gt;参与SAPP治理&lt;/li&gt;
+&lt;li&gt;参与EGG治理&lt;/li&gt;
 &lt;li&gt;赢取主节点奖励&lt;/li&gt;
 &lt;li&gt;商品期货期权&lt;/li&gt;
-&lt;li&gt;帮助保护SAPP网络&lt;/li&gt;
+&lt;li&gt;帮助保护EGG网络&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/p&gt;&lt;p align="justify"&gt;
 
 要求：
 &lt;/p&gt;&lt;p align="justify"&gt;
 &lt;ul&gt;
-&lt;li&gt;每个主节点实例有10,000 SAPP&lt;/li&gt;
+&lt;li&gt;每个主节点实例有10,000 EGG&lt;/li&gt;
 &lt;li&gt;必须存储在核心钱包&lt;/li&gt;
 &lt;li&gt;需要专用IP地址&lt;/li&gt;
 主节点钱包保持在线&lt;li&gt;
@@ -3584,8 +3584,8 @@ SAPP使用了一个股权证明(PoS)一致系统算法，
         <translation>脚本&amp;验证线程数</translation>
     </message>
     <message>
-        <source>Start SAPP on system login</source>
-        <translation>开机启动SAPP</translation>
+        <source>Start EGG on system login</source>
+        <translation>开机启动EGG</translation>
     </message>
     <message>
         <source>Minimize to the tray instead of the taskbar</source>
@@ -3672,8 +3672,8 @@ Are you sure?
         <translation>查看列表</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other SAPP addresses after it matures.</source>
-        <translation>成熟以后，多重花费允许您自动发送高达 100% 的股权或主节点奖励到其他SAPP地址列表</translation>
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other EGG addresses after it matures.</source>
+        <translation>成熟以后，多重花费允许您自动发送高达 100% 的股权或主节点奖励到其他EGG地址列表</translation>
     </message>
     <message>
         <source>Active</source>
@@ -3791,8 +3791,8 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>消息 </translation>
     </message>
     <message>
-        <source>SAPP address or contact label</source>
-        <translation>SAPP 地址或者联系人标签</translation>
+        <source>EGG address or contact label</source>
+        <translation>EGG 地址或者联系人标签</translation>
     </message>
     <message>
         <source>Enter address</source>
@@ -4068,8 +4068,8 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>常见问题</translation>
     </message>
     <message>
-        <source>About SAPP</source>
-        <translation>关于SAPP </translation>
+        <source>About EGG</source>
+        <translation>关于EGG </translation>
     </message>
     <message>
         <source>Settings</source>
@@ -4135,8 +4135,8 @@ Are you sure?
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Sapphire is shutting down...</source>
-        <translation>Sapphire 核心正在关闭...</translation>
+        <source>NestEGG is shutting down...</source>
+        <translation>NestEGG 核心正在关闭...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4165,8 +4165,8 @@ Are you sure?
         <translation>正在下载…</translation>
     </message>
     <message>
-        <source>Sapphire</source>
-        <translation>Sapphire</translation>
+        <source>NestEGG</source>
+        <translation>NestEGG</translation>
     </message>
 </context>
 <context>
@@ -4601,25 +4601,25 @@ backup will be created.
     </message>
     <message>
         <source>Welcome to
-Sapphire Wallet</source>
+NestEGG Wallet</source>
         <translation>欢迎
-Sapphire心钱包</translation>
+NestEGG心钱包</translation>
     </message>
     <message>
-        <source>SAPP is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>SAPP是世界上最先进的隐私保护技术，由经验丰富的开发人员和密码专家开发。</translation>
+        <source>EGG is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>EGG是世界上最先进的隐私保护技术，由经验丰富的开发人员和密码专家开发。</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - SAPP believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;正如我们的宣言所说:隐私是一项不容协商的基本人权;它赋予用户随时随地与任何人共享数据的自由——SAPP相信自我主权&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - EGG believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;正如我们的宣言所说:隐私是一项不容协商的基本人权;它赋予用户随时随地与任何人共享数据的自由——EGG相信自我主权&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>The masternode network is SAPP's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
-        <translation>主节点网络是SAPP在区块链之上的第二层网络，它使我们的DAO能够提供去中心的治理。</translation>
+        <source>The masternode network is EGG's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
+        <translation>主节点网络是EGG在区块链之上的第二层网络，它使我们的DAO能够提供去中心的治理。</translation>
     </message>
     <message>
-        <source>How SAPP respects your privacy?</source>
-        <translation>SAPP 到底是怎么尊重你的隐私的？</translation>
+        <source>How EGG respects your privacy?</source>
+        <translation>EGG 到底是怎么尊重你的隐私的？</translation>
     </message>
     <message>
         <source>What is a Masternode?</source>
@@ -4653,8 +4653,8 @@ Sapphire心钱包</translation>
         <translation>绑定到给定地址监听JSON-RPC连接。使用[主机]: IPv6的端口符号。可以多次指定此选项(默认:绑定到所有接口)</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Sapphire is probably already running.</source>
-        <translation>无法获取数据目录%s锁。Sapphire心可能已经在运行了。</translation>
+        <source>Cannot obtain a lock on data directory %s. NestEGG is probably already running.</source>
+        <translation>无法获取数据目录%s锁。NestEGG心可能已经在运行了。</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4813,8 +4813,8 @@ Sapphire心钱包</translation>
         <translation>网络版本字符串的总长度(%i)超过最大长度(%i)。减少任务的数量或大小。</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Sapphire is probably already running.</source>
-        <translation>无法绑定到此计算机上的%s。Sapphire心可能已经在运行了。</translation>
+        <source>Unable to bind to %s on this computer. NestEGG is probably already running.</source>
+        <translation>无法绑定到此计算机上的%s。NestEGG心可能已经在运行了。</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -4829,8 +4829,8 @@ Sapphire心钱包</translation>
         <translation>警告:-支付tx费用设置的非常高!这是您发送交易时要支付的交易费。</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Sapphire will not work properly.</source>
-        <translation>注意：请检查您的电脑的日期和时间是否正确！ 如果您的时间设置不正确，Sapphire将无法正常工作。</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
+        <translation>注意：请检查您的电脑的日期和时间是否正确！ 如果您的时间设置不正确，NestEGG将无法正常工作。</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5037,8 +5037,8 @@ Sapphire心钱包</translation>
         <translation>信息</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. Sapphire is shutting down.</source>
-        <translation>初始化完整性检查失败。Sapphire心快要关闭了。</translation>
+        <source>Initialization sanity check failed. NestEGG is shutting down.</source>
+        <translation>初始化完整性检查失败。NestEGG心快要关闭了。</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5069,8 +5069,8 @@ Sapphire心钱包</translation>
         <translation>白名单中指定的无效网络掩码:'%s'</translation>
     </message>
     <message>
-        <source>Recalculating SAPP supply...</source>
-        <translation>重新计算SAPP供应量……</translation>
+        <source>Recalculating EGG supply...</source>
+        <translation>重新计算EGG供应量……</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5089,8 +5089,8 @@ Sapphire心钱包</translation>
         <translation>这是一个预发行测试版本 - 您自己承担风险 - 不要用于商业应用！</translation>
     </message>
     <message>
-        <source>Disable all SAPP specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)</source>
-        <translation>禁用所有SAPP特定功能(主节点, 零币, budget)(0-1，默认值:%u)</translation>
+        <source>Disable all EGG specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)</source>
+        <translation>禁用所有EGG特定功能(主节点, 零币, budget)(0-1，默认值:%u)</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -checklevel found. Checklevel must be level 4.</source>
@@ -5325,8 +5325,8 @@ Sapphire心钱包</translation>
         <translation>准备重新同步……</translation>
     </message>
     <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong Sapphire will not work properly.</source>
-        <translation>请检查您的电脑的日期和时间是否正确!如果你的时间错误，Sapphire将无法正常工作。</translation>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
+        <translation>请检查您的电脑的日期和时间是否正确!如果你的时间错误，NestEGG将无法正常工作。</translation>
     </message>
     <message>
         <source>Specify location of debug log file: this can be an absolute path or a path relative to the data directory (default: %s)</source>
@@ -5509,8 +5509,8 @@ Sapphire心钱包</translation>
         <translation>正在同步分叉...</translation>
     </message>
     <message>
-        <source>Syncing zSAPP wallet...</source>
-        <translation>正在同步zSAPP钱包……</translation>
+        <source>Syncing zEGG wallet...</source>
+        <translation>正在同步zEGG钱包……</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -5613,8 +5613,8 @@ Sapphire心钱包</translation>
         <translation>JSON-RPC连接的用户名</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zSAPP</source>
-        <translation>值小于zSAPP的最小可用面额(= 1)</translation>
+        <source>Value is below the smallest available denomination (= 1) of zEGG</source>
+        <translation>值小于zEGG的最小可用面额(= 1)</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -5629,8 +5629,8 @@ Sapphire心钱包</translation>
         <translation>钱包%s驻留在数据目录%s之外</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Sapphire to complete</source>
-        <translation>钱包需要重写:重新启动Sapphire心完成</translation>
+        <source>Wallet needed to be rewritten: restart NestEGG to complete</source>
+        <translation>钱包需要重写:重新启动NestEGG心完成</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -5696,8 +5696,8 @@ Sapphire心钱包</translation>
         <translation>发送</translation>
     </message>
     <message>
-        <source>SAPP address or contact label</source>
-        <translation>SAPP 地址或者联系人标签</translation>
+        <source>EGG address or contact label</source>
+        <translation>EGG 地址或者联系人标签</translation>
     </message>
     <message>
         <source>Amount</source>

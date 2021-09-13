@@ -152,12 +152,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your SAPP addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your EGG addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>These are your SAPP addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your EGG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -448,7 +448,7 @@ for staking</source>
     </message>
     <message>
         <location line="+161"/>
-        <source>SAPP will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your SAPPs from being stolen by malware infecting your computer.</source>
+        <source>EGG will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your EGGs from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -579,7 +579,7 @@ for staking</source>
     </message>
     <message>
         <location line="+81"/>
-        <source>Select SAPP Outputs to Spend</source>
+        <source>Select EGG Outputs to Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -617,7 +617,7 @@ for staking</source>
         <location line="-393"/>
         <location line="+124"/>
         <location line="+461"/>
-        <source>0.00 SAPP</source>
+        <source>0.00 EGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -910,7 +910,7 @@ for staking</source>
     </message>
     <message>
         <location line="+357"/>
-        <source>How to get SAPP</source>
+        <source>How to get EGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -940,7 +940,7 @@ for staking</source>
     </message>
     <message>
         <location line="-558"/>
-        <source>Amount of SAPP and zSAPP staked.</source>
+        <source>Amount of EGG and zEGG staked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1060,7 +1060,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+67"/>
-        <source>The entered address &quot;%1&quot; is not a valid SAPP address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid EGG address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1124,7 +1124,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+0"/>
-        <source>Sapphire</source>
+        <source>NestEGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1135,7 +1135,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+6"/>
-        <source>About Sapphire</source>
+        <source>About NestEGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1203,17 +1203,17 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+90"/>
-        <source>Welcome to Sapphire.</source>
+        <source>Welcome to NestEGG.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+35"/>
-        <source>As this is the first time the program is launched, you can choose where Sapphire will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where NestEGG will store its data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>Sapphire will download and store a copy of the SAPP block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>NestEGG will download and store a copy of the EGG block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1238,7 +1238,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location filename="../intro.cpp" line="+100"/>
-        <source>Sapphire</source>
+        <source>NestEGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1370,7 +1370,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+23"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a SAPP Masternode you must dedicate a collateral amount of SAPP (the unit of SAPP) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a EGG Masternode you must dedicate a collateral amount of EGG (the unit of EGG) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1910,7 +1910,7 @@ NODES</source>
     </message>
     <message>
         <location line="+33"/>
-        <source>Automatically open the SAPP client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the EGG client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1935,12 +1935,12 @@ NODES</source>
     </message>
     <message>
         <location line="-236"/>
-        <source>Automatically start SAPP after logging in to the system.</source>
+        <source>Automatically start EGG after logging in to the system.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start SAPP on system login</source>
+        <source>&amp;Start EGG on system login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1975,7 +1975,7 @@ NODES</source>
     </message>
     <message>
         <location line="+192"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting SAPP.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting EGG.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1991,17 +1991,17 @@ NODES</source>
     </message>
     <message>
         <location line="-187"/>
-        <source>Enable automatic minting of SAPP units to zSAPP</source>
+        <source>Enable automatic minting of EGG units to zEGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Enable zSAPP Automint</source>
+        <source>Enable zEGG Automint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Enable automatic zSAPP minting from specific addresses</source>
+        <source>Enable automatic zEGG minting from specific addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2011,23 +2011,23 @@ NODES</source>
     </message>
     <message>
         <location line="+11"/>
-        <source>Percentage of incoming SAPP which get automatically converted to zSAPP via Zerocoin Protocol (min: 10%)</source>
+        <source>Percentage of incoming EGG which get automatically converted to zEGG via Zerocoin Protocol (min: 10%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Percentage of autominted zSAPP</source>
+        <source>Percentage of autominted zEGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+30"/>
         <location line="+16"/>
-        <source>Wait with automatic conversion to Zerocoin until enough SAPP for this denomination is available</source>
+        <source>Wait with automatic conversion to Zerocoin until enough EGG for this denomination is available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-13"/>
-        <source>Preferred Automint zSAPP Denomination</source>
+        <source>Preferred Automint zEGG Denomination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2037,7 +2037,7 @@ NODES</source>
     </message>
     <message>
         <location line="+98"/>
-        <source>Connect to the SAPP network through a SOCKS5 proxy.</source>
+        <source>Connect to the EGG network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2225,7 +2225,7 @@ NODES</source>
         <location filename="../pivx/pivxgui.cpp" line="+69"/>
         <location line="+298"/>
         <location line="+69"/>
-        <source>Sapphire</source>
+        <source>NestEGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2260,7 +2260,7 @@ NODES</source>
     </message>
     <message>
         <location line="+39"/>
-        <source>Sapphire client</source>
+        <source>NestEGG client</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2353,7 +2353,7 @@ Address: %4
     </message>
     <message>
         <location line="+107"/>
-        <source>URI cannot be parsed! This can be caused by an invalid SAPP address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid EGG address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2466,11 +2466,11 @@ Address: %4
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+138"/>
-        <source>Enter SAPP address (e.g. %1)</source>
+        <source>Enter EGG address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+SAPP"/>
+        <location line="+EGG"/>
         <source>%1 d</source>
         <translation>%1 d</translation>
     </message>
@@ -2522,7 +2522,7 @@ Address: %4
     </message>
     <message>
         <location filename="../pivx.cpp" line="+518"/>
-        <source>A fatal error occurred. SAPP can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. EGG can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2530,7 +2530,7 @@ Address: %4
         <location line="+7"/>
         <location line="+13"/>
         <location line="+19"/>
-        <source>Sapphire</source>
+        <source>NestEGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2555,7 +2555,7 @@ Address: %4
     </message>
     <message>
         <location line="+64"/>
-        <source>Sapphire didn&apos;t yet exit safely...</source>
+        <source>NestEGG didn&apos;t yet exit safely...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2847,7 +2847,7 @@ Address: %4
     </message>
     <message>
         <location line="+93"/>
-        <source>Open the SAPP debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the EGG debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3029,7 +3029,7 @@ Address: %4
     </message>
     <message>
         <location line="+29"/>
-        <source>Custom zSAPP Backup Path:</source>
+        <source>Custom zEGG Backup Path:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3129,7 +3129,7 @@ Address: %4
     </message>
     <message>
         <location line="-39"/>
-        <source>Welcome to the SAPP RPC console.</source>
+        <source>Welcome to the EGG RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3310,7 +3310,7 @@ Address: %4
     </message>
     <message>
         <location filename="../pivx/forms/receivewidget.ui" line="+61"/>
-        <source>Scan the QR code or copy the address to receive SAPP</source>
+        <source>Scan the QR code or copy the address to receive EGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3473,12 +3473,12 @@ Address: %4
     </message>
     <message>
         <location line="+74"/>
-        <source>SAPP</source>
+        <source>EGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-117"/>
-        <source>Instead of sharing only a SAPP address, you can create a payment request, bundling up more information</source>
+        <source>Instead of sharing only a EGG address, you can create a payment request, bundling up more information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3577,7 +3577,7 @@ Address: %4
     </message>
     <message>
         <location line="+72"/>
-        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the &quot;change&quot; SAPP address</source>
+        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the &quot;change&quot; EGG address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3610,7 +3610,7 @@ Address: %4
     </message>
     <message>
         <location line="+86"/>
-        <source>SAPP/kilobyte</source>
+        <source>EGG/kilobyte</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3943,7 +3943,7 @@ Remember to write it down and store it safely, otherwise you might lose access t
     </message>
     <message>
         <location line="+7"/>
-        <source>Encrypt your SAPP addresses (key pair actually) using BIP38 encryption.
+        <source>Encrypt your EGG addresses (key pair actually) using BIP38 encryption.
 Using this mechanism you can share your keys without middle-man risk, only need to store your passphrase safely</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3990,7 +3990,7 @@ Using this mechanism you can share your keys without middle-man risk, only need 
     </message>
     <message>
         <location line="+77"/>
-        <source>SAPP address</source>
+        <source>EGG address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4157,7 +4157,7 @@ Verify that you have installed a predetermined text editor.</source>
     </message>
     <message>
         <location line="+148"/>
-        <source>Welcome to the SAPP RPC console.</source>
+        <source>Welcome to the EGG RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4385,12 +4385,12 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+152"/>
-        <source>1) What is SAPP?</source>
+        <source>1) What is EGG?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>2) Why are my SAPP unspendable?</source>
+        <source>2) Why are my EGG unspendable?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4405,21 +4405,21 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+18"/>
-        <source>What is SAPP?</source>
+        <source>What is EGG?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           SAPP is a form of digital online money using blockchain technology
+                           EGG is a form of digital online money using blockchain technology
                            that can be easily transferred globally, instantly, and with near
-                           zero fees.  SAPP incorporates market leading security &amp;
+                           zero fees.  EGG incorporates market leading security &amp;
                            privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement ZeroCoin(zSAPP) and Zerocoin staking.
+                           to implement ZeroCoin(zEGG) and Zerocoin staking.
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           SAPP utilizes a Proof of Stake (PoS) consensus system algorithm,
-                           allowing all owners of SAPP to participate in earning block rewards
+                           EGG utilizes a Proof of Stake (PoS) consensus system algorithm,
+                           allowing all owners of EGG to participate in earning block rewards
                            while securing the network with full node wallets, as well as to
                            run Masternodes to create and vote on proposals.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
@@ -4433,17 +4433,17 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+21"/>
-        <source>Why are my SAPP unspendable?</source>
+        <source>Why are my EGG unspendable?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           Newly received SAPP requires 6 confirmations on the network
+                           Newly received EGG requires 6 confirmations on the network
                            to become eligible for spending which can take ~6 minutes.
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           Your SAPP wallet also needs to be completely synchronized
+                           Your EGG wallet also needs to be completely synchronized
                            to see and spend balances on the network.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
@@ -4456,12 +4456,12 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+18"/>
-        <source>How do I stake SAPP?</source>
+        <source>How do I stake EGG?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You must have a balance of SAPP with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (sapphire-cli); the command &lt;span style=&quot; font-style:italic;&quot;&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You must have a balance of EGG with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (sapphire-cli); the command &lt;span style=&quot; font-style:italic;&quot;&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4514,7 +4514,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <location line="-131"/>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           A masternode is a computer running a full node SAPP wallet with a
+                           A masternode is a computer running a full node EGG wallet with a
                            required amount of secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
@@ -4536,10 +4536,10 @@ There was an error trying to save the address list to %1. Please try again.</sou
                            Masternode Perks:
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;Participate in SAPP Governance&lt;/li&gt;
+                           &lt;li&gt;Participate in EGG Governance&lt;/li&gt;
                            &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
                            &lt;li&gt;Commodity option for future sale&lt;/li&gt;
-                           &lt;li&gt;Help secure the SAPP network&lt;/li&gt;
+                           &lt;li&gt;Help secure the EGG network&lt;/li&gt;
                            &lt;/ul&gt;
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
 
@@ -4562,7 +4562,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+158"/>
-        <source>3) How do I stake SAPP?</source>
+        <source>3) How do I stake EGG?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4783,7 +4783,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location filename="../pivx/settings/settingsmainoptionswidget.cpp" line="+57"/>
-        <source>Start SAPP on system login</source>
+        <source>Start EGG on system login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4891,7 +4891,7 @@ Are you sure?
     </message>
     <message>
         <location filename="../pivx/settings/settingsmultisendwidget.cpp" line="+164"/>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other SAPP addresses after it matures.</source>
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other EGG addresses after it matures.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5046,7 +5046,7 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     </message>
     <message>
         <location line="-62"/>
-        <source>SAPP address or contact label</source>
+        <source>EGG address or contact label</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5456,7 +5456,7 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     </message>
     <message>
         <location line="+31"/>
-        <source>About SAPP</source>
+        <source>About EGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5538,7 +5538,7 @@ Are you sure?
     <name>ShutdownWindow</name>
     <message>
         <location filename="../utilitydialog.cpp" line="+71"/>
-        <source>Sapphire is shutting down...</source>
+        <source>NestEGG is shutting down...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5574,7 +5574,7 @@ Are you sure?
     </message>
     <message>
         <location filename="../pivx/splash.cpp" line="+30"/>
-        <source>Sapphire</source>
+        <source>NestEGG</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6271,27 +6271,27 @@ Select fewer inputs with coin control.</source>
     <message>
         <location line="+89"/>
         <source>Welcome to
-Sapphire Wallet</source>
+NestEGG Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+27"/>
-        <source>SAPP is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <source>EGG is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - SAPP believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - EGG believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+83"/>
-        <source>The masternode network is SAPP&apos;s second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
+        <source>The masternode network is EGG&apos;s second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-103"/>
-        <source>How SAPP respects your privacy?</source>
+        <source>How EGG respects your privacy?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6339,7 +6339,7 @@ Sapphire Wallet</source>
     </message>
     <message>
         <location line="+5"/>
-        <source>Cannot obtain a lock on data directory %s. Sapphire is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. NestEGG is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6539,7 +6539,7 @@ Sapphire Wallet</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to bind to %s on this computer. Sapphire is probably already running.</source>
+        <source>Unable to bind to %s on this computer. NestEGG is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6559,7 +6559,7 @@ Sapphire Wallet</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Sapphire will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6819,7 +6819,7 @@ Sapphire Wallet</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Initialization sanity check failed. Sapphire is shutting down.</source>
+        <source>Initialization sanity check failed. NestEGG is shutting down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6859,7 +6859,7 @@ Sapphire Wallet</source>
     </message>
     <message>
         <location line="+50"/>
-        <source>Recalculating SAPP supply...</source>
+        <source>Recalculating EGG supply...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6894,7 +6894,7 @@ Sapphire Wallet</source>
     </message>
     <message>
         <location line="-144"/>
-        <source>Disable all SAPP specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)</source>
+        <source>Disable all EGG specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7254,12 +7254,12 @@ Sapphire Wallet</source>
     </message>
     <message>
         <location line="+37"/>
-        <source>Minimum positive amount (in SAPP) allowed by GUI and RPC for the stake split threshold (default: %s)</source>
+        <source>Minimum positive amount (in EGG) allowed by GUI and RPC for the stake split threshold (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Please check that your computer&apos;s date and time are correct! If your clock is wrong Sapphire will not work properly.</source>
+        <source>Please check that your computer&apos;s date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7314,7 +7314,7 @@ Sapphire Wallet</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading %s: Wallet requires newer version of Sapphire</source>
+        <source>Error loading %s: Wallet requires newer version of NestEGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7636,7 +7636,7 @@ Sapphire Wallet</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Syncing zSAPP wallet...</source>
+        <source>Syncing zEGG wallet...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7791,7 +7791,7 @@ Sapphire Wallet</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Value is below the smallest available denomination (= 1) of zSAPP</source>
+        <source>Value is below the smallest available denomination (= 1) of zEGG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7816,7 +7816,7 @@ Sapphire Wallet</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Sapphire to complete</source>
+        <source>Wallet needed to be rewritten: restart NestEGG to complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7900,12 +7900,12 @@ Sapphire Wallet</source>
     </message>
     <message>
         <location line="-505"/>
-        <source>Send public coins (SAPP)</source>
+        <source>Send public coins (EGG)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+60"/>
-        <source>SAPP address or contact label</source>
+        <source>EGG address or contact label</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

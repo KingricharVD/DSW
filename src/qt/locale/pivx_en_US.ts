@@ -122,12 +122,12 @@
         <translation>Receiving addresses</translation>
     </message>
     <message>
-        <source>These are your SAPP addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>These are your SAPP addresses for sending payments. Always check the amount and the receiving address before sending coins.</translation>
+        <source>These are your EGG addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>These are your EGG addresses for sending payments. Always check the amount and the receiving address before sending coins.</translation>
     </message>
     <message>
-        <source>These are your SAPP addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>These are your SAPP addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</translation>
+        <source>These are your EGG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>These are your EGG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -364,8 +364,8 @@ for staking</translation>
         <translation>CANCEL</translation>
     </message>
     <message>
-        <source>SAPP will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your SAPPs from being stolen by malware infecting your computer.</source>
-        <translation>SAPP will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your SAPPs from being stolen by malware infecting your computer.</translation>
+        <source>EGG will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your EGGs from being stolen by malware infecting your computer.</source>
+        <translation>EGG will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your EGGs from being stolen by malware infecting your computer.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -465,8 +465,8 @@ for staking</translation>
         <translation>Coin Selection</translation>
     </message>
     <message>
-        <source>Select SAPP Outputs to Spend</source>
-        <translation>Select SAPP Outputs to Spend</translation>
+        <source>Select EGG Outputs to Spend</source>
+        <translation>Select EGG Outputs to Spend</translation>
     </message>
     <message>
         <source>Dust:</source>
@@ -493,8 +493,8 @@ for staking</translation>
         <translation>Amount</translation>
     </message>
     <message>
-        <source>0.00 SAPP</source>
-        <translation>0.00 SAPP</translation>
+        <source>0.00 EGG</source>
+        <translation>0.00 EGG</translation>
     </message>
     <message>
         <source>0</source>
@@ -723,8 +723,8 @@ for staking</translation>
         <translation>View your account's history</translation>
     </message>
     <message>
-        <source>How to get SAPP</source>
-        <translation>How to get SAPP</translation>
+        <source>How to get EGG</source>
+        <translation>How to get EGG</translation>
     </message>
     <message>
         <source>Sort by</source>
@@ -747,8 +747,8 @@ for staking</translation>
         <translation>Filter by</translation>
     </message>
     <message>
-        <source>Amount of SAPP and zSAPP staked.</source>
-        <translation>Amount of SAPP and zSAPP staked.</translation>
+        <source>Amount of EGG and zEGG staked.</source>
+        <translation>Amount of EGG and zEGG staked.</translation>
     </message>
     <message>
         <source>Please wait until the wallet is fully synced to see your correct balance</source>
@@ -843,8 +843,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>Edit sending address</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid SAPP address.</source>
-        <translation>The entered address "%1" is not a valid SAPP address.</translation>
+        <source>The entered address "%1" is not a valid EGG address.</source>
+        <translation>The entered address "%1" is not a valid EGG address.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -896,16 +896,16 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>version</translation>
     </message>
     <message>
-        <source>Sapphire</source>
-        <translation>Sapphire</translation>
+        <source>NestEGG</source>
+        <translation>NestEGG</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Sapphire</source>
-        <translation>About Sapphire</translation>
+        <source>About NestEGG</source>
+        <translation>About NestEGG</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -959,16 +959,16 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>Welcome</translation>
     </message>
     <message>
-        <source>Welcome to Sapphire.</source>
-        <translation>Welcome to Sapphire.</translation>
+        <source>Welcome to NestEGG.</source>
+        <translation>Welcome to NestEGG.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Sapphire will store its data.</source>
-        <translation>As this is the first time the program is launched, you can choose where Sapphire will store its data.</translation>
+        <source>As this is the first time the program is launched, you can choose where NestEGG will store its data.</source>
+        <translation>As this is the first time the program is launched, you can choose where NestEGG will store its data.</translation>
     </message>
     <message>
-        <source>Sapphire will download and store a copy of the SAPP block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Sapphire will download and store a copy of the SAPP block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</translation>
+        <source>NestEGG will download and store a copy of the EGG block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>NestEGG will download and store a copy of the EGG block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -987,8 +987,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>OK</translation>
     </message>
     <message>
-        <source>Sapphire</source>
-        <translation>Sapphire</translation>
+        <source>NestEGG</source>
+        <translation>NestEGG</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1095,8 +1095,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>Create New Masternode Controller</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a SAPP Masternode you must dedicate a collateral amount of SAPP (the unit of SAPP) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a SAPP Masternode you must dedicate a collateral amount of SAPP (the unit of SAPP) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a EGG Masternode you must dedicate a collateral amount of EGG (the unit of EGG) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a EGG Masternode you must dedicate a collateral amount of EGG (the unit of EGG) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Set Masternode Name</source>
@@ -1560,8 +1560,8 @@ NODES</translation>
         <translation>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</translation>
     </message>
     <message>
-        <source>Automatically open the SAPP client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the SAPP client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the EGG client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the EGG client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1580,12 +1580,12 @@ NODES</translation>
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start SAPP after logging in to the system.</source>
-        <translation>Automatically start SAPP after logging in to the system.</translation>
+        <source>Automatically start EGG after logging in to the system.</source>
+        <translation>Automatically start EGG after logging in to the system.</translation>
     </message>
     <message>
-        <source>&amp;Start SAPP on system login</source>
-        <translation>&amp;Start SAPP on system login</translation>
+        <source>&amp;Start EGG on system login</source>
+        <translation>&amp;Start EGG on system login</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1612,8 +1612,8 @@ NODES</translation>
         <translation>&amp;Network</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting SAPP.</source>
-        <translation>The user interface language can be set here. This setting will take effect after restarting SAPP.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting EGG.</source>
+        <translation>The user interface language can be set here. This setting will take effect after restarting EGG.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
@@ -1626,44 +1626,44 @@ NODES</translation>
         <translation>Map port using &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of SAPP units to zSAPP</source>
-        <translation>Enable automatic minting of SAPP units to zSAPP</translation>
+        <source>Enable automatic minting of EGG units to zEGG</source>
+        <translation>Enable automatic minting of EGG units to zEGG</translation>
     </message>
     <message>
-        <source>Enable zSAPP Automint</source>
-        <translation>Enable zSAPP Automint</translation>
+        <source>Enable zEGG Automint</source>
+        <translation>Enable zEGG Automint</translation>
     </message>
     <message>
-        <source>Enable automatic zSAPP minting from specific addresses</source>
-        <translation>Enable automatic zSAPP minting from specific addresses</translation>
+        <source>Enable automatic zEGG minting from specific addresses</source>
+        <translation>Enable automatic zEGG minting from specific addresses</translation>
     </message>
     <message>
         <source>Enable Automint Addresses</source>
         <translation>Enable Automint Addresses</translation>
     </message>
     <message>
-        <source>Percentage of incoming SAPP which get automatically converted to zSAPP via Zerocoin Protocol (min: 10%)</source>
-        <translation>Percentage of incoming SAPP which get automatically converted to zSAPP via Zerocoin Protocol (min: 10%)</translation>
+        <source>Percentage of incoming EGG which get automatically converted to zEGG via Zerocoin Protocol (min: 10%)</source>
+        <translation>Percentage of incoming EGG which get automatically converted to zEGG via Zerocoin Protocol (min: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zSAPP</source>
-        <translation>Percentage of autominted zSAPP</translation>
+        <source>Percentage of autominted zEGG</source>
+        <translation>Percentage of autominted zEGG</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough SAPP for this denomination is available</source>
-        <translation>Wait with automatic conversion to Zerocoin until enough SAPP for this denomination is available</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough EGG for this denomination is available</source>
+        <translation>Wait with automatic conversion to Zerocoin until enough EGG for this denomination is available</translation>
     </message>
     <message>
-        <source>Preferred Automint zSAPP Denomination</source>
-        <translation>Preferred Automint zSAPP Denomination</translation>
+        <source>Preferred Automint zEGG Denomination</source>
+        <translation>Preferred Automint zEGG Denomination</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
         <translation>Stake split threshold:</translation>
     </message>
     <message>
-        <source>Connect to the SAPP network through a SOCKS5 proxy.</source>
-        <translation>Connect to the SAPP network through a SOCKS5 proxy.</translation>
+        <source>Connect to the EGG network through a SOCKS5 proxy.</source>
+        <translation>Connect to the EGG network through a SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1809,8 +1809,8 @@ NODES</translation>
 <context>
     <name>PIVXGUI</name>
     <message>
-        <source>Sapphire</source>
-        <translation>Sapphire</translation>
+        <source>NestEGG</source>
+        <translation>NestEGG</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -1837,8 +1837,8 @@ NODES</translation>
         <translation>Quit application</translation>
     </message>
     <message>
-        <source>Sapphire client</source>
-        <translation>Sapphire client</translation>
+        <source>NestEGG client</source>
+        <translation>NestEGG client</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1908,8 +1908,8 @@ Address: %4
         <translation>Cannot start sapphire: click-to-pay handler</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid SAPP address or malformed URI parameters.</source>
-        <translation>URI cannot be parsed! This can be caused by an invalid SAPP address or malformed URI parameters.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid EGG address or malformed URI parameters.</source>
+        <translation>URI cannot be parsed! This can be caused by an invalid EGG address or malformed URI parameters.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -1998,8 +1998,8 @@ Address: %4
         <translation>Amount</translation>
     </message>
     <message>
-        <source>Enter SAPP address (e.g. %1)</source>
-        <translation>Enter SAPP address (e.g. %1)</translation>
+        <source>Enter EGG address (e.g. %1)</source>
+        <translation>Enter EGG address (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2042,12 +2042,12 @@ Address: %4
         <translation>%1 ms</translation>
     </message>
     <message>
-        <source>A fatal error occurred. SAPP can no longer continue safely and will quit.</source>
-        <translation>A fatal error occurred. SAPP can no longer continue safely and will quit.</translation>
+        <source>A fatal error occurred. EGG can no longer continue safely and will quit.</source>
+        <translation>A fatal error occurred. EGG can no longer continue safely and will quit.</translation>
     </message>
     <message>
-        <source>Sapphire</source>
-        <translation>Sapphire</translation>
+        <source>NestEGG</source>
+        <translation>NestEGG</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
@@ -2066,8 +2066,8 @@ Address: %4
         <translation>Error reading masternode configuration file: %1</translation>
     </message>
     <message>
-        <source>Sapphire didn't yet exit safely...</source>
-        <translation>Sapphire didn't yet exit safely...</translation>
+        <source>NestEGG didn't yet exit safely...</source>
+        <translation>NestEGG didn't yet exit safely...</translation>
     </message>
     <message>
         <source>Contact</source>
@@ -2277,8 +2277,8 @@ Address: %4
         <translation>Block chain</translation>
     </message>
     <message>
-        <source>Open the SAPP debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Open the SAPP debug log file from the current data directory. This can take a few seconds for large log files.</translation>
+        <source>Open the EGG debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open the EGG debug log file from the current data directory. This can take a few seconds for large log files.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -2421,8 +2421,8 @@ Address: %4
         <translation>Custom Backup Path:</translation>
     </message>
     <message>
-        <source>Custom zSAPP Backup Path:</source>
-        <translation>Custom zSAPP Backup Path:</translation>
+        <source>Custom zEGG Backup Path:</source>
+        <translation>Custom zEGG Backup Path:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -2501,8 +2501,8 @@ Address: %4
         <translation>Out:</translation>
     </message>
     <message>
-        <source>Welcome to the SAPP RPC console.</source>
-        <translation>Welcome to the SAPP RPC console.</translation>
+        <source>Welcome to the EGG RPC console.</source>
+        <translation>Welcome to the EGG RPC console.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -2643,8 +2643,8 @@ Address: %4
         <translation>No address</translation>
     </message>
     <message>
-        <source>Scan the QR code or copy the address to receive SAPP</source>
-        <translation>Scan the QR code or copy the address to receive SAPP</translation>
+        <source>Scan the QR code or copy the address to receive EGG</source>
+        <translation>Scan the QR code or copy the address to receive EGG</translation>
     </message>
     <message>
         <source>Add Label</source>
@@ -2773,12 +2773,12 @@ Address: %4
         <translation>Amount</translation>
     </message>
     <message>
-        <source>SAPP</source>
-        <translation>SAPP</translation>
+        <source>EGG</source>
+        <translation>EGG</translation>
     </message>
     <message>
-        <source>Instead of sharing only a SAPP address, you can create a payment request, bundling up more information</source>
-        <translation>Instead of sharing only a SAPP address, you can create a payment request, bundling up more information</translation>
+        <source>Instead of sharing only a EGG address, you can create a payment request, bundling up more information</source>
+        <translation>Instead of sharing only a EGG address, you can create a payment request, bundling up more information</translation>
     </message>
     <message>
         <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
@@ -2856,8 +2856,8 @@ Address: %4
         <translation>Custom Change Address</translation>
     </message>
     <message>
-        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" SAPP address</source>
-        <translation>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" SAPP address</translation>
+        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" EGG address</source>
+        <translation>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" EGG address</translation>
     </message>
     <message>
         <source>SAVE</source>
@@ -2883,8 +2883,8 @@ Address: %4
         <translation>Recommended</translation>
     </message>
     <message>
-        <source>SAPP/kilobyte</source>
-        <translation>SAPP/kilobyte</translation>
+        <source>EGG/kilobyte</source>
+        <translation>EGG/kilobyte</translation>
     </message>
     <message>
         <source>0.00 KB</source>
@@ -3155,9 +3155,9 @@ Remember to write it down and store it safely, otherwise you might lose access t
         <translation>BIP38 Tool</translation>
     </message>
     <message>
-        <source>Encrypt your SAPP addresses (key pair actually) using BIP38 encryption.
+        <source>Encrypt your EGG addresses (key pair actually) using BIP38 encryption.
 Using this mechanism you can share your keys without middle-man risk, only need to store your passphrase safely</source>
-        <translation>Encrypt your SAPP addresses (key pair actually) using BIP38 encryption.
+        <translation>Encrypt your EGG addresses (key pair actually) using BIP38 encryption.
 Using this mechanism you can share your keys without middle-man risk, only need to store your passphrase safely</translation>
     </message>
     <message>
@@ -3193,8 +3193,8 @@ Using this mechanism you can share your keys without middle-man risk, only need 
         <translation>DECRYPT KEY</translation>
     </message>
     <message>
-        <source>SAPP address</source>
-        <translation>SAPP address</translation>
+        <source>EGG address</source>
+        <translation>EGG address</translation>
     </message>
     <message>
         <source>Enter address</source>
@@ -3326,8 +3326,8 @@ Verify that you have installed a predetermined text editor.</source>
 Verify that you have installed a predetermined text editor.</translation>
     </message>
     <message>
-        <source>Welcome to the SAPP RPC console.</source>
-        <translation>Welcome to the SAPP RPC console.</translation>
+        <source>Welcome to the EGG RPC console.</source>
+        <translation>Welcome to the EGG RPC console.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
@@ -3511,12 +3511,12 @@ There was an error trying to save the address list to %1. Please try again.</tra
         <translation>Form</translation>
     </message>
     <message>
-        <source>1) What is SAPP?</source>
-        <translation>1) What is SAPP?</translation>
+        <source>1) What is EGG?</source>
+        <translation>1) What is EGG?</translation>
     </message>
     <message>
-        <source>2) Why are my SAPP unspendable?</source>
-        <translation>2) Why are my SAPP unspendable?</translation>
+        <source>2) Why are my EGG unspendable?</source>
+        <translation>2) Why are my EGG unspendable?</translation>
     </message>
     <message>
         <source>https://sappcoin.com/</source>
@@ -3527,34 +3527,34 @@ There was an error trying to save the address list to %1. Please try again.</tra
         <translation>1</translation>
     </message>
     <message>
-        <source>What is SAPP?</source>
-        <translation>What is SAPP?</translation>
+        <source>What is EGG?</source>
+        <translation>What is EGG?</translation>
     </message>
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           SAPP is a form of digital online money using blockchain technology
+                           EGG is a form of digital online money using blockchain technology
                            that can be easily transferred globally, instantly, and with near
-                           zero fees.  SAPP incorporates market leading security &amp;
+                           zero fees.  EGG incorporates market leading security &amp;
                            privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement ZeroCoin(zSAPP) and Zerocoin staking.
+                           to implement ZeroCoin(zEGG) and Zerocoin staking.
                            &lt;/p&gt;&lt;p align="justify"&gt;
-                           SAPP utilizes a Proof of Stake (PoS) consensus system algorithm,
-                           allowing all owners of SAPP to participate in earning block rewards
+                           EGG utilizes a Proof of Stake (PoS) consensus system algorithm,
+                           allowing all owners of EGG to participate in earning block rewards
                            while securing the network with full node wallets, as well as to
                            run Masternodes to create and vote on proposals.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           SAPP is a form of digital online money using blockchain technology
+                           EGG is a form of digital online money using blockchain technology
                            that can be easily transferred globally, instantly, and with near
-                           zero fees.  SAPP incorporates market leading security &amp;
+                           zero fees.  EGG incorporates market leading security &amp;
                            privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement ZeroCoin(zSAPP) and Zerocoin staking.
+                           to implement ZeroCoin(zEGG) and Zerocoin staking.
                            &lt;/p&gt;&lt;p align="justify"&gt;
-                           SAPP utilizes a Proof of Stake (PoS) consensus system algorithm,
-                           allowing all owners of SAPP to participate in earning block rewards
+                           EGG utilizes a Proof of Stake (PoS) consensus system algorithm,
+                           allowing all owners of EGG to participate in earning block rewards
                            while securing the network with full node wallets, as well as to
                            run Masternodes to create and vote on proposals.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
@@ -3565,25 +3565,25 @@ There was an error trying to save the address list to %1. Please try again.</tra
         <translation>2</translation>
     </message>
     <message>
-        <source>Why are my SAPP unspendable?</source>
-        <translation>Why are my SAPP unspendable?</translation>
+        <source>Why are my EGG unspendable?</source>
+        <translation>Why are my EGG unspendable?</translation>
     </message>
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           Newly received SAPP requires 6 confirmations on the network
+                           Newly received EGG requires 6 confirmations on the network
                            to become eligible for spending which can take ~6 minutes.
                            &lt;/p&gt;&lt;p align="justify"&gt;
-                           Your SAPP wallet also needs to be completely synchronized
+                           Your EGG wallet also needs to be completely synchronized
                            to see and spend balances on the network.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           Newly received SAPP requires 6 confirmations on the network
+                           Newly received EGG requires 6 confirmations on the network
                            to become eligible for spending which can take ~6 minutes.
                            &lt;/p&gt;&lt;p align="justify"&gt;
-                           Your SAPP wallet also needs to be completely synchronized
+                           Your EGG wallet also needs to be completely synchronized
                            to see and spend balances on the network.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>
@@ -3593,12 +3593,12 @@ There was an error trying to save the address list to %1. Please try again.</tra
         <translation>3</translation>
     </message>
     <message>
-        <source>How do I stake SAPP?</source>
-        <translation>How do I stake SAPP?</translation>
+        <source>How do I stake EGG?</source>
+        <translation>How do I stake EGG?</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li align="justify" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You must have a balance of SAPP with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (sapphire-cli); the command &lt;span style=" font-style:italic;"&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li align="justify" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You must have a balance of SAPP with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (sapphire-cli); the command &lt;span style=" font-style:italic;"&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li align="justify" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You must have a balance of EGG with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (sapphire-cli); the command &lt;span style=" font-style:italic;"&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li align="justify" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You must have a balance of EGG with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (sapphire-cli); the command &lt;span style=" font-style:italic;"&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>4</source>
@@ -3647,7 +3647,7 @@ There was an error trying to save the address list to %1. Please try again.</tra
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           A masternode is a computer running a full node SAPP wallet with a
+                           A masternode is a computer running a full node EGG wallet with a
                            required amount of secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
@@ -3669,10 +3669,10 @@ There was an error trying to save the address list to %1. Please try again.</tra
                            Masternode Perks:
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;Participate in SAPP Governance&lt;/li&gt;
+                           &lt;li&gt;Participate in EGG Governance&lt;/li&gt;
                            &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
                            &lt;li&gt;Commodity option for future sale&lt;/li&gt;
-                           &lt;li&gt;Help secure the SAPP network&lt;/li&gt;
+                           &lt;li&gt;Help secure the EGG network&lt;/li&gt;
                            &lt;/ul&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
 
@@ -3688,7 +3688,7 @@ There was an error trying to save the address list to %1. Please try again.</tra
                          </source>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           A masternode is a computer running a full node SAPP wallet with a
+                           A masternode is a computer running a full node EGG wallet with a
                            required amount of secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
@@ -3710,10 +3710,10 @@ There was an error trying to save the address list to %1. Please try again.</tra
                            Masternode Perks:
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;Participate in SAPP Governance&lt;/li&gt;
+                           &lt;li&gt;Participate in EGG Governance&lt;/li&gt;
                            &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
                            &lt;li&gt;Commodity option for future sale&lt;/li&gt;
-                           &lt;li&gt;Help secure the SAPP network&lt;/li&gt;
+                           &lt;li&gt;Help secure the EGG network&lt;/li&gt;
                            &lt;/ul&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
 
@@ -3733,8 +3733,8 @@ There was an error trying to save the address list to %1. Please try again.</tra
         <translation>Frequently Asked Questions</translation>
     </message>
     <message>
-        <source>3) How do I stake SAPP?</source>
-        <translation>3) How do I stake SAPP?</translation>
+        <source>3) How do I stake EGG?</source>
+        <translation>3) How do I stake EGG?</translation>
     </message>
     <message>
         <source>4) Where I should go if I need support?</source>
@@ -3911,8 +3911,8 @@ There was an error trying to save the address list to %1. Please try again.</tra
         <translation>Number of script verification threads</translation>
     </message>
     <message>
-        <source>Start SAPP on system login</source>
-        <translation>Start SAPP on system login</translation>
+        <source>Start EGG on system login</source>
+        <translation>Start EGG on system login</translation>
     </message>
     <message>
         <source>Minimize to the tray instead of the taskbar</source>
@@ -3999,8 +3999,8 @@ Are you sure?
         <translation>CheckBox</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other SAPP addresses after it matures.</source>
-        <translation>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other SAPP addresses after it matures.</translation>
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other EGG addresses after it matures.</source>
+        <translation>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other EGG addresses after it matures.</translation>
     </message>
     <message>
         <source>Active</source>
@@ -4126,8 +4126,8 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>Message</translation>
     </message>
     <message>
-        <source>SAPP address or contact label</source>
-        <translation>SAPP address or contact label</translation>
+        <source>EGG address or contact label</source>
+        <translation>EGG address or contact label</translation>
     </message>
     <message>
         <source>Enter address</source>
@@ -4447,8 +4447,8 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
         <translation>FAQ</translation>
     </message>
     <message>
-        <source>About SAPP</source>
-        <translation>About SAPP</translation>
+        <source>About EGG</source>
+        <translation>About EGG</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -4518,8 +4518,8 @@ Are you sure?
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Sapphire is shutting down...</source>
-        <translation>Sapphire is shutting down...</translation>
+        <source>NestEGG is shutting down...</source>
+        <translation>NestEGG is shutting down...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4548,8 +4548,8 @@ Are you sure?
         <translation>Loading…</translation>
     </message>
     <message>
-        <source>Sapphire</source>
-        <translation>Sapphire</translation>
+        <source>NestEGG</source>
+        <translation>NestEGG</translation>
     </message>
 </context>
 <context>
@@ -5096,25 +5096,25 @@ Select fewer inputs with coin control.</translation>
     </message>
     <message>
         <source>Welcome to
-Sapphire Wallet</source>
+NestEGG Wallet</source>
         <translation>Welcome to
-Sapphire Wallet</translation>
+NestEGG Wallet</translation>
     </message>
     <message>
-        <source>SAPP is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>SAPP is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</translation>
+        <source>EGG is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>EGG is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - SAPP believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - SAPP believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - EGG believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - EGG believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>The masternode network is SAPP's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
-        <translation>The masternode network is SAPP's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</translation>
+        <source>The masternode network is EGG's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
+        <translation>The masternode network is EGG's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</translation>
     </message>
     <message>
-        <source>How SAPP respects your privacy?</source>
-        <translation>How SAPP respects your privacy?</translation>
+        <source>How EGG respects your privacy?</source>
+        <translation>How EGG respects your privacy?</translation>
     </message>
     <message>
         <source>What is a Masternode?</source>
@@ -5152,8 +5152,8 @@ Sapphire Wallet</translation>
         <translation>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Sapphire is probably already running.</source>
-        <translation>Cannot obtain a lock on data directory %s. Sapphire is probably already running.</translation>
+        <source>Cannot obtain a lock on data directory %s. NestEGG is probably already running.</source>
+        <translation>Cannot obtain a lock on data directory %s. NestEGG is probably already running.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -5312,8 +5312,8 @@ Sapphire Wallet</translation>
         <translation>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Sapphire is probably already running.</source>
-        <translation>Unable to bind to %s on this computer. Sapphire is probably already running.</translation>
+        <source>Unable to bind to %s on this computer. NestEGG is probably already running.</source>
+        <translation>Unable to bind to %s on this computer. NestEGG is probably already running.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5328,8 +5328,8 @@ Sapphire Wallet</translation>
         <translation>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Sapphire will not work properly.</source>
-        <translation>Warning: Please check that your computer's date and time are correct! If your clock is wrong Sapphire will not work properly.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
+        <translation>Warning: Please check that your computer's date and time are correct! If your clock is wrong NestEGG will not work properly.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5536,8 +5536,8 @@ Sapphire Wallet</translation>
         <translation>Information</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. Sapphire is shutting down.</source>
-        <translation>Initialization sanity check failed. Sapphire is shutting down.</translation>
+        <source>Initialization sanity check failed. NestEGG is shutting down.</source>
+        <translation>Initialization sanity check failed. NestEGG is shutting down.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5568,8 +5568,8 @@ Sapphire Wallet</translation>
         <translation>Invalid netmask specified in -whitelist: '%s'</translation>
     </message>
     <message>
-        <source>Recalculating SAPP supply...</source>
-        <translation>Recalculating SAPP supply...</translation>
+        <source>Recalculating EGG supply...</source>
+        <translation>Recalculating EGG supply...</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5596,8 +5596,8 @@ Sapphire Wallet</translation>
         <translation>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</translation>
     </message>
     <message>
-        <source>Disable all SAPP specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)</source>
-        <translation>Disable all SAPP specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)</translation>
+        <source>Disable all EGG specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)</source>
+        <translation>Disable all EGG specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -checklevel found. Checklevel must be level 4.</source>
@@ -5884,12 +5884,12 @@ Sapphire Wallet</translation>
         <translation>Fees (in %s/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</translation>
     </message>
     <message>
-        <source>Minimum positive amount (in SAPP) allowed by GUI and RPC for the stake split threshold (default: %s)</source>
-        <translation>Minimum positive amount (in SAPP) allowed by GUI and RPC for the stake split threshold (default: %s)</translation>
+        <source>Minimum positive amount (in EGG) allowed by GUI and RPC for the stake split threshold (default: %s)</source>
+        <translation>Minimum positive amount (in EGG) allowed by GUI and RPC for the stake split threshold (default: %s)</translation>
     </message>
     <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong Sapphire will not work properly.</source>
-        <translation>Please check that your computer's date and time are correct! If your clock is wrong Sapphire will not work properly.</translation>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
+        <translation>Please check that your computer's date and time are correct! If your clock is wrong NestEGG will not work properly.</translation>
     </message>
     <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect/-noconnect)</source>
@@ -5932,8 +5932,8 @@ Sapphire Wallet</translation>
         <translation>Error loading %s: Wallet corrupted</translation>
     </message>
     <message>
-        <source>Error loading %s: Wallet requires newer version of Sapphire</source>
-        <translation>Error loading %s: Wallet requires newer version of Sapphire</translation>
+        <source>Error loading %s: Wallet requires newer version of NestEGG</source>
+        <translation>Error loading %s: Wallet requires newer version of NestEGG</translation>
     </message>
     <message>
         <source>Error loading %s
@@ -6192,8 +6192,8 @@ Sapphire Wallet</translation>
         <translation>Synchronizing sporks...</translation>
     </message>
     <message>
-        <source>Syncing zSAPP wallet...</source>
-        <translation>Syncing zSAPP wallet...</translation>
+        <source>Syncing zEGG wallet...</source>
+        <translation>Syncing zEGG wallet...</translation>
     </message>
     <message>
         <source>The threshold value cannot be less than %s</source>
@@ -6316,8 +6316,8 @@ Sapphire Wallet</translation>
         <translation>Username for JSON-RPC connections</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zSAPP</source>
-        <translation>Value is below the smallest available denomination (= 1) of zSAPP</translation>
+        <source>Value is below the smallest available denomination (= 1) of zEGG</source>
+        <translation>Value is below the smallest available denomination (= 1) of zEGG</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -6336,8 +6336,8 @@ Sapphire Wallet</translation>
         <translation>Wallet debugging/testing options:</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Sapphire to complete</source>
-        <translation>Wallet needed to be rewritten: restart Sapphire to complete</translation>
+        <source>Wallet needed to be rewritten: restart NestEGG to complete</source>
+        <translation>Wallet needed to be rewritten: restart NestEGG to complete</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -6403,12 +6403,12 @@ Sapphire Wallet</translation>
         <translation>Send</translation>
     </message>
     <message>
-        <source>Send public coins (SAPP)</source>
-        <translation>Send public coins (SAPP)</translation>
+        <source>Send public coins (EGG)</source>
+        <translation>Send public coins (EGG)</translation>
     </message>
     <message>
-        <source>SAPP address or contact label</source>
-        <translation>SAPP address or contact label</translation>
+        <source>EGG address or contact label</source>
+        <translation>EGG address or contact label</translation>
     </message>
     <message>
         <source>Amount</source>

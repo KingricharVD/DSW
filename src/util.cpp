@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2020 The PIVX developers
-// Copyright (c) 2021 The DECENOMY Core Developers
+// Copyright (c) 2021 The NestEGG Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -89,7 +89,7 @@ const char * const PIVX_PID_FILENAME = "sapphire.pid";
 const char * const PIVX_MASTERNODE_CONF_FILENAME = "masternode.conf";
 
 
-// Sapphire only features
+// NestEGG only features
 // Masternode
 bool fMasterNode = false;
 std::string strMasterNodePrivKey = "";
@@ -292,7 +292,7 @@ fs::path GetDefaultDataDir()
 // Unix: ~/.sapphire
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Sapphire";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "NestEGG";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -304,7 +304,7 @@ fs::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "Sapphire";
+    return pathRet / "NestEGG";
 #else
     // Unix
     return pathRet / ".sapphire";
@@ -326,7 +326,7 @@ static fs::path ZC_GetBaseParamsDir()
     // Unix: ~/.sapphire-params
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "SapphireParams";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "NestEGGParams";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -338,7 +338,7 @@ static fs::path ZC_GetBaseParamsDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "SapphireParams";
+    return pathRet / "NestEGGParams";
 #else
     // Unix
     return pathRet / ".sapphire-params";

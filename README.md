@@ -1,17 +1,17 @@
-Sapphire wallet repository
+NestEGG wallet repository
 =====================================
 
 ### Coin Specs
 
 • PoW Algorithm: Quark   
-• Premine: 300,000 SAPP   
+• Premine: 300,000 EGG   
 • PoW Blocks: 1 - 500   
 • PoS Blocks: Starting from 501   
 • Block Time: 60 Seconds    
 • Maturity: 100 Confirmations   
-• Prefix: SAPP addresses start with the capital letter "S"   
+• Prefix: EGG addresses start with the capital letter "S"   
 • Ports: 20434 (p2p) / 51473 (rpc)   
-• Explorer https://explorer.decenomy.net/SAPP/blocks   
+• Explorer https://explorer.NestEGG.net/EGG/blocks   
 • Website https://sappcoin.com/
 
 ### Rewards Breakdown

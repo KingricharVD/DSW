@@ -1,10 +1,10 @@
 ![Example-Logo](https://avatars.githubusercontent.com/u/60038376?v=4)
 
-# Sapphire Masternode Setup Guide
+# NestEGG Masternode Setup Guide
 ***
 ## Required
-1) **SAPP collateral value at current block** ([consult the collateral table](../../README.md#rewards-breakdown))
-2) **Local Wallet https://github.com/sappcoin-com/SAPP/releases**
+1) **EGG collateral value at current block** ([consult the collateral table](../../README.md#rewards-breakdown))
+2) **Local Wallet https://github.com/sappcoin-com/EGG/releases**
 3) **VPS with UBUNTU 18.04** (it is possible to work on other versions but it is not tested)
 4) **Putty https://www.putty.org/**
 5) **Text editor on your local pc to save data for copy/paste**
@@ -30,7 +30,7 @@ You will then receive your private key, save it in a txt to use it later.
 * Once logged in your vps, *copy/paste* each line one by one with *Enter*
 
 ```
-wget -q https://raw.githubusercontent.com/sappcoin-com/SAPP/master/contrib/masternodesetup/masternodesetup.sh
+wget -q https://raw.githubusercontent.com/sappcoin-com/EGG/master/contrib/masternodesetup/masternodesetup.sh
 ```
 
 ```
@@ -81,4 +81,4 @@ sapphire-cli getmasternodestatus
 
 You need to get **"status" : 4** 
 
-## Congratulations your Sapphire node it's running
+## Congratulations your NestEGG node it's running

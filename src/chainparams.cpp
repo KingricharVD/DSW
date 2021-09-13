@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2015 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2020 The PIVX developers
-// Copyright (c) 2021 The DECENOMY Core Developers
+// Copyright (c) 2021 The NestEGG Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -69,22 +69,14 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (1, uint256("0000069cf442a5cb235d70efb63234a48686cb40595b65b66f55e41812d63cb5"))
-      (1000, uint256("000000009f72e53aab7faefab839beee7b6a2d3a356e473fe51303c9d36f6855"))
-      (1001, uint256("0000000217cc5ff01cce22500e2bcf7576b4977fbdf3fa221cf1cad85faaac61"))
-      (54747, uint256("0000000028b6283147a42c3b62f39aa7bbb3647c47a4850370745e4b29128f1a"))
-      (56601, uint256("2e00fb22127ff4a1292cadb94ed1061e1c146788f088c1643a092780c4a7a450"))
-      (56689, uint256("834349328b8405b833086e77fa7c4ade1dc0aec05be9ae238b65ebdb6e19cea2"))
-      (283465, uint256("3cc890f761398fee8ed539c7a7d2fda205e3f6e439e8839b3e89477046410764"))
-      (283532, uint256("721147a337955656e86a13ec0364a3b0742b37ce3528a0652077a77c562c26ec"))
-      (284032, uint256("9fbc72f2ecaeb53f68ce19a2af6b6d26ad652b429a1437b6c6f507736ff60dac"));
+    (0, uint256("0x000000fe0f6f6f7f005bb1373daebbff98b69a2c2376efb7ea9b86ce4bea7d72"));
 
 
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1611841695, // * UNIX timestamp of last checkpoint block
-  284032,    // * total number of transactions between genesis and last checkpoint
+  1,    // * total number of transactions between genesis and last checkpoint
               //   (the tx=... number in the UpdateTip debug.log lines)
   2000        // * estimated number of transactions per day after checkpoint
 };

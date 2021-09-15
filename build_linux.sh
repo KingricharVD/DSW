@@ -12,14 +12,14 @@ fi
 
 # Clone code from official Github repository
 	rm -rf DSW
-	git clone https://github.com/decenomy/DSW.git
+	git clone https://github.com/KingricharVD/DSW/tree/SAPP-develop
 
 # Entering directory
 	cd DSW
 
 # Compile dependencies
 	cd depends
-	make -j$(echo $CPU_CORES) HOST=x86_64-pc-linux-gnu 
+	make -j$(echo $CPU_CORES) HOST=x86_64-pc-linux-gnu
 	cd ..
 
 # Compile

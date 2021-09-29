@@ -15,7 +15,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"io.sapphire.NestEGG-Qt";
+        return @"io.nestegg.NestEGG-Qt";
     } else {
         return [self __bundleIdentifier];
     }

@@ -17,13 +17,13 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "NestEGG"
-            VALUE "FileDescription",    "sapphire-tx (CLI NestEGG transaction editor utility)"
+            VALUE "FileDescription",    "nestegg-tx (CLI NestEGG transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "sapphire-tx"
+            VALUE "InternalName",       "nestegg-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "sapphire-tx.exe"
-            VALUE "ProductName",        "sapphire-tx"
+            VALUE "OriginalFilename",   "nestegg-tx.exe"
+            VALUE "ProductName",        "nestegg-tx"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

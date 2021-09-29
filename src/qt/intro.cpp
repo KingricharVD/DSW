@@ -207,8 +207,8 @@ bool Intro::pickDataDirectory()
     }
 
     /* Only override -datadir if different from the default, to make it possible to
-     * override -datadir in the sapphire.conf file in the default data directory
-     * (to be consistent with sapphired behavior)
+     * override -datadir in the nestegg.conf file in the default data directory
+     * (to be consistent with nesteggd behavior)
      */
 
     if (dataDir != getDefaultDataDirectory())

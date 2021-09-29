@@ -48,6 +48,15 @@ public:
         EXT_COIN_TYPE,  // BIP44
 
         MAX_BASE58_TYPES
+      };
+
+enum Bech32Type {
+    EGGLING_PAYMENT_ADDRESS,
+    EGGLING_FULL_VIEWING_KEY,
+    EGGLING_INCOMING_VIEWING_KEY,
+    EGGLING_EXTENDED_SPEND_KEY,
+
+    MAX_BECH32_TYPES
     };
 
     const Consensus::Params& GetConsensus() const { return consensus; }
@@ -67,12 +76,14 @@ public:
     std::string NetworkIDString() const { return strNetworkID; }
     const std::vector<CDNSSeedData>& DNSSeeds() const { return vSeeds; }
     const std::vector<unsigned char>& Base58Prefix(Base58Type type) const { return base58Prefixes[type]; }
+    const std::string& Bech32HRP(Bech32Type type) const { return bech32HRPs[type]; }
     const std::vector<SeedSpec6>& FixedSeeds() const { return vFixedSeeds; }
     virtual const Checkpoints::CCheckpointData& Checkpoints() const = 0;
 
     CBaseChainParams::Network NetworkID() const { return networkID; }
     bool IsRegTestNet() const { return NetworkID() == CBaseChainParams::REGTEST; }
-
+    bool IsTestNet() const { return NetworkID() == CBaseChainParams::TESTNET; }
+  	bool IsMainNet() const { return NetworkID() == CBaseChainParams::MAIN; }
 
 protected:
     CChainParams() {}
@@ -85,6 +96,7 @@ protected:
     int nDefaultPort;
     std::vector<CDNSSeedData> vSeeds;
     std::vector<unsigned char> base58Prefixes[MAX_BASE58_TYPES];
+    std::string bech32HRPs[MAX_BECH32_TYPES];
     std::vector<SeedSpec6> vFixedSeeds;
 };
 

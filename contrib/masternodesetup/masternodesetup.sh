@@ -1,14 +1,14 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='sapphire.conf'
-CONFIGFOLDER='/root/.sapphire'
-COIN_DAEMON='sapphired'
-COIN_CLI='sapphire-cli'
+CONFIG_FILE='nestegg.conf'
+CONFIGFOLDER='/root/.nestegg'
+COIN_DAEMON='nesteggd'
+COIN_CLI='nestegg-cli'
 COIN_PATH='/usr/local/bin/'
 COIN_TGZ=`curl -s https://api.github.com/repos/sappcoin-com/EGG/releases/latest | grep "browser_download_url.*Linux\\.zip" | cut -d : -f 2,3 | tr -d \" | xargs`
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='sapphire'
+COIN_NAME='nestegg'
 COIN_PORT=20434
 RPC_PORT=51473
 

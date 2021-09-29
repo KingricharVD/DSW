@@ -1,4 +1,4 @@
-Source: sapphire
+Source: nestegg
 Section: utils
 Priority: optional
 Maintainer: Fuzzbawls <fuzzbawls@gmail.com>
@@ -32,7 +32,7 @@ Homepage: https://sappcoin.com
 Vcs-Git: git://github.com/sappcoin-com/EGG.git
 Vcs-Browser: https://github.com/sappcoin-com/EGG
 
-Package: sapphired
+Package: nesteggd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
@@ -45,10 +45,10 @@ Description: peer-to-peer network based digital currency - daemon
  Full transaction history is stored locally at each client.  This
  requires 18.5+ GB of space, slowly growing.
  .
- This package provides the daemon, sapphired, and the CLI tool
- sapphire-cli to interact with the daemon.
+ This package provides the daemon, nesteggd, and the CLI tool
+ nestegg-cli to interact with the daemon.
 
-Package: sapphire-qt
+Package: nestegg-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI

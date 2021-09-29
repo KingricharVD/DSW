@@ -259,7 +259,7 @@ public:
       vSeeds.emplace_back(CDNSSeedData("45.77.133.78", "45.77.133.78", true));
       vSeeds.emplace_back(CDNSSeedData("207.148.1.73", "207.148.1.73", true));
       vSeeds.emplace_back(CDNSSeedData("139.180.170.177", "139.180.170.177", true));
-  vSeeds.emplace_back(CDNSSeedData("108.61.188.101", "108.61.188.101", true));
+      vSeeds.emplace_back(CDNSSeedData("108.61.188.101", "108.61.188.101", true));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 33);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 34);
@@ -271,6 +271,13 @@ public:
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
         //convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main)); // added
+        // Sapling
+      		//TODO: Set the parameters below for EGG
+              bech32HRPs[EGGLING_PAYMENT_ADDRESS]      = "ps";
+              bech32HRPs[EGGLING_FULL_VIEWING_KEY]     = "pviews";
+              bech32HRPs[EGGLING_INCOMING_VIEWING_KEY] = "pivks";
+              bech32HRPs[EGGLING_EXTENDED_SPEND_KEY]   = "p-secret-spending-key-main";
+
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -408,6 +415,13 @@ public:
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
+
+
+        // Sapling
+        bech32HRPs[EGGLING_PAYMENT_ADDRESS]      = "ptestsapling";
+        bech32HRPs[EGGLING_FULL_VIEWING_KEY]     = "pviewtestsapling";
+        bech32HRPs[EGGLING_INCOMING_VIEWING_KEY] = "pivktestsapling";
+        bech32HRPs[EGGLING_EXTENDED_SPEND_KEY]   = "p-secret-spending-key-test";
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const

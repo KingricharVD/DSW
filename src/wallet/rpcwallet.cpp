@@ -22,6 +22,8 @@
 #include "walletdb.h"
 #include "zpivchain.h"
 
+#include "sapling/key_io_sapling.h"
+
 #include <stdint.h>
 
 #include "libzerocoin/Coin.h"
@@ -161,7 +163,7 @@ UniValue getaddressinfo(const JSONRPCRequest& request)
                 "                                                         hdseedid) and relation to the wallet (ismine, iswatchonly).\n"
                 "  \"iscompressed\" : true|false,        (boolean, optional) If the pubkey is compressed.\n"
                 "  \"label\" :  \"label\"                  (string) The label associated with the address, \"\" is the default label.\n"
-                "  \"account\" : \"account\"                 (string) DEPRECATED. This field will be removed in v5.0. To see this deprecated field, start sapphired with -deprecatedrpc=accounts. The account associated with the address, \"\" is the default account\n"
+                "  \"account\" : \"account\"                 (string) DEPRECATED. This field will be removed in v5.0. To see this deprecated field, start nesteggd with -deprecatedrpc=accounts. The account associated with the address, \"\" is the default account\n"
                 "  \"timestamp\" : timestamp,            (number, optional) The creation time of the key, if available, expressed in the UNIX epoch time.\n"
                 "  \"hdkeypath\" : \"keypath\"             (string, optional) The HD keypath, if the key is HD and available.\n"
                 "  \"hdseedid\" : \"<hash160>\"            (string, optional) The Hash160 of the HD seed.\n"
@@ -503,9 +505,9 @@ UniValue getaccountaddress(const JSONRPCRequest& request)
 {
     if (!IsDeprecatedRPCEnabled("accounts")) {
         if (request.fHelp) {
-            throw std::runtime_error("getaccountaddress (Deprecated, will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts)");
+            throw std::runtime_error("getaccountaddress (Deprecated, will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getaccountaddress is deprecated and will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getaccountaddress is deprecated and will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() < 1 || request.params.size() > 2)
@@ -571,9 +573,9 @@ UniValue setlabel(const JSONRPCRequest& request)
 {
     if (!IsDeprecatedRPCEnabled("accounts") && request.strMethod == "setaccount") {
         if (request.fHelp) {
-            throw std::runtime_error("setaccount (Deprecated, will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts)");
+            throw std::runtime_error("setaccount (Deprecated, will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "setaccount is deprecated and will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "setaccount is deprecated and will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() != 2)
@@ -628,9 +630,9 @@ UniValue getaccount(const JSONRPCRequest& request)
 {
     if (!IsDeprecatedRPCEnabled("accounts")) {
         if (request.fHelp) {
-            throw std::runtime_error("getaccount (Deprecated, will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts)");
+            throw std::runtime_error("getaccount (Deprecated, will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getaccount is deprecated and will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getaccount is deprecated and will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() != 1)
@@ -665,9 +667,9 @@ UniValue getaddressesbyaccount(const JSONRPCRequest& request)
 {
     if (!IsDeprecatedRPCEnabled("accounts")) {
         if (request.fHelp) {
-            throw std::runtime_error("getaddressesbyaccount (Deprecated, will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts)");
+            throw std::runtime_error("getaddressesbyaccount (Deprecated, will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getaddressesbyaccount is deprecated and will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getaddressesbyaccount is deprecated and will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() != 1)
@@ -947,9 +949,9 @@ UniValue getreceivedbylabel(const JSONRPCRequest& request)
 {
     if (!IsDeprecatedRPCEnabled("accounts") && request.strMethod == "getreceivedbyaccount") {
         if (request.fHelp) {
-            throw std::runtime_error("getreceivedbyaccount (Deprecated, will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts)");
+            throw std::runtime_error("getreceivedbyaccount (Deprecated, will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getreceivedbyaccount is deprecated and will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getreceivedbyaccount is deprecated and will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() < 1 || request.params.size() > 2)
@@ -1017,12 +1019,12 @@ UniValue getbalance(const JSONRPCRequest& request)
 
             "\nArguments:\n"
             "1. \"account\"      (string, optional) DEPRECATED. This argument will be removed in v5.0.\n"
-            "                    To use this deprecated argument, start sapphired with -deprecatedrpc=accounts."
+            "                    To use this deprecated argument, start nesteggd with -deprecatedrpc=accounts."
             "2. minconf          (numeric, optional, default=1) DEPRECATED. This argument will be removed in v5.0.\n"
-            "                    To use this deprecated argument, start sapphired with -deprecatedrpc=accounts. Only include transactions confirmed at least this many times.\n"
+            "                    To use this deprecated argument, start nesteggd with -deprecatedrpc=accounts. Only include transactions confirmed at least this many times.\n"
             "3. includeWatchonly (bool, optional, default=false) DEPRECATED. This argument will be removed in v5.0.\n"
-            "                    To use this deprecated argument, start sapphired with -deprecatedrpc=accounts. Also include balance in watchonly addresses (see 'importaddress')\n"
-            
+            "                    To use this deprecated argument, start nesteggd with -deprecatedrpc=accounts. Also include balance in watchonly addresses (see 'importaddress')\n"
+
             "\nResult:\n"
             "amount              (numeric) The total amount in EGG received for this account.\n"
 
@@ -1048,7 +1050,7 @@ UniValue getbalance(const JSONRPCRequest& request)
         isminefilter filter = ISMINE_SPENDABLE;
         if (request.params.size() > 2 && request.params[2].get_bool())
             filter = filter | ISMINE_WATCH_ONLY;
-        
+
         return ValueFromAmount(pwalletMain->GetLegacyBalance(filter, nMinDepth, account));
     }
 
@@ -1076,9 +1078,9 @@ UniValue movecmd(const JSONRPCRequest& request)
 {
     if (!IsDeprecatedRPCEnabled("accounts")) {
         if (request.fHelp) {
-            throw std::runtime_error("move (Deprecated, will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts)");
+            throw std::runtime_error("move (Deprecated, will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "move is deprecated and will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "move is deprecated and will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() < 3 || request.params.size() > 5)
@@ -1153,9 +1155,9 @@ UniValue sendfrom(const JSONRPCRequest& request)
 {
     if (!IsDeprecatedRPCEnabled("accounts")) {
         if (request.fHelp) {
-            throw std::runtime_error("sendfrom (Deprecated, will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts)");
+            throw std::runtime_error("sendfrom (Deprecated, will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "sendfrom is deprecated and will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "sendfrom is deprecated and will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() < 3 || request.params.size() > 7)
@@ -1175,7 +1177,7 @@ UniValue sendfrom(const JSONRPCRequest& request)
             "6. \"comment-to\"        (string, optional) An optional comment to store the name of the person or organization \n"
             "                                     to which you're sending the transaction. This is not part of the transaction, \n"
             "                                     it is just kept in your wallet.\n"
-            
+
             "\nResult:\n"
             "\"transactionid\"        (string) The transaction id.\n"
 
@@ -1206,7 +1208,7 @@ UniValue sendfrom(const JSONRPCRequest& request)
         wtx.mapValue["to"] = request.params[5].get_str();
 
     isminefilter filter = ISMINE_SPENDABLE;
-    
+
     EnsureWalletIsUnlocked();
 
     // Check funds
@@ -1227,7 +1229,7 @@ UniValue sendmany(const JSONRPCRequest& request)
         help_text = "sendmany \"\" {\"address\":amount,...} ( minconf \"comment\" )\n"
             "\nSend multiple times. Amounts are double-precision floating point numbers.\n"
             "Note that the \"fromaccount\" argument has been removed in v4.2. To use this RPC with a \"fromaccount\" argument, restart\n"
-            "sapphired with -deprecatedrpc=accounts\n" +
+            "nesteggd with -deprecatedrpc=accounts\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
@@ -1239,7 +1241,7 @@ UniValue sendmany(const JSONRPCRequest& request)
             "    }\n"
             "3. minconf                 (numeric, optional, default=1) Only use the balance confirmed at least this many times.\n"
             "4. \"comment\"             (string, optional) A comment\n"
-            
+
             "\nResult:\n"
             "\"transactionid\"          (string) The transaction id for the send. Only 1 transaction is created regardless of \n"
             "                                    the number of addresses.\n"
@@ -1266,7 +1268,7 @@ UniValue sendmany(const JSONRPCRequest& request)
             "    }\n"
             "3. minconf                 (numeric, optional, default=1) Only use the balance confirmed at least this many times.\n"
             "4. \"comment\"             (string, optional) A comment\n"
-            
+
             "\nResult:\n"
             "\"transactionid\"          (string) The transaction id for the send. Only 1 transaction is created regardless of \n"
             "                                    the number of addresses.\n"
@@ -1323,7 +1325,7 @@ UniValue sendmany(const JSONRPCRequest& request)
     }
 
     isminefilter filter = ISMINE_SPENDABLE;
-    
+
     EnsureWalletIsUnlocked();
 
     // Check funds
@@ -1596,9 +1598,9 @@ UniValue listreceivedbylabel(const JSONRPCRequest& request)
 {
     if (!IsDeprecatedRPCEnabled("accounts") && request.strMethod == "listreceivedbyaccount") {
         if (request.fHelp) {
-            throw std::runtime_error("listreceivedbyaccount (Deprecated, will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts)");
+            throw std::runtime_error("listreceivedbyaccount (Deprecated, will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "listreceivedbyaccount is deprecated and will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "listreceivedbyaccount is deprecated and will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() > 3)
@@ -1735,7 +1737,7 @@ UniValue listtransactions(const JSONRPCRequest& request)
             "2. count          (numeric, optional, default=10) The number of transactions to return\n"
             "3. from           (numeric, optional, default=0) The number of transactions to skip\n"
             "4. includeWatchonly (bool, optional, default=false) Include transactions to watchonly addresses (see 'importaddress')\n"
-            
+
             "\nResult:\n"
             "[\n"
             "  {\n"
@@ -1786,7 +1788,7 @@ UniValue listtransactions(const JSONRPCRequest& request)
             "2. count          (numeric, optional, default=10) The number of transactions to return\n"
             "3. from           (numeric, optional, default=0) The number of transactions to skip\n"
             "4. includeWatchonly (bool, optional, default=false) Include transactions to watchonly addresses (see 'importaddress')\n"
-            
+
             "\nResult:\n"
             "[\n"
             "  {\n"
@@ -1855,7 +1857,7 @@ UniValue listtransactions(const JSONRPCRequest& request)
     isminefilter filter = ISMINE_SPENDABLE;
     if ( request.params.size() > 3 && request.params[3].get_bool() )
             filter = filter | ISMINE_WATCH_ONLY;
-    
+
     if (nCount < 0)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Negative count");
     if (nFrom < 0)
@@ -1907,9 +1909,9 @@ UniValue listaccounts(const JSONRPCRequest& request)
 {
     if (!IsDeprecatedRPCEnabled("accounts")) {
         if (request.fHelp) {
-            throw std::runtime_error("listaccounts (Deprecated, will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts)");
+            throw std::runtime_error("listaccounts (Deprecated, will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "listaccounts is deprecated and will be removed in v5.0. To use this command, start sapphired with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "listaccounts is deprecated and will be removed in v5.0. To use this command, start nesteggd with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() > 2)
@@ -2002,7 +2004,7 @@ UniValue listsinceblock(const JSONRPCRequest& request)
             "\nResult:\n"
             "{\n"
             "  \"transactions\": [\n"
-            "    \"account\":\"accountname\",       (string) DEPRECATED. This field will be removed in v5.0. To see this deprecated field, start sapphired with -deprecatedrpc=accounts. The account name associated with the transaction. Will be \"\" for the default account.\n"
+            "    \"account\":\"accountname\",       (string) DEPRECATED. This field will be removed in v5.0. To see this deprecated field, start nesteggd with -deprecatedrpc=accounts. The account name associated with the transaction. Will be \"\" for the default account.\n"
             "    \"address\":\"EGGaddress\",    (string) The EGG address of the transaction. Not present for move transactions (category = move).\n"
             "    \"category\":\"send|receive\",     (string) The transaction category. 'send' has negative amounts, 'receive' has positive amounts.\n"
             "    \"amount\": x.xxx,          (numeric) The amount in EGG. This is negative for the 'send' category, and for the 'move' category for moves \n"
@@ -2099,7 +2101,7 @@ UniValue gettransaction(const JSONRPCRequest& request)
             "  \"timereceived\" : ttt,    (numeric) The time received in seconds since epoch (1 Jan 1970 GMT)\n"
             "  \"details\" : [\n"
             "    {\n"
-            "      \"account\" : \"accountname\",  (string) DEPRECATED.This field will be removed in v5.0. To see this deprecated field, start sapphired with -deprecatedrpc=accounts. The account name involved in the transaction, can be \"\" for the default account.\n"
+            "      \"account\" : \"accountname\",  (string) DEPRECATED.This field will be removed in v5.0. To see this deprecated field, start nesteggd with -deprecatedrpc=accounts. The account name involved in the transaction, can be \"\" for the default account.\n"
             "      \"address\" : \"EGGaddress\",   (string) The EGG address involved in the transaction\n"
             "      \"category\" : \"send|receive\",    (string) The category, either 'send' or 'receive'\n"
             "      \"amount\" : x.xxx                  (numeric) The amount in EGG\n"
@@ -2455,7 +2457,7 @@ UniValue encryptwallet(const JSONRPCRequest& request)
     // slack space in .dat files; that is bad if the old data is
     // unencrypted private keys. So:
     StartShutdown();
-    return "wallet encrypted; sapphire server stopping, restart to run with encrypted wallet. The keypool has been flushed, you need to make a new backup.";
+    return "wallet encrypted; nestegg server stopping, restart to run with encrypted wallet. The keypool has been flushed, you need to make a new backup.";
 }
 
 UniValue listunspent(const JSONRPCRequest& request)
@@ -2486,7 +2488,7 @@ UniValue listunspent(const JSONRPCRequest& request)
                 "    \"vout\" : n,               (numeric) the vout value\n"
                 "    \"address\" : \"address\",  (string) the EGG address\n"
                 "    \"label\" : \"label\",      (string) The associated label, or \"\" for the default label\n"
-                "    \"account\" : \"account\",  (string) DEPRECATED.This field will be removed in v5.0. To see this deprecated field, start sapphired with -deprecatedrpc=accounts. Backwards compatible alias for label.\n"
+                "    \"account\" : \"account\",  (string) DEPRECATED.This field will be removed in v5.0. To see this deprecated field, start nesteggd with -deprecatedrpc=accounts. Backwards compatible alias for label.\n"
                 "    \"scriptPubKey\" : \"key\", (string) the script key\n"
                 "    \"redeemScript\" : \"key\", (string) the redeemscript key\n"
                 "    \"amount\" : x.xxx,         (numeric) the transaction amount in EGG\n"
@@ -3408,7 +3410,7 @@ UniValue mintzerocoin(const JSONRPCRequest& request)
     }
 
     int64_t nTime = GetTimeMillis();
-    
+
     EnsureWalletIsUnlocked(true);
 
     CAmount nAmount = request.params[0].get_int() * COIN;

@@ -1,6 +1,6 @@
 [Protocol]
-exec=sapphire-qt '%u'
-protocol=sapphire
+exec=nestegg-qt '%u'
+protocol=nestegg
 input=none
 output=none
 helper=true

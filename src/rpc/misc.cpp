@@ -11,6 +11,7 @@
 #include "httpserver.h"
 #include "consensus/zerocoin_verify.h"
 #include "init.h"
+#include "sapling/key_io_sapling.h"
 #include "main.h"
 #include "masternode-sync.h"
 #include "net.h"
@@ -338,7 +339,7 @@ class DescribePaymentAddressVisitor : public boost::static_visitor<UniValue>
 {
 public:
     explicit DescribePaymentAddressVisitor() {}
-    
+
     UniValue operator()(const CTxDestination &dest) const {
         UniValue ret(UniValue::VOBJ);
         std::string currentAddress = EncodeDestination(dest);
@@ -688,7 +689,7 @@ UniValue getstakingstatus(const JSONRPCRequest& request)
             "\nResult:\n"
             "{\n"
             "  \"staking_status\": true|false,      (boolean) whether the wallet is staking or not\n"
-            "  \"staking_enabled\": true|false,     (boolean) whether staking is enabled/disabled in sapphire.conf\n"
+            "  \"staking_enabled\": true|false,     (boolean) whether staking is enabled/disabled in nestegg.conf\n"
             "  \"haveconnections\": true|false,     (boolean) whether network connections are present\n"
             "  \"mnsync\": true|false,              (boolean) whether the required masternode/spork data is synced\n"
             "  \"walletunlocked\": true|false,      (boolean) whether the wallet is unlocked\n"

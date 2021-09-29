@@ -21,6 +21,7 @@
 #include "pairresult.h"
 #include "primitives/block.h"
 #include "primitives/transaction.h"
+#include "sapling/address.hpp"
 #include "zpiv/zerocoin.h"
 #include "guiinterface.h"
 #include "util.h"
@@ -28,6 +29,7 @@
 #include "validationinterface.h"
 #include "script/ismine.h"
 #include "wallet/scriptpubkeyman.h"
+#include "sapling/saplingscriptpubkeyman.h"
 #include "wallet/walletdb.h"
 #include "zpiv/zpivmodule.h"
 #include "zpiv/zpivwallet.h"
@@ -157,7 +159,7 @@ public:
 
     bool IsInternal() const { return type == HDChain::ChangeType::INTERNAL; }
     bool IsExternal() const { return type == HDChain::ChangeType::EXTERNAL; }
-    bool IsStaking() const { return type == HDChain::ChangeType::STAKING; } // obsolete 
+    bool IsStaking() const { return type == HDChain::ChangeType::STAKING; } // obsolete
     bool IsECommerce() const { return type == HDChain::ChangeType::ECOMMERCE; }
 
     ADD_SERIALIZE_METHODS;
@@ -898,7 +900,7 @@ public:
     void MarkDirty();
 
     void BindWallet(CWallet* pwalletIn);
-    
+
     int GetDepthAndMempool(bool& fConflicted, bool enableIX = true) const;
 
     //! filter decides which addresses will count towards the debit

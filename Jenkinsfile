@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         NAME = 'NestEGG'
-        BASE_NAME = 'sapphire'
+        BASE_NAME = 'nestegg'
         ZIP_NAME = 'EGG'
     }
 

@@ -38,7 +38,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>io.sapphire.NestEGG-Qt</string>
+  <string>io.nestegg.NestEGG-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>

@@ -52,6 +52,10 @@
 #include "validationinterface.h"
 #include "zpivchain.h"
 
+// Sapling
+#include "sapling/util.h"
+#include <librustzcash.h>
+
 #ifdef ENABLE_WALLET
 #include "wallet/db.h"
 #include "wallet/wallet.h"

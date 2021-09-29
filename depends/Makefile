@@ -20,6 +20,8 @@ DOWNLOAD_RETRIES:=3
 HOST_ID_SALT ?= salt
 BUILD_ID_SALT ?= salt
 
+LIBRUSTZCASH_OVERRIDE ?=
+
 host:=$(BUILD)
 ifneq ($(HOST),)
 host:=$(HOST)
@@ -108,7 +110,7 @@ endif
 
 all_packages = $(packages) $(native_packages)
 
-meta_depends = Makefile funcs.mk builders/default.mk hosts/default.mk hosts/$(host_os).mk builders/$(build_os).mk
+meta_depends = Makefile funcs.mk builders/default.mk hosts/default.mk hosts/$(host_os).mk builders/$(build_os).mk cargo-checksum.sh
 
 $(host_arch)_$(host_os)_native_toolchain?=$($(host_os)_native_toolchain)
 
@@ -140,6 +142,7 @@ $(host_prefix)/share/config.site : config.site.in $(host_prefix)/.stamp_$(final_
             -e 's|@CXXFLAGS@|$(strip $(host_CXXFLAGS) $(host_$(release_type)_CXXFLAGS))|' \
             -e 's|@CPPFLAGS@|$(strip $(host_CPPFLAGS) $(host_$(release_type)_CPPFLAGS))|' \
             -e 's|@LDFLAGS@|$(strip $(host_LDFLAGS) $(host_$(release_type)_LDFLAGS))|' \
+						-e 's|@rust_target@|$(call rust_target,rust,$(canonical_host),$(host_os))|' \
             -e 's|@allow_host_packages@|$(ALLOW_HOST_PACKAGES)|' \
             -e 's|@no_qt@|$(NO_QT)|' \
             -e 's|@no_zmq@|$(NO_ZMQ)|' \

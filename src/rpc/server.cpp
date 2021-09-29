@@ -361,31 +361,31 @@ static const CRPCCommand vRPCCommands[] =
         { "hidden",             "waitforblockheight",     &waitforblockheight,     true },
 
         /* EGG features */
-        {"sapphire", "listmasternodes", &listmasternodes, true },
-        {"sapphire", "getmasternodecount", &getmasternodecount, true },
-        {"sapphire", "createmasternodebroadcast", &createmasternodebroadcast, true },
-        {"sapphire", "decodemasternodebroadcast", &decodemasternodebroadcast, true },
-        {"sapphire", "relaymasternodebroadcast", &relaymasternodebroadcast, true },
-        {"sapphire", "masternodecurrent", &masternodecurrent, true },
-        {"sapphire", "startmasternode", &startmasternode, true },
-        {"sapphire", "createmasternodekey", &createmasternodekey, true },
-        {"sapphire", "getmasternodeoutputs", &getmasternodeoutputs, true },
-        {"sapphire", "listmasternodeconf", &listmasternodeconf, true },
-        {"sapphire", "getmasternodestatus", &getmasternodestatus, true },
-        {"sapphire", "getmasternodewinners", &getmasternodewinners, true },
-        {"sapphire", "getmasternodescores", &getmasternodescores, true },
-        {"sapphire", "preparebudget", &preparebudget, true },
-        {"sapphire", "submitbudget", &submitbudget, true },
-        {"sapphire", "mnbudgetvote", &mnbudgetvote, true },
-        {"sapphire", "getbudgetvotes", &getbudgetvotes, true },
-        {"sapphire", "getnextsuperblock", &getnextsuperblock, true },
-        {"sapphire", "getbudgetprojection", &getbudgetprojection, true },
-        {"sapphire", "getbudgetinfo", &getbudgetinfo, true },
-        {"sapphire", "mnbudgetrawvote", &mnbudgetrawvote, true },
-        {"sapphire", "mnfinalbudget", &mnfinalbudget, true },
-        {"sapphire", "checkbudgets", &checkbudgets, true },
-        {"sapphire", "mnsync", &mnsync, true },
-        {"sapphire", "spork", &spork, true },
+        {"nestegg", "listmasternodes", &listmasternodes, true },
+        {"nestegg", "getmasternodecount", &getmasternodecount, true },
+        {"nestegg", "createmasternodebroadcast", &createmasternodebroadcast, true },
+        {"nestegg", "decodemasternodebroadcast", &decodemasternodebroadcast, true },
+        {"nestegg", "relaymasternodebroadcast", &relaymasternodebroadcast, true },
+        {"nestegg", "masternodecurrent", &masternodecurrent, true },
+        {"nestegg", "startmasternode", &startmasternode, true },
+        {"nestegg", "createmasternodekey", &createmasternodekey, true },
+        {"nestegg", "getmasternodeoutputs", &getmasternodeoutputs, true },
+        {"nestegg", "listmasternodeconf", &listmasternodeconf, true },
+        {"nestegg", "getmasternodestatus", &getmasternodestatus, true },
+        {"nestegg", "getmasternodewinners", &getmasternodewinners, true },
+        {"nestegg", "getmasternodescores", &getmasternodescores, true },
+        {"nestegg", "preparebudget", &preparebudget, true },
+        {"nestegg", "submitbudget", &submitbudget, true },
+        {"nestegg", "mnbudgetvote", &mnbudgetvote, true },
+        {"nestegg", "getbudgetvotes", &getbudgetvotes, true },
+        {"nestegg", "getnextsuperblock", &getnextsuperblock, true },
+        {"nestegg", "getbudgetprojection", &getbudgetprojection, true },
+        {"nestegg", "getbudgetinfo", &getbudgetinfo, true },
+        {"nestegg", "mnbudgetrawvote", &mnbudgetrawvote, true },
+        {"nestegg", "mnfinalbudget", &mnfinalbudget, true },
+        {"nestegg", "checkbudgets", &checkbudgets, true },
+        {"nestegg", "mnsync", &mnsync, true },
+        {"nestegg", "spork", &spork, true },
 
 #ifdef ENABLE_WALLET
         /* Wallet */
@@ -598,7 +598,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(std::string methodname, std::string args)
 {
-    return "> sapphire-cli " + methodname + " " + args + "\n";
+    return "> nestegg-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(std::string methodname, std::string args)

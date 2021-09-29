@@ -75,9 +75,9 @@ static bool AppInitRPC(int argc, char* argv[])
         std::string strUsage = _("NestEGG RPC client version") + " " + FormatFullVersion() + "\n";
         if (!mapArgs.count("-version")) {
             strUsage += "\n" + _("Usage:") + "\n" +
-                        "  sapphire-cli [options] <command> [params]  " + _("Send command to NestEGG") + "\n" +
-                        "  sapphire-cli [options] help                " + _("List commands") + "\n" +
-                        "  sapphire-cli [options] help <command>      " + _("Get help for a command") + "\n";
+                        "  nestegg-cli [options] <command> [params]  " + _("Send command to NestEGG") + "\n" +
+                        "  nestegg-cli [options] help                " + _("List commands") + "\n" +
+                        "  nestegg-cli [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessageCli();
         }

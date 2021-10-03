@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2020 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2020-2021 The NestEgg Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -75,6 +75,11 @@ std::string DecodeDumpString(const std::string& str)
     return ret.str();
 }
 
+bool IsStakingDerPath(KeyOriginInfo keyOrigin)
+{
+    return keyOrigin.path.size() > 3 && keyOrigin.path[3] == (2 | BIP32_HARDENED_KEY_LIMIT);
+}
+
 UniValue importprivkey(const JSONRPCRequest& request)
 {
     if (request.fHelp || request.params.size() < 1 || request.params.size() > 4)
@@ -87,6 +92,7 @@ UniValue importprivkey(const JSONRPCRequest& request)
             "1. \"nesteggprivkey\"      (string, required) The private key (see dumpprivkey)\n"
             "2. \"label\"            (string, optional, default=\"\") An optional label\n"
             "3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions\n"
+            "4. fStakingAddress      (boolean, optional, default=false) Whether this key refers to a (cold) staking address\n"
 
             "\nNote: This call can take minutes to complete if rescan is true.\n"
 
@@ -103,6 +109,7 @@ UniValue importprivkey(const JSONRPCRequest& request)
     const std::string strSecret = request.params[0].get_str();
     const std::string strLabel = (request.params.size() > 1 ? request.params[1].get_str() : "");
     const bool fRescan = (request.params.size() > 2 ? request.params[2].get_bool() : true);
+    const bool fStakingAddress = (request.params.size() > 3 ? request.params[3].get_bool() : false);
 
     CKey key = DecodeSecret(strSecret);
     if (!key.IsValid()) throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid private key encoding");
@@ -115,7 +122,10 @@ UniValue importprivkey(const JSONRPCRequest& request)
         EnsureWalletIsUnlocked();
 
         pwalletMain->MarkDirty();
-        pwalletMain->SetAddressBook(vchAddress, strLabel, AddressBook::AddressBookPurpose::RECEIVE);
+        pwalletMain->SetAddressBook(vchAddress, strLabel, (
+                fStakingAddress ?
+                        AddressBook::AddressBookPurpose::COLD_STAKING :
+                        AddressBook::AddressBookPurpose::RECEIVE));
 
         // Don't throw error in case a key is already there
         if (pwalletMain->HaveKey(vchAddress))
@@ -131,6 +141,10 @@ UniValue importprivkey(const JSONRPCRequest& request)
 
         if (fRescan) {
             CBlockIndex *pindex = chainActive.Genesis();
+            if (fStakingAddress && !Params().IsRegTestNet()) {
+                // cold staking was activated after nBlockTimeProtocolV2 (PIVX v4.0). No need to scan the whole chain
+                pindex = chainActive[Params().GetConsensus().vUpgrades[Consensus::UPGRADE_V4_0].nActivationHeight];
+            }
             pwalletMain->ScanForWalletTransactions(pindex, true);
         }
     }
@@ -199,19 +213,22 @@ UniValue importaddress(const JSONRPCRequest& request)
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
-    CTxDestination dest = DecodeDestination(request.params[0].get_str());
+    bool isStakingAddress = false;
+    CTxDestination dest = DecodeDestination(request.params[0].get_str(), isStakingAddress);
 
     if (IsValidDestination(dest)) {
         if (fP2SH)
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Cannot use the p2sh flag with an address - use a script instead");
-        ImportAddress(dest, strLabel, AddressBook::AddressBookPurpose::RECEIVE);
+        ImportAddress(dest, strLabel, isStakingAddress ?
+                                        AddressBook::AddressBookPurpose::COLD_STAKING :
+                                        AddressBook::AddressBookPurpose::RECEIVE);
 
     } else if (IsHex(request.params[0].get_str())) {
         std::vector<unsigned char> data(ParseHex(request.params[0].get_str()));
         ImportScript(CScript(data.begin(), data.end()), strLabel, fP2SH);
 
     } else {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid  address or script");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid NestEgg address or script");
     }
 
     if (fRescan) {
@@ -397,7 +414,7 @@ UniValue dumpprivkey(const JSONRPCRequest& request)
     std::string strAddress = request.params[0].get_str();
     CTxDestination dest = DecodeDestination(strAddress);
     if (!IsValidDestination(dest))
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid NestEGG address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid NestEgg address");
     CKeyID keyID = *boost::get<CKeyID>(&dest);
     if (!keyID)
         throw JSONRPCError(RPC_TYPE_ERROR, "Address does not refer to a key");
@@ -459,7 +476,7 @@ UniValue dumpwallet(const JSONRPCRequest& request)
 
     CBlockIndex* tip = chainActive.Tip();
     // produce output
-    file << strprintf("# Wallet dump created by NestEGG %s (%s)\n", CLIENT_BUILD, CLIENT_DATE);
+    file << strprintf("# Wallet dump created by NestEgg %s (%s)\n", CLIENT_BUILD, CLIENT_DATE);
     file << strprintf("# * Created on %s\n", EncodeDumpTime(GetTime()));
     if (tip) {
         file << strprintf("# * Best block at time of backup was %i (%s),\n", tip->nHeight,
@@ -479,24 +496,7 @@ UniValue dumpwallet(const JSONRPCRequest& request)
             CExtKey masterKey;
             masterKey.SetSeed(seed.begin(), seed.size());
 
-            file << "# extended private masterkey: " << KeyIO::EncodeExtKey(masterKey) << "\n";
-
-            CExtKey purposeKey;            //key at m/purpose' --> key at m/44'
-            CExtKey cointypeKey;           //key at m/purpose'/coin_type'  --> key at m/44'/BIP32_HDCHAIN'
-            CExtKey accountKey;            //key at m/purpose'/coin_type'/account' ---> key at m/44'/BIP32_HDCHAIN'/0'
-            CExtKey changeKey;             //key at m/purpose'/coin_type'/account'/change ---> key at m/44'/BIP32_HDCHAIN'/0'/HDChain::ChangeType::ECOMMERCE.
-
-            // derive m/0'
-            // use hardened derivation (child keys >= 0x80000000 are hardened after bip32)
-            masterKey.Derive(purposeKey, 44 | BIP32_HARDENED_KEY_LIMIT);
-            // derive m/purpose'/coin_type'
-            purposeKey.Derive(cointypeKey, BIP32_HDCHAIN | BIP32_HARDENED_KEY_LIMIT);
-            // derive m/purpose'/coin_type'/account' // Hardcoded to account 0 for now.
-            cointypeKey.Derive(accountKey, 0 | BIP32_HARDENED_KEY_LIMIT);
-            // derive m/purpose'/coin_type'/account'/change'
-            accountKey.Derive(changeKey, HDChain::ChangeType::ECOMMERCE);
-
-            file << "# extended public masterkey: " << KeyIO::EncodeExtPubKey(changeKey.Neuter()) << "\n\n";
+            file << "# extended private masterkey: " << KeyIO::EncodeExtKey(masterKey) << "\n\n";
         }
     }
 
@@ -506,7 +506,9 @@ UniValue dumpwallet(const JSONRPCRequest& request)
         CKey key;
         if (pwalletMain->GetKey(keyid, key)) {
             const CKeyMetadata& metadata = pwalletMain->mapKeyMetadata[keyid];
-            std::string strAddr = EncodeDestination(keyid);
+            std::string strAddr = EncodeDestination(keyid, (metadata.HasKeyOrigin() && IsStakingDerPath(metadata.key_origin) ?
+                                                          CChainParams::STAKING_ADDRESS :
+                                                          CChainParams::PUBKEY_ADDRESS));
 
             file << strprintf("%s %s ", KeyIO::EncodeSecret(key), strTime);
             if (pwalletMain->mapAddressBook.count(keyid)) {
@@ -560,7 +562,7 @@ UniValue bip38encrypt(const JSONRPCRequest& request)
 
     CTxDestination address = DecodeDestination(strAddress);
     if (!IsValidDestination(address))
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid NestEGG address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid NestEgg address");
     CKeyID keyID = *boost::get<CKeyID>(&address);
     if (!keyID)
         throw JSONRPCError(RPC_TYPE_ERROR, "Address does not refer to a key");

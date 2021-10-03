@@ -16,6 +16,7 @@ class CCoinControl
 {
 public:
     CTxDestination destChange = CNoDestination();
+    bool useSwiftTX;
     bool fSplitBlock;
     int nSplitBlock;
     //! If false, allows unselected inputs, but requires all selected inputs be used
@@ -38,6 +39,7 @@ public:
     {
         destChange = CNoDestination();
         setSelected.clear();
+        useSwiftTX = false;
         fAllowOtherInputs = false;
         fAllowWatchOnly = false;
         nMinimumTotalFee = 0;

@@ -152,12 +152,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your EGG addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your NestEgg addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>These are your EGG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your NestEgg addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -448,7 +448,7 @@ for staking</source>
     </message>
     <message>
         <location line="+161"/>
-        <source>EGG will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your EGGs from being stolen by malware infecting your computer.</source>
+        <source>NestEgg will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your EGGs from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -544,6 +544,39 @@ for staking</source>
     <message>
         <location line="+0"/>
         <source>Banned Until</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CSRow</name>
+    <message>
+        <location filename="../pivx/forms/csrow.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+71"/>
+        <source>Savings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>0,00 EGG</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Not Staking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pivx/csrow.cpp" line="+27"/>
+        <source>Own delegation</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -815,6 +848,11 @@ for staking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+177"/>
+        <source>delegated to %1 for cold staking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+56"/>
         <source>Select All</source>
         <translation type="unfinished"></translation>
@@ -871,6 +909,288 @@ for staking</source>
         <location line="+1"/>
         <source>(change)</source>
         <translation>(change)</translation>
+    </message>
+</context>
+<context>
+    <name>ColdStakingWidget</name>
+    <message>
+        <location filename="../pivx/forms/coldstakingwidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+341"/>
+        <source>Owner address (optional, if empty a new address will be created)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+217"/>
+        <source>Total Staking:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-471"/>
+        <source>Cold Staking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+90"/>
+        <source>Staker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Delegation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+279"/>
+        <source>Delegate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-38"/>
+        <source>Clear All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+89"/>
+        <source>Delegated balance history</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+168"/>
+        <source>No delegations yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pivx/coldstakingwidget.cpp" line="+797"/>
+        <source>Total Staking: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-507"/>
+        <source>Error loading delegations: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pivx/forms/coldstakingwidget.ui" line="-603"/>
+        <source>You can delegate your EGGs, letting a hot node (24/7 online node)
+stake on your behalf, while you keep the keys securely offline.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+263"/>
+        <source>Enter owner address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-139"/>
+        <source>Accept EGG delegation / Delegate EGG</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+65"/>
+        <source>Cold Staking address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pivx/coldstakingwidget.cpp" line="+18"/>
+        <source>No receive addresses available, you can go to the receive screen and create some there!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>No contacts available, you can go to the contacts screen and add some there!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+161"/>
+        <source>Cannot send delegation, wallet locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-49"/>
+        <source>Cold staking is networkely disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-290"/>
+        <source>Coin Control</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Select %1 outputs to delegate.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Create Cold Staking Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Creates an address to receive delegated coins
+and stake them on their owner&apos;s behalf.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+36"/>
+        <source>My Cold Staking Addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>List your own cold staking addresses.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+254"/>
+        <source>Invalid entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Invalid entry, minimum delegable amount is </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Owner address invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>ALERT!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Delegating to an external owner address!
+
+The delegated coins will NOT be spendable by this wallet.
+Spending these coins will need to be done from the wallet or
+device containing the owner address.
+
+Do you wish to proceed?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Staking address corresponds to this wallet, change it to an external node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>Cannot create transaction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Coins delegated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>You don&apos;t have any %1 to select.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>URI copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Address copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Stake</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Blacklist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Edit Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copy owner
+address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <source>Address copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Edit Cold Address Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Whitelist failed, please check the logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source> staking!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Blacklist failed, please check the logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source> blacklisted from staking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Owner address copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Edit Owner Address Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Address label saved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error storing address label</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1060,7 +1380,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+67"/>
-        <source>The entered address &quot;%1&quot; is not a valid EGG address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid NestEgg address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1124,7 +1444,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+0"/>
-        <source>NestEGG</source>
+        <source>NestEgg Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1135,7 +1455,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+6"/>
-        <source>About NestEGG</source>
+        <source>About NestEgg Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1203,17 +1523,17 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+90"/>
-        <source>Welcome to NestEGG.</source>
+        <source>Welcome to NestEgg Core.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+35"/>
-        <source>As this is the first time the program is launched, you can choose where NestEGG will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where NestEgg Core will store its data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>NestEGG will download and store a copy of the EGG block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>NestEgg Core will download and store a copy of the NestEgg block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1238,7 +1558,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location filename="../intro.cpp" line="+100"/>
-        <source>NestEGG</source>
+        <source>NestEgg Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1370,7 +1690,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+23"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a EGG Masternode you must dedicate a collateral amount of EGG (the unit of EGG) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a NestEgg Masternode you must dedicate 25,000 EGG (the unit of NestEgg) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1395,7 +1715,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+97"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of collateral amount will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node&apos;s name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 25,000 EGG will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node&apos;s name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1606,7 +1926,7 @@ Please wait few more minutes (masternode collaterals require %1 confirmations).<
     </message>
     <message>
         <location line="+118"/>
-        <source>Not enough balance to create a masternode, 10,000 %1 required.</source>
+        <source>Not enough balance to create a masternode, 200,000 %1 required.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1790,6 +2110,12 @@ NODES</source>
     </message>
     <message>
         <location line="+26"/>
+        <source>COLD
+STAKING</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
         <source>SETTINGS
 </source>
         <translation type="unfinished"></translation>
@@ -1910,7 +2236,7 @@ NODES</source>
     </message>
     <message>
         <location line="+33"/>
-        <source>Automatically open the EGG client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the NestEgg client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1935,12 +2261,12 @@ NODES</source>
     </message>
     <message>
         <location line="-236"/>
-        <source>Automatically start EGG after logging in to the system.</source>
+        <source>Automatically start NestEgg after logging in to the system.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start EGG on system login</source>
+        <source>&amp;Start NestEgg on system login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1975,13 +2301,13 @@ NODES</source>
     </message>
     <message>
         <location line="+192"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting EGG.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting NestEgg.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+21"/>
         <source>Language missing or translation incomplete? Help contributing translations here:
-        https://discord.gg/zgcXB76</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2037,7 +2363,7 @@ NODES</source>
     </message>
     <message>
         <location line="+98"/>
-        <source>Connect to the EGG network through a SOCKS5 proxy.</source>
+        <source>Connect to the NestEgg network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2225,7 +2551,7 @@ NODES</source>
         <location filename="../pivx/pivxgui.cpp" line="+69"/>
         <location line="+298"/>
         <location line="+69"/>
-        <source>NestEGG</source>
+        <source>NestEgg Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2260,7 +2586,7 @@ NODES</source>
     </message>
     <message>
         <location line="+39"/>
-        <source>NestEGG client</source>
+        <source>NestEgg Core client</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2348,12 +2674,12 @@ Address: %4
     </message>
     <message>
         <location line="-101"/>
-        <source>Cannot start nestegg: click-to-pay handler</source>
+        <source>Cannot start NestEgg: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+107"/>
-        <source>URI cannot be parsed! This can be caused by an invalid EGG address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid NestEgg address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2466,11 +2792,11 @@ Address: %4
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+138"/>
-        <source>Enter EGG address (e.g. %1)</source>
+        <source>Enter NestEgg address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+EGG"/>
+        <location line="+777"/>
         <source>%1 d</source>
         <translation>%1 d</translation>
     </message>
@@ -2522,7 +2848,7 @@ Address: %4
     </message>
     <message>
         <location filename="../pivx.cpp" line="+518"/>
-        <source>A fatal error occurred. EGG can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. NestEgg can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2530,7 +2856,7 @@ Address: %4
         <location line="+7"/>
         <location line="+13"/>
         <location line="+19"/>
-        <source>NestEGG</source>
+        <source>NestEgg Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2555,7 +2881,7 @@ Address: %4
     </message>
     <message>
         <location line="+64"/>
-        <source>NestEGG didn&apos;t yet exit safely...</source>
+        <source>NestEgg Core didn&apos;t yet exit safely...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2567,6 +2893,29 @@ Address: %4
         <location line="+2"/>
         <location filename="../pivx/qtutils.cpp" line="+136"/>
         <source>Receiving</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <location filename="../pivx/qtutils.cpp" line="+3"/>
+        <source>Delegator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <location filename="../pivx/qtutils.cpp" line="+1"/>
+        <source>Delegable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <location filename="../pivx/qtutils.cpp" line="-2"/>
+        <source>Cold Staking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Cold Staking Contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2647,7 +2996,22 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
+        <source>Cold stakes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Hot stakes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Delegated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Delegations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2723,6 +3087,11 @@ Address: %4
     <message>
         <location line="+0"/>
         <source>Dec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pivx/coldstakingwidget.cpp" line="-707"/>
+        <source>Address with no label</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2847,7 +3216,7 @@ Address: %4
     </message>
     <message>
         <location line="+93"/>
-        <source>Open the EGG debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the NestEgg debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3129,7 +3498,7 @@ Address: %4
     </message>
     <message>
         <location line="-39"/>
-        <source>Welcome to the EGG RPC console.</source>
+        <source>Welcome to the NestEgg RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3478,7 +3847,7 @@ Address: %4
     </message>
     <message>
         <location line="-117"/>
-        <source>Instead of sharing only a EGG address, you can create a payment request, bundling up more information</source>
+        <source>Instead of sharing only a NestEgg address, you can create a payment request, bundling up more information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3537,6 +3906,16 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../pivx/requestdialog.cpp" line="+27"/>
+        <source>Creates an address to receive coin delegations and be able to stake them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>New Cold Staking Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+1"/>
         <source>Amount (optional)</source>
         <translation type="unfinished"></translation>
@@ -3554,6 +3933,11 @@ Address: %4
     <message>
         <location line="+17"/>
         <source>Request for </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Cold Staking Address Generated</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3577,7 +3961,7 @@ Address: %4
     </message>
     <message>
         <location line="+72"/>
-        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the &quot;change&quot; EGG address</source>
+        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the &quot;change&quot; NestEgg address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3593,6 +3977,11 @@ Address: %4
     <message>
         <location line="+33"/>
         <source>Invalid address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Cannot use cold staking addresses for change</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3727,6 +4116,11 @@ Do you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+42"/>
+        <source>Possibly spend coins delegated for cold-staking (currently available: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+18"/>
         <source>Invalid entry</source>
         <translation type="unfinished"></translation>
@@ -3744,6 +4138,13 @@ Do you want to continue?</source>
     <message>
         <location line="+29"/>
         <source>Cannot create transaction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>WARNING:
+Transaction spends a cold-stake delegation, voiding it.
+These coins will no longer be cold-staked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3943,7 +4344,7 @@ Remember to write it down and store it safely, otherwise you might lose access t
     </message>
     <message>
         <location line="+7"/>
-        <source>Encrypt your EGG addresses (key pair actually) using BIP38 encryption.
+        <source>Encrypt your NestEgg addresses (key pair actually) using BIP38 encryption.
 Using this mechanism you can share your keys without middle-man risk, only need to store your passphrase safely</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3990,7 +4391,7 @@ Using this mechanism you can share your keys without middle-man risk, only need 
     </message>
     <message>
         <location line="+77"/>
-        <source>EGG address</source>
+        <source>NestEgg address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4157,7 +4558,7 @@ Verify that you have installed a predetermined text editor.</source>
     </message>
     <message>
         <location line="+148"/>
-        <source>Welcome to the EGG RPC console.</source>
+        <source>Welcome to the NestEgg RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4297,12 +4698,12 @@ Verify that you have installed a predetermined text editor.</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>PIVX_tx_csv_export(*.csv)</source>
+        <source>NestEgg_tx_csv_export(*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>PIVX_addresses_csv_export(*.csv)</source>
+        <source>NestEgg_addresses_csv_export(*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4385,7 +4786,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+152"/>
-        <source>1) What is EGG?</source>
+        <source>1) What is NestEgg?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4395,7 +4796,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+148"/>
-        <source>https://sappcoin.com/</source>
+        <source>https://nesteggcoin.com/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4405,21 +4806,21 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+18"/>
-        <source>What is EGG?</source>
+        <source>What is NestEgg?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           EGG is a form of digital online money using blockchain technology
+                           NestEgg is a form of digital online money using blockchain technology
                            that can be easily transferred globally, instantly, and with near
-                           zero fees.  EGG incorporates market leading security &amp;
+                           zero fees.  NestEgg incorporates market leading security &amp;
                            privacy and is also the first PoS (Proof of Stake) Cryptocurrency
                            to implement ZeroCoin(zEGG) and Zerocoin staking.
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           EGG utilizes a Proof of Stake (PoS) consensus system algorithm,
-                           allowing all owners of EGG to participate in earning block rewards
+                           NestEgg utilizes a Proof of Stake (PoS) consensus system algorithm,
+                           allowing all owners of NestEgg to participate in earning block rewards
                            while securing the network with full node wallets, as well as to
                            run Masternodes to create and vote on proposals.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
@@ -4440,10 +4841,10 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <location line="+26"/>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           Newly received EGG requires 6 confirmations on the network
+                           Newly received NestEgg requires 6 confirmations on the network
                            to become eligible for spending which can take ~6 minutes.
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           Your EGG wallet also needs to be completely synchronized
+                           Your NestEgg wallet also needs to be completely synchronized
                            to see and spend balances on the network.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
@@ -4461,7 +4862,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+26"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You must have a balance of EGG with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (nestegg-cli); the command &lt;span style=&quot; font-style:italic;&quot;&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You must have a balance of NestEgg with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (nestegg-cli); the command &lt;span style=&quot; font-style:italic;&quot;&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4489,7 +4890,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style=&apos;color: #6666ff&apos; href=&apos;https://discord.gg/zgcXB76&apos;&gt;
+                           &lt;a style=&apos;color: #b088ff&apos; href=&apos;https://discord.gg/zgcXB76&apos;&gt;
                            #support in our Discord&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
@@ -4507,20 +4908,21 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+26"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;A Masternode Controller wallet is where the collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;A Masternode Controller wallet is where the 25,000 EGG collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-131"/>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
-                           A masternode is a computer running a full node EGG wallet with a
-                           required amount of secured collateral to provide extra services
+                           A masternode is a computer running a full node NestEgg core wallet with a
+                           requirement of 25,000 EGG secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
 
                            &lt;ul&gt;
+                           &lt;li&gt;Instant transactions (SwiftX)&lt;/li&gt;
                            &lt;li&gt;A decentralized governance (Proposal Voting)&lt;/li&gt;
                            &lt;li&gt;A decentralized budgeting system (Treasury)&lt;/li&gt;
                            &lt;li&gt;Validation of transactions within each block&lt;/li&gt;
@@ -4536,17 +4938,17 @@ There was an error trying to save the address list to %1. Please try again.</sou
                            Masternode Perks:
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;Participate in EGG Governance&lt;/li&gt;
+                           &lt;li&gt;Participate in NestEgg Governance&lt;/li&gt;
                            &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
                            &lt;li&gt;Commodity option for future sale&lt;/li&gt;
-                           &lt;li&gt;Help secure the EGG network&lt;/li&gt;
+                           &lt;li&gt;Help secure the NestEgg network&lt;/li&gt;
                            &lt;/ul&gt;
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
 
                            Requirements:
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;Enough collateral balance per single Masternode instance&lt;/li&gt;
+                           &lt;li&gt;25,000 EGG per single Masternode instance&lt;/li&gt;
                            &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
                            &lt;li&gt;Need dedicated IP address&lt;/li&gt;
                            &lt;li&gt;Masternode wallet to remain online&lt;/li&gt;
@@ -4783,7 +5185,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location filename="../pivx/settings/settingsmainoptionswidget.cpp" line="+57"/>
-        <source>Start EGG on system login</source>
+        <source>Start NestEgg on system login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4891,7 +5293,7 @@ Are you sure?
     </message>
     <message>
         <location filename="../pivx/settings/settingsmultisendwidget.cpp" line="+164"/>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other EGG addresses after it matures.</source>
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other NestEgg addresses after it matures.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5046,7 +5448,7 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     </message>
     <message>
         <location line="-62"/>
-        <source>EGG address or contact label</source>
+        <source>NestEgg address or contact label</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5456,7 +5858,7 @@ Check one or both of the check boxes to send on stake and/or masternode rewards<
     </message>
     <message>
         <location line="+31"/>
-        <source>About EGG</source>
+        <source>About NestEgg</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5538,13 +5940,13 @@ Are you sure?
     <name>ShutdownWindow</name>
     <message>
         <location filename="../utilitydialog.cpp" line="+71"/>
-        <source>NestEGG is shutting down...</source>
+        <source>NestEgg Core is shutting down...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Do not shut down the computer until this window disappears.</source>
-        <translation>Do not shut down the computer until this window disappears.</translation>
+        <source>Do not shut down the computer until this window dieggears.</source>
+        <translation>Do not shut down the computer until this window dieggears.</translation>
     </message>
 </context>
 <context>
@@ -5574,7 +5976,7 @@ Are you sure?
     </message>
     <message>
         <location filename="../pivx/splash.cpp" line="+30"/>
-        <source>NestEGG</source>
+        <source>NestEgg Core</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5773,6 +6175,11 @@ backup will be created.
     </message>
     <message>
         <location line="+3"/>
+        <source>Cold Staking Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source> %54 Synchronizing..</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5963,7 +6370,17 @@ backup will be created.
     </message>
     <message>
         <location line="+2"/>
+        <source>%1 Cold Stake</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>%1 Stake on behalf of</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Stake delegation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5980,6 +6397,11 @@ backup will be created.
         <location line="+44"/>
         <source>Payment to yourself</source>
         <translation>Payment to yourself</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Stake delegation spent by</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
@@ -6209,6 +6631,12 @@ backup will be created.
         <translation>Send Coins</translation>
     </message>
     <message>
+        <location line="-30"/>
+        <location line="+20"/>
+        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 %2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+10"/>
         <source>Transaction creation failed!
 %1</source>
@@ -6271,27 +6699,27 @@ Select fewer inputs with coin control.</source>
     <message>
         <location line="+89"/>
         <source>Welcome to
-NestEGG Wallet</source>
+		NestEgg Core Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+27"/>
-        <source>EGG is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <source>NestEgg is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - EGG believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - NestEgg believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+83"/>
-        <source>The masternode network is EGG&apos;s second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
+        <source>The masternode network is NestEgg&apos;s second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-103"/>
-        <source>How EGG respects your privacy?</source>
+        <source>How NestEgg respects your privacy?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6306,7 +6734,7 @@ NestEGG Wallet</source>
     </message>
 </context>
 <context>
-    <name>nestegg</name>
+    <name>pivx-core</name>
     <message>
         <location filename="../pivxstrings.cpp" line="+12"/>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
@@ -6338,8 +6766,20 @@ NestEGG Wallet</source>
         <translation type="unfinished">Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <source>Cannot find the Sapling parameters in the following directory:
+%s
+Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos; and then restart.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+5"/>
-        <source>Cannot obtain a lock on data directory %s. NestEGG is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. NestEgg Core is probably already running.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Cannot upgrade to Sapling wallet (already running Sapling support). Version: %d</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6371,6 +6811,11 @@ NestEGG Wallet</source>
         <location line="+6"/>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
         <translation type="unfinished">Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Enable cold staking functionality (0-1, default: %u). Disabled if staking=0</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
@@ -6539,7 +6984,7 @@ NestEGG Wallet</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to bind to %s on this computer. NestEGG is probably already running.</source>
+        <source>Unable to bind to %s on this computer. NestEgg Core is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6559,7 +7004,7 @@ NestEGG Wallet</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong NestEgg Core will not work properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6659,6 +7104,11 @@ NestEGG Wallet</source>
     </message>
     <message>
         <location line="+1"/>
+        <source>Copyright (C) 2020-%i NestEgg Core Developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Corrupted block database detected</source>
         <translation type="unfinished">Corrupted block database detected</translation>
     </message>
@@ -6701,6 +7151,16 @@ NestEGG Wallet</source>
         <location line="+1"/>
         <source>Done loading</source>
         <translation type="unfinished">Done loading</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
@@ -6819,7 +7279,7 @@ NestEGG Wallet</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Initialization sanity check failed. NestEGG is shutting down.</source>
+        <source>Initialization sanity check failed. NestEgg Core is shutting down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6888,13 +7348,23 @@ NestEGG Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+4"/>
+        <source>SwiftX options:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="-228"/>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-144"/>
-        <source>Disable all EGG specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)</source>
+        <source>Disable all NestEgg specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6920,6 +7390,11 @@ NestEGG Wallet</source>
     <message>
         <location line="+59"/>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7259,7 +7734,7 @@ NestEGG Wallet</source>
     </message>
     <message>
         <location line="+7"/>
-        <source>Please check that your computer&apos;s date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
+        <source>Please check that your computer&apos;s date and time are correct! If your clock is wrong NestEgg Core will not work properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7314,7 +7789,7 @@ NestEGG Wallet</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading %s: Wallet requires newer version of NestEGG</source>
+        <source>Error loading %s: Wallet requires newer version of NestEgg Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7816,7 +8291,7 @@ NestEGG Wallet</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart NestEGG to complete</source>
+        <source>Wallet needed to be rewritten: restart NestEgg Core to complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7905,7 +8380,7 @@ NestEGG Wallet</source>
     </message>
     <message>
         <location line="+60"/>
-        <source>EGG address or contact label</source>
+        <source>NestEgg address or contact label</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7936,6 +8411,11 @@ NestEGG Wallet</source>
     <message>
         <location line="+236"/>
         <source>Reset to default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-418"/>
+        <source>Include delegated</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

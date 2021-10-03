@@ -215,7 +215,7 @@ void PrepareShutdown()
     /// for example if the data directory was found to be locked.
     /// Be sure that anything that writes files or flushes caches only does this if the respective
     /// module was initialized.
-    util::ThreadRename("pivx-shutoff");
+    util::ThreadRename("nestegg-shutoff");
     mempool.AddTransactionsUpdated(1);
     StopHTTPRPC();
     StopREST();
@@ -465,8 +465,10 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageGroup(_("ZeroMQ notification options:"));
     strUsage += HelpMessageOpt("-zmqpubhashblock=<address>", _("Enable publish hash block in <address>"));
     strUsage += HelpMessageOpt("-zmqpubhashtx=<address>", _("Enable publish hash transaction in <address>"));
+    strUsage += HelpMessageOpt("-zmqpubhashtxlock=<address>", _("Enable publish hash transaction (locked via SwiftX) in <address>"));
     strUsage += HelpMessageOpt("-zmqpubrawblock=<address>", _("Enable publish raw block in <address>"));
     strUsage += HelpMessageOpt("-zmqpubrawtx=<address>", _("Enable publish raw transaction in <address>"));
+    strUsage += HelpMessageOpt("-zmqpubrawtxlock=<address>", _("Enable publish raw transaction (locked via SwiftX) in <address>"));
 #endif
 
     strUsage += HelpMessageGroup(_("Debugging/Testing options:"));
@@ -514,7 +516,7 @@ std::string HelpMessage(HelpMessageMode mode)
     }
     strUsage += HelpMessageOpt("-shrinkdebugfile", _("Shrink debug.log file on client startup (default: 1 when no -debug)"));
     strUsage += HelpMessageOpt("-testnet", _("Use the test network"));
-    strUsage += HelpMessageOpt("-litemode=<n>", strprintf(_("Disable all EGG specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)"), 0));
+    strUsage += HelpMessageOpt("-litemode=<n>", strprintf(_("Disable all EGG specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)"), 0));
 
     strUsage += HelpMessageGroup(_("Masternode options:"));
     strUsage += HelpMessageOpt("-masternode=<n>", strprintf(_("Enable the client to act as a masternode (0-1, default: %u)"), DEFAULT_MASTERNODE));
@@ -526,6 +528,10 @@ std::string HelpMessage(HelpMessageMode mode)
 
     strUsage += HelpMessageGroup(_("Zerocoin options:"));
     strUsage += HelpMessageOpt("-reindexzerocoin=<n>", strprintf(_("Delete all zerocoin spends and mints that have been recorded to the blockchain database and reindex them (0-1, default: %u)"), 0));
+
+    strUsage += HelpMessageGroup(_("SwiftX options:"));
+    strUsage += HelpMessageOpt("-enableswifttx=<n>", strprintf(_("Enable SwiftX, show confirmations for locked transactions (bool, default: %s)"), "true"));
+    strUsage += HelpMessageOpt("-swifttxdepth=<n>", strprintf(_("Show N confirmations for a successfully locked transaction (0-9999, default: %u)"), nSwiftTXDepth));
 
     strUsage += HelpMessageGroup(_("Node relay options:"));
     strUsage += HelpMessageOpt("-datacarrier", strprintf(_("Relay and mine data carrier transactions (default: %u)"), DEFAULT_ACCEPT_DATACARRIER));
@@ -569,7 +575,7 @@ std::string LicenseInfo()
            "\n" +
            FormatParagraph(strprintf(_("Copyright (C) 2015-%i The PIVX Core Developers"), COPYRIGHT_YEAR)) + "\n" +
            "\n" +
-           FormatParagraph(strprintf(_("Copyright (C) %i The NestEGG Core Developers"), COPYRIGHT_YEAR)) + "\n" +
+           FormatParagraph(strprintf(_("Copyright (C) 2020-%i NestEgg Core Developers"), COPYRIGHT_YEAR)) + "\n" +
            "\n" +
            FormatParagraph(_("This is experimental software.")) + "\n" +
            "\n" +
@@ -639,7 +645,7 @@ struct CImportingNow {
 
 void ThreadImport(std::vector<fs::path> vImportFiles)
 {
-    util::ThreadRename("pivx-loadblk");
+    util::ThreadRename("nestegg-loadblk");
 
     // -reindex
     if (fReindex) {
@@ -697,7 +703,7 @@ void ThreadImport(std::vector<fs::path> vImportFiles)
 }
 
 /** Sanity checks
- *  Ensure that NestEGG is running in a usable environment with all
+ *  Ensure that NestEgg is running in a usable environment with all
  *  necessary library support.
  */
 bool InitSanityCheck(void)
@@ -716,6 +722,30 @@ bool InitSanityCheck(void)
     }
 
     return true;
+}
+
+static void LoadSaplingParams()
+{
+    struct timeval tv_start, tv_end;
+    float elapsed;
+    gettimeofday(&tv_start, 0);
+
+    try {
+        initZKSNARKS();
+    } catch (std::runtime_error &e) {
+        uiInterface.ThreadSafeMessageBox(strprintf(
+                _("Cannot find the Sapling parameters in the following directory:\n"
+                  "%s\n"
+                  "Please run 'sapling-fetch-params' or './util/fetch-params.sh' and then restart."),
+                ZC_GetParamsDir()),
+                                         "", CClientUIInterface::MSG_ERROR);
+        StartShutdown();
+        return;
+    }
+
+    gettimeofday(&tv_end, 0);
+    elapsed = float(tv_end.tv_sec-tv_start.tv_sec) + (tv_end.tv_usec-tv_start.tv_usec)/float(1000000);
+    LogPrintf("Loaded Sapling parameters in %fs seconds.\n", elapsed);
 }
 
 bool AppInitServers()
@@ -862,6 +892,11 @@ void InitParameterInteraction()
         if (SoftSetBoolArg("-rescan", true))
             LogPrintf("%s : parameter interaction: -zapwallettxes=<mode> -> setting -rescan=1\n", __func__);
     }
+
+    if (!GetBoolArg("-enableswifttx", fEnableSwiftTX)) {
+        if (SoftSetArg("-swifttxdepth", "0"))
+            LogPrintf("%s : parameter interaction: -enableswifttx=false -> setting -nSwiftTXDepth=0\n", __func__);
+    }
 }
 
 bool InitNUParams()
@@ -928,17 +963,14 @@ void InitLogging()
 #else
     version_string += " (release build)";
 #endif
-    LogPrintf("NestEGG version %s (%s)\n", version_string, CLIENT_DATE);
+    LogPrintf("NestEgg version %s (%s)\n", version_string, CLIENT_DATE);
 }
 
-/** Initialize NestEGG.
+/** Initialize nestegg.
  *  @pre Parameters should be parsed and config file should be read.
  */
 bool AppInit2()
 {
-    // ********************************************************* Step 0: masternode collateral init
-    CMasternode::InitMasternodeCollateralList();
-
     // ********************************************************* Step 1: setup
     if (!AppInitBasicSetup())
         return false;
@@ -947,7 +979,7 @@ bool AppInit2()
     // Make sure enough file descriptors are available
     int nBind = std::max((int)mapArgs.count("-bind") + (int)mapArgs.count("-whitebind"), 1);
     int nUserMaxConnections = GetArg("-maxconnections", DEFAULT_MAX_PEER_CONNECTIONS);
-    int nMaxConnections = std::max(nUserMaxConnections, 2 * MAX_OUTBOUND_CONNECTIONS);
+    int nMaxConnections = std::max(nUserMaxConnections, 0);
 
     // Trim requested connection counts, to fit into system limitations
     nMaxConnections = std::max(std::min(nMaxConnections, (int)(FD_SETSIZE - nBind - MIN_CORE_FILEDESCRIPTORS)), 0);
@@ -1090,11 +1122,11 @@ bool AppInit2()
 
     // Sanity check
     if (!InitSanityCheck())
-        return UIError(_("Initialization sanity check failed. NestEGG is shutting down."));
+        return UIError(_("Initialization sanity check failed. NestEgg Core is shutting down."));
 
     std::string strDataDir = GetDataDir().string();
 
-    // Make sure only a single NestEGG process is using the data directory.
+    // Make sure only a single NestEgg process is using the data directory.
     fs::path pathLockFile = GetDataDir() / ".lock";
     FILE* file = fsbridge::fopen(pathLockFile, "a"); // empty lock file; created if it doesn't exist.
     if (file) fclose(file);
@@ -1102,7 +1134,7 @@ bool AppInit2()
 
     // Wait maximum 10 seconds if an old wallet is still running. Avoids lockup during restart
     if (!lock.timed_lock(boost::get_system_time() + boost::posix_time::seconds(10)))
-        return UIError(strprintf(_("Cannot obtain a lock on data directory %s. NestEGG is probably already running."), strDataDir));
+        return UIError(strprintf(_("Cannot obtain a lock on data directory %s. NestEgg Core is probably already running."), strDataDir));
 
 #ifndef WIN32
     CreatePidFile(GetPidFile(), getpid());
@@ -1141,6 +1173,11 @@ bool AppInit2()
     // Start the lightweight task scheduler thread
     CScheduler::Function serviceLoop = boost::bind(&CScheduler::serviceQueue, &scheduler);
     threadGroup.create_thread(boost::bind(&TraceThread<CScheduler::Function>, "scheduler", serviceLoop));
+
+    if (Params().IsRegTestNet()) { // only for regtest for now
+        // Initialize Sapling circuit parameters
+        LoadSaplingParams();
+    }
 
     /* Start the RPC server already.  It will be started in "warmup" mode
      * and not really process calls already (but it will signify connections
@@ -1450,7 +1487,7 @@ bool AppInit2()
                 delete zerocoinDB;
                 delete pSporkDB;
 
-                //NestEGG specific: zerocoin and spork DB's
+                //EGG specific: zerocoin and spork DB's
                 zerocoinDB = new CZerocoinDB(0, false, fReindex);
                 pSporkDB = new CSporkDB(0, false, false);
 
@@ -1473,7 +1510,7 @@ bool AppInit2()
                 // End loop if shutdown was requested
                 if (ShutdownRequested()) break;
 
-                // NestEGG: load previous sessions sporks if we have them.
+                // EGG: load previous sessions sporks if we have them.
                 uiInterface.InitMessage(_("Loading sporks..."));
                 sporkManager.LoadSporksFromDB();
 
@@ -1517,12 +1554,12 @@ bool AppInit2()
                     LOCK(cs_main);
                     chainHeight = chainActive.Height();
 
-                    // initialize EGG and zEGG supply to 0
+                    // initialize PIV and zEGG supply to 0
                     mapZerocoinSupply.clear();
                     for (auto& denom : libzerocoin::zerocoinDenomList) mapZerocoinSupply.insert(std::make_pair(denom, 0));
                     nMoneySupply = 0;
 
-                    // Load EGG and zEGG supply from DB
+                    // Load PIV and zEGG supply from DB
                     if (chainHeight >= 0) {
                         const uint256& tipHash = chainActive[chainHeight]->GetBlockHash();
                         CLegacyBlockIndex bi;
@@ -1539,7 +1576,7 @@ bool AppInit2()
                             }
                         }
 
-                        // Load EGG supply amount
+                        // Load PIV supply amount
                         if (!fReindexMoneySupply && !pblocktree->ReadMoneySupply(nMoneySupply)) {
                             // try first reading legacy block index from DB
                             if (pblocktree->ReadLegacyBlockIndex(tipHash, bi)) {
@@ -1566,7 +1603,7 @@ bool AppInit2()
                 // Recalculate money supply
                 if (fReindexMoneySupply) {
                     LOCK(cs_main);
-                    // Skip zEGG if already reindexed
+                    // Skip zpiv if already reindexed
                     RecalculatePIVSupply(1, fReindexZerocoin);
                 }
 
@@ -1817,6 +1854,10 @@ bool AppInit2()
         }
     }
 
+    fEnableSwiftTX = GetBoolArg("-enableswifttx", fEnableSwiftTX);
+    nSwiftTXDepth = GetArg("-swifttxdepth", nSwiftTXDepth);
+    nSwiftTXDepth = std::min(std::max(nSwiftTXDepth, 0), 60);
+
     //lite mode disables all Masternode related functionality
     fLiteMode = GetBoolArg("-litemode", false);
     if (fMasterNode && fLiteMode) {
@@ -1824,6 +1865,7 @@ bool AppInit2()
     }
 
     LogPrintf("fLiteMode %d\n", fLiteMode);
+    LogPrintf("nSwiftTXDepth %d\n", nSwiftTXDepth);
     LogPrintf("Budget Mode %s\n", strBudgetMode.c_str());
 
     threadGroup.create_thread(boost::bind(&ThreadCheckMasternodes));

@@ -114,12 +114,12 @@
         <translation>받을 주소</translation>
     </message>
     <message>
-        <source>These are your EGG addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>이 주소들은 송금할 EGG 주소입니다. 송금하기 전 항상 금액과 주소를 확인해주세요.</translation>
+        <source>These are your NestEgg addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>이 주소들은 송금할 NestEgg 주소입니다. 송금하기 전 항상 금액과 주소를 확인해주세요.</translation>
     </message>
     <message>
-        <source>These are your EGG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>이 주소들은 입금 받을 EGG 주소입니다. 매 거래마다 새로운 입금 주소를 사용하는 것이 좋습니다.</translation>
+        <source>These are your NestEgg addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>이 주소들은 입금 받을 NestEgg 주소입니다. 매 거래마다 새로운 입금 주소를 사용하는 것이 좋습니다.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -345,8 +345,8 @@ for staking</source>
         <translation>취소</translation>
     </message>
     <message>
-        <source>EGG will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your EGGs from being stolen by malware infecting your computer.</source>
-        <translation>EGG는 이제 암호화 프로세스를 마치기 위해 닫힐것입니다. 지갑을 암호화하더라도 맬웨어로 인한 EGGs 의 도난당하는 것을 완벽하게 보호 할 수는 없습니다.</translation>
+        <source>NestEgg will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your EGGs from being stolen by malware infecting your computer.</source>
+        <translation>NestEgg는 이제 암호화 프로세스를 마치기 위해 닫힐것입니다. 지갑을 암호화하더라도 맬웨어로 인한 EGGs 의 도난당하는 것을 완벽하게 보호 할 수는 없습니다.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -402,6 +402,33 @@ for staking</source>
     <message>
         <source>Banned Until</source>
         <translation>까지 제한됨</translation>
+    </message>
+</context>
+<context>
+    <name>CSRow</name>
+    <message>
+        <source>Form</source>
+        <translation>양식</translation>
+    </message>
+    <message>
+        <source>Savings</source>
+        <translation>계좌</translation>
+    </message>
+    <message>
+        <source>0,00 EGG</source>
+        <translation>0,00 EGG</translation>
+    </message>
+    <message>
+        <source>address</source>
+        <translation>주소</translation>
+    </message>
+    <message>
+        <source>Not Staking</source>
+        <translation>스테이킹 비활성 상태</translation>
+    </message>
+    <message>
+        <source>Own delegation</source>
+        <translation>오너 위임</translation>
     </message>
 </context>
 <context>
@@ -610,6 +637,10 @@ for staking</source>
         <translation>예</translation>
     </message>
     <message>
+        <source>delegated to %1 for cold staking</source>
+        <translation>콜드 스테이킹 주소 %1 로 위임 됨</translation>
+    </message>
+    <message>
         <source>Select All</source>
         <translation>모두 선택</translation>
     </message>
@@ -652,6 +683,215 @@ for staking</source>
     <message>
         <source>(change)</source>
         <translation>(잔돈)</translation>
+    </message>
+</context>
+<context>
+    <name>ColdStakingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>양식</translation>
+    </message>
+    <message>
+        <source>Owner address (optional, if empty a new address will be created)</source>
+        <translation>오너 주소 (선택과목, 입력 하지 않을경우 새로운 주소가 생성됨)</translation>
+    </message>
+    <message>
+        <source>Total Staking:</source>
+        <translation>스테이킹 총 액수</translation>
+    </message>
+    <message>
+        <source>Cold Staking</source>
+        <translation>콜드 스테이킹</translation>
+    </message>
+    <message>
+        <source>Staker</source>
+        <translation>스테이커</translation>
+    </message>
+    <message>
+        <source>Delegation</source>
+        <translation>위임</translation>
+    </message>
+    <message>
+        <source>Delegate</source>
+        <translation>위임 함</translation>
+    </message>
+    <message>
+        <source>Clear All</source>
+        <translation>전체 지우기</translation>
+    </message>
+    <message>
+        <source>Delegated balance history</source>
+        <translation>위임된 액수 기록</translation>
+    </message>
+    <message>
+        <source>No delegations yet</source>
+        <translation>아직 위임된 액수가 없습니다</translation>
+    </message>
+    <message>
+        <source>Total Staking: %1</source>
+        <translation>스테이킹 총 액수: %1</translation>
+    </message>
+    <message>
+        <source>Error loading delegations: %1</source>
+        <translation>위임 데이터 로딩 에러: %1</translation>
+    </message>
+    <message>
+        <source>You can delegate your EGGs, letting a hot node (24/7 online node)
+stake on your behalf, while you keep the keys securely offline.</source>
+        <translation>안전히 개인 프라이빗 키를 오프라인으로 보관한 상태로, 가지고 계신 EGG 를 매일 24시간 온라인으로 돌아가는 핫 노드로 위임하여, 대신 스테이킹을 하게 할수 있습니다. </translation>
+    </message>
+    <message>
+        <source>Enter owner address</source>
+        <translation>Owner 주소 입력</translation>
+    </message>
+    <message>
+        <source>Accept EGG delegation / Delegate EGG</source>
+        <translation>EGG 위임권 수락하기 / EGG 위임 하기</translation>
+    </message>
+    <message>
+        <source>Cold Staking address</source>
+        <translation>콜드 스테이킹 주소</translation>
+    </message>
+    <message>
+        <source>No receive addresses available, you can go to the receive screen and create some there!</source>
+        <translation>존재하는 입금 주소가 없습니다. 입금 화면에서 생성 하실수 있습니다.</translation>
+    </message>
+    <message>
+        <source>No contacts available, you can go to the contacts screen and add some there!</source>
+        <translation>존재하는 연락처가 없습니다. 연락처 화면에서 추가 하실수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Cannot send delegation, wallet locked</source>
+        <translation>위임을 할수가 없습니다. 지갑이 잠겨 있습니다.</translation>
+    </message>
+    <message>
+        <source>Cold staking is networkely disabled</source>
+        <translation>콜드 스테이킹 네트워크가 비활성화 된 상태입니다.</translation>
+    </message>
+    <message>
+        <source>Coin Control</source>
+        <translation>코인 설정</translation>
+    </message>
+    <message>
+        <source>Invalid entry</source>
+        <translation>잘못된 입력</translation>
+    </message>
+    <message>
+        <source>Invalid entry, minimum delegable amount is </source>
+        <translation>유효한 입력이 아닙니다. 최소 위임 액수: </translation>
+    </message>
+    <message>
+        <source>Owner address invalid</source>
+        <translation>유효한 오너 주소가 아닙니다.</translation>
+    </message>
+    <message>
+        <source>ALERT!</source>
+        <translation>경보!</translation>
+    </message>
+    <message>
+        <source>Delegating to an external owner address!
+
+The delegated coins will NOT be spendable by this wallet.
+Spending these coins will need to be done from the wallet or
+device containing the owner address.
+
+Do you wish to proceed?</source>
+        <translation>지갑 밖의 오너 주소로 위임을 선택 하셨습니다.
+
+위임된 코인들은 이 지갑에서 더 이상 전송이 불가해집니다.
+위임된 코인들의 사용/전송권은 위임된 오너 주소를 보유하고 있는 지갑으로 넘어갑니다.
+
+계속 진행 하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Staking address corresponds to this wallet, change it to an external node</source>
+        <translation>스테이킹 주소가 이 지갑과 일치합니다. 스테이킹 주소를 외부 노드로 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>Cannot create transaction.</source>
+        <translation>전송 불가</translation>
+    </message>
+    <message>
+        <source>Coins delegated</source>
+        <translation>위임된 코인</translation>
+    </message>
+    <message>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>명령을 수행할 수 없습니다. 지갑이 잠겨 있습니다.</translation>
+    </message>
+    <message>
+        <source>URI copied to clipboard</source>
+        <translation>URI가 클립보드에 복사되었습니다.</translation>
+    </message>
+    <message>
+        <source>Address copied to clipboard</source>
+        <translation>주소가 클립보드에 복사됨</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>복사</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>수정</translation>
+    </message>
+    <message>
+        <source>Stake</source>
+        <translation>스테이크</translation>
+    </message>
+    <message>
+        <source>Blacklist</source>
+        <translation>블랙리스트</translation>
+    </message>
+    <message>
+        <source>Edit Label</source>
+        <translation>라벨 수정하기</translation>
+    </message>
+    <message>
+        <source>Copy owner
+address</source>
+        <translation>소유자 복사
+주소</translation>
+    </message>
+    <message>
+        <source>Address copied</source>
+        <translation>주소가 복사되었습니다.</translation>
+    </message>
+    <message>
+        <source>Edit Cold Address Label</source>
+        <translation>콜드 주소 라벨 수정하기</translation>
+    </message>
+    <message>
+        <source>Whitelist failed, please check the logs</source>
+        <translation>화이트 리스트 설정 실패, 로그를 확인해주세요.</translation>
+    </message>
+    <message>
+        <source> staking!</source>
+        <translation>스테이킹!</translation>
+    </message>
+    <message>
+        <source>Blacklist failed, please check the logs</source>
+        <translation>블랙리스트 설정 실패, 로그를 확인해주세요.</translation>
+    </message>
+    <message>
+        <source> blacklisted from staking</source>
+        <translation>블랙리스트 처리됨</translation>
+    </message>
+    <message>
+        <source>Owner address copied</source>
+        <translation>소유자 주소 복사됨</translation>
+    </message>
+    <message>
+        <source>Edit Owner Address Label</source>
+        <translation>소유자 주소 라벨 수정하기</translation>
+    </message>
+    <message>
+        <source>Address label saved</source>
+        <translation>주소 라벨이 저장됨</translation>
+    </message>
+    <message>
+        <source>Error storing address label</source>
+        <translation>주소 라벨 저장 오류</translation>
     </message>
 </context>
 <context>
@@ -795,8 +1035,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>보내는 주소 수정</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EGG address.</source>
-        <translation>입력된 주소 "%1"는 올바른 EGG 주소가 아닙니다.</translation>
+        <source>The entered address "%1" is not a valid NestEgg address.</source>
+        <translation>입력된 주소 "%1"는 올바른 NestEgg 주소가 아닙니다.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -848,16 +1088,16 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>버전</translation>
     </message>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>NestEgg Core</source>
+        <translation>NestEgg Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About NestEGG</source>
-        <translation>NestEGG 정보</translation>
+        <source>About NestEgg Core</source>
+        <translation>NestEgg Core 정보</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -911,16 +1151,16 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>환영합니다</translation>
     </message>
     <message>
-        <source>Welcome to NestEGG.</source>
-        <translation>NestEGG에 오신 것을 환영합니다.</translation>
+        <source>Welcome to NestEgg Core.</source>
+        <translation>NestEgg Core에 오신 것을 환영합니다.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where NestEGG will store its data.</source>
-        <translation>이 프로그램이 처음 실행되었으므로 NestEGG가 데이터를 저장할 위치를 선택할 수 있습니다.</translation>
+        <source>As this is the first time the program is launched, you can choose where NestEgg Core will store its data.</source>
+        <translation>이 프로그램이 처음 실행되었으므로 NestEgg Core가 데이터를 저장할 위치를 선택할 수 있습니다.</translation>
     </message>
     <message>
-        <source>NestEGG will download and store a copy of the EGG block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>NestEGG는 EGG 블록체인을 다운로드하여 저장합니다. 최소 %1GB의 데이터가 디렉토리에 저장되며 시간이 지날수록 증가합니다. 또한 지갑도 해당 디렉토리에 저장됩니다.</translation>
+        <source>NestEgg Core will download and store a copy of the NestEgg block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>NestEgg Core는 NestEgg 블록체인을 다운로드하여 저장합니다. 최소 %1GB의 데이터가 디렉토리에 저장되며 시간이 지날수록 증가합니다. 또한 지갑도 해당 디렉토리에 저장됩니다.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -939,8 +1179,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>선택</translation>
     </message>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>NestEgg Core</source>
+        <translation>NestEgg Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1039,8 +1279,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>새로운 마스터노드 컨트롤러 만들기</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a EGG Masternode you must dedicate a collateral amount of EGG (the unit of EGG) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;EGG 마스터노드를 생성하기 위해서는 10,000 EGG (EGG 단위)를 네트워크에 예치해야 합니다. (예치한 코인은 계속 본인의 소유입니다.) &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;언제든지 노드를 비활성화 시키고 코인을 잠금해제할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a NestEgg Masternode you must dedicate 25,000 EGG (the unit of NestEgg) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NestEgg 마스터노드를 생성하기 위해서는 25,000 EGG (NestEgg 단위)를 네트워크에 예치해야 합니다. (예치한 코인은 계속 본인의 소유입니다.) &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;언제든지 노드를 비활성화 시키고 코인을 잠금해제할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Set Masternode Name</source>
@@ -1059,8 +1299,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>이만큼의 코인을 보유하고 있는지 확인하십시오.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of collateral amount will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;10,000 EGG의 트랜잭션은&lt;/p&gt;&lt;p&gt;지갑의 새로운 빈 주소로 만들어질 것입니다.&lt;/p&gt;&lt;p&gt;그 주소는 마스터노드 이름에 따라 레이블링됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 25,000 EGG will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;25,000 EGG의 트랜잭션은&lt;/p&gt;&lt;p&gt;지갑의 새로운 빈 주소로 만들어질 것입니다.&lt;/p&gt;&lt;p&gt;그 주소는 마스터노드 이름에 따라 레이블링됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Address of the node that must always be online running the actual master node.</source>
@@ -1434,8 +1674,8 @@ Are you sure?</source>
         <translation>확인되지 않은 잔엑을 사용하지 않도록 설정하면 해당 트랜잭션에 하나 이상의 컨펌이 진행되야&lt;br/&gt;트랜잭션의 잔액을 전송할 수 있습니다.&lt;br/&gt;또한 이것은 잔액 계산 방식에도 영향을 줍니다.</translation>
     </message>
     <message>
-        <source>Automatically open the EGG client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>라우터에서 EGG 클라이언트 포트를 자동으로 엽니다. 이 기능은 라우터가 UPnP를 지원하고 활성화 된 경우에만 사용할 수 있습니다.</translation>
+        <source>Automatically open the NestEgg client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>라우터에서 NestEgg 클라이언트 포트를 자동으로 엽니다. 이 기능은 라우터가 UPnP를 지원하고 활성화 된 경우에만 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1454,12 +1694,12 @@ Are you sure?</source>
         <translation>전문적</translation>
     </message>
     <message>
-        <source>Automatically start EGG after logging in to the system.</source>
-        <translation>시스템 로그인 후 EGG을 자동으로 시작합니다.</translation>
+        <source>Automatically start NestEgg after logging in to the system.</source>
+        <translation>시스템 로그인 후 NestEgg을 자동으로 시작합니다.</translation>
     </message>
     <message>
-        <source>&amp;Start EGG on system login</source>
-        <translation>&amp;시스템 로그인시 EGG 시작</translation>
+        <source>&amp;Start NestEgg on system login</source>
+        <translation>&amp;시스템 로그인시 NestEgg 시작</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1486,14 +1726,14 @@ Are you sure?</source>
         <translation>&amp;네트워크</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting EGG.</source>
-        <translation>사용자 인터페이스 언어를 설정할 수 있습니다. 이 설정은 EGG을 다시 시작한 후에 적용됩니다.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting NestEgg.</source>
+        <translation>사용자 인터페이스 언어를 설정할 수 있습니다. 이 설정은 NestEgg을 다시 시작한 후에 적용됩니다.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-        https://discord.gg/zgcXB76</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>지원 언어가 없거나 번역이 불완전한가요? 번역을 도와주세요 :
-        https://discord.gg/zgcXB76</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1536,8 +1776,8 @@ Are you sure?</source>
         <translation>Stake split threshold:</translation>
     </message>
     <message>
-        <source>Connect to the EGG network through a SOCKS5 proxy.</source>
-        <translation>SOCKS5 프록시를 통해 EGG 네트워크에 연결해주세요.</translation>
+        <source>Connect to the NestEgg network through a SOCKS5 proxy.</source>
+        <translation>SOCKS5 프록시를 통해 NestEgg 네트워크에 연결해주세요.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1683,8 +1923,8 @@ Are you sure?</source>
 <context>
     <name>PIVXGUI</name>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>NestEgg Core</source>
+        <translation>NestEgg Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -1711,8 +1951,8 @@ Are you sure?</source>
         <translation>어플리케이션 종료</translation>
     </message>
     <message>
-        <source>NestEGG client</source>
-        <translation>NestEGG 클라이언트</translation>
+        <source>NestEgg Core client</source>
+        <translation>NestEgg Core 클라이언트</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1778,12 +2018,12 @@ Address: %4
         <translation>잘못된 결제 주소 %1</translation>
     </message>
     <message>
-        <source>Cannot start nestegg: click-to-pay handler</source>
-        <translation>nestegg을 시작할 수 없습니다: 결제하기 위한 클릭 처리</translation>
+        <source>Cannot start NestEgg: click-to-pay handler</source>
+        <translation>NestEgg을 시작할 수 없습니다: 결제하기 위한 클릭 처리</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid EGG address or malformed URI parameters.</source>
-        <translation>URI를 분석할 수 없습니다! 이는 잘못된 EGG 주소 또는 URI 매개변수 손상으로 인해 발생할 수 있습니다.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid NestEgg address or malformed URI parameters.</source>
+        <translation>URI를 분석할 수 없습니다! 이는 잘못된 NestEgg 주소 또는 URI 매개변수 손상으로 인해 발생할 수 있습니다.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -1868,8 +2108,8 @@ Address: %4
         <translation>금액</translation>
     </message>
     <message>
-        <source>Enter EGG address (e.g. %1)</source>
-        <translation>EGG 주소 입력(예 : %1)</translation>
+        <source>Enter NestEgg address (e.g. %1)</source>
+        <translation>NestEgg 주소 입력(예 : %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1912,20 +2152,20 @@ Address: %4
         <translation>%1 ms</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EGG can no longer continue safely and will quit.</source>
-        <translation>치명적인 오류가 발생하였습니다. EGG는 더 이상 안전하게 계속될 수 없으며, 곧 종료됩니다.</translation>
+        <source>A fatal error occurred. NestEgg can no longer continue safely and will quit.</source>
+        <translation>치명적인 오류가 발생하였습니다. NestEgg는 더 이상 안전하게 계속될 수 없으며, 곧 종료됩니다.</translation>
     </message>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>NestEgg Core</source>
+        <translation>NestEgg Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
         <translation>Error: Specified data directory "%1" does not exist.</translation>
     </message>
     <message>
-        <source>NestEGG didn't yet exit safely...</source>
-        <translation>NestEGG가 아직 안전하게 종료되지 않았습니다....</translation>
+        <source>NestEgg Core didn't yet exit safely...</source>
+        <translation>NestEgg Core가 아직 안전하게 종료되지 않았습니다....</translation>
     </message>
     <message>
         <source>Contact</source>
@@ -1934,6 +2174,14 @@ Address: %4
     <message>
         <source>Receiving</source>
         <translation>받는중</translation>
+    </message>
+    <message>
+        <source>Cold Staking</source>
+        <translation>콜드 스테이킹</translation>
+    </message>
+    <message>
+        <source>Cold Staking Contact</source>
+        <translation>콜드 스테이킹 연락처</translation>
     </message>
     <message>
         <source>Hidden</source>
@@ -1994,6 +2242,10 @@ Address: %4
     <message>
         <source>To yourself</source>
         <translation>자신에게</translation>
+    </message>
+    <message>
+        <source>Cold stakes</source>
+        <translation>콜드 스테이크</translation>
     </message>
     </context>
 <context>
@@ -2067,8 +2319,8 @@ Address: %4
         <translation>블록체인</translation>
     </message>
     <message>
-        <source>Open the EGG debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>현재 데이터 디렉토리에서 EGG 디버그 로그 파일을 엽니다. 로그 파일이 클 경우, 약간의 시간이 걸릴 수 있습니다.</translation>
+        <source>Open the NestEgg debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>현재 데이터 디렉토리에서 NestEgg 디버그 로그 파일을 엽니다. 로그 파일이 클 경우, 약간의 시간이 걸릴 수 있습니다.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -2292,8 +2544,8 @@ Address: %4
         <translation>출력:</translation>
     </message>
     <message>
-        <source>Welcome to the EGG RPC console.</source>
-        <translation>EGG RPC 콘솔에 오신 것을 환영합니다.</translation>
+        <source>Welcome to the NestEgg RPC console.</source>
+        <translation>NestEgg RPC 콘솔에 오신 것을 환영합니다.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -2584,6 +2836,10 @@ Address: %4
         <translation>생성</translation>
     </message>
     <message>
+        <source>New Cold Staking Address</source>
+        <translation>새로운 콜드 스테이킹 주소</translation>
+    </message>
+    <message>
         <source>Amount (optional)</source>
         <translation>액수 (선택 과목)</translation>
     </message>
@@ -2706,6 +2962,14 @@ Address: %4
     <message>
         <source>Cannot create transaction.</source>
         <translation>전송 불가</translation>
+    </message>
+    <message>
+        <source>WARNING:
+Transaction spends a cold-stake delegation, voiding it.
+These coins will no longer be cold-staked.</source>
+        <translation>주의 :
+Cold-staking 중인 코인을 사용하여 전송하며, 무효화됩니다.
+이 코인은 더이상  cold-staking 되지 않습니다.</translation>
     </message>
     <message>
         <source>Transaction sent</source>
@@ -2862,8 +3126,8 @@ Address: %4
         <translation>키 암호 해재</translation>
     </message>
     <message>
-        <source>EGG address</source>
-        <translation>EGG 주소</translation>
+        <source>NestEgg address</source>
+        <translation>NestEgg 주소</translation>
     </message>
     <message>
         <source>Enter address</source>
@@ -2979,8 +3243,8 @@ Verify that you have installed a predetermined text editor.</source>
 미리 결정된 텍스트 에디터를 인스톨했는지 확인하세요.</translation>
     </message>
     <message>
-        <source>Welcome to the EGG RPC console.</source>
-        <translation>EGG RPC 콘솔에 오신 것을 환영합니다.</translation>
+        <source>Welcome to the NestEgg RPC console.</source>
+        <translation>NestEgg RPC 콘솔에 오신 것을 환영합니다.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
@@ -3294,8 +3558,8 @@ Verify that you have installed a predetermined text editor.</source>
         <translation>스크립트 검증 스레드 개수</translation>
     </message>
     <message>
-        <source>Start EGG on system login</source>
-        <translation>시스템 로그인시 EGG 지갑 시작</translation>
+        <source>Start NestEgg on system login</source>
+        <translation>시스템 로그인시 NestEgg 지갑 시작</translation>
     </message>
     <message>
         <source>Minimize to the tray instead of the taskbar</source>
@@ -3382,7 +3646,7 @@ Are you sure?
         <translation>체크박스</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other EGG addresses after it matures.</source>
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other NestEgg addresses after it matures.</source>
         <translation>멀티 전송 기능은 확인된 새로 받은 스테이킹 혹은 마스터노드 보상을 100% 전부 까지 지정된 다른 주소로 자동 전송할수 있는 기능입니다.</translation>
     </message>
     <message>
@@ -3475,8 +3739,8 @@ Please check the address and try again.</source>
         <translation>메세지</translation>
     </message>
     <message>
-        <source>EGG address or contact label</source>
-        <translation>EGG 주소 / 연락처 라벨</translation>
+        <source>NestEgg address or contact label</source>
+        <translation>NestEgg 주소 / 연락처 라벨</translation>
     </message>
     <message>
         <source>Enter address</source>
@@ -3744,8 +4008,8 @@ Please check the address and try again.</source>
         <translation>FAQ</translation>
     </message>
     <message>
-        <source>About EGG</source>
-        <translation>EGG 정보</translation>
+        <source>About NestEgg</source>
+        <translation>NestEgg 정보</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -3811,11 +4075,11 @@ Are you sure?
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>NestEGG is shutting down...</source>
-        <translation>NestEGG가 종료됩니다...</translation>
+        <source>NestEgg Core is shutting down...</source>
+        <translation>NestEgg Core가 종료됩니다...</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window dieggears.</source>
         <translation>이 창이 사라질 때까지 컴퓨터를 종료하지 마십시오.</translation>
     </message>
 </context>
@@ -3841,8 +4105,8 @@ Are you sure?
         <translation>로딩중...</translation>
     </message>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>NestEgg Core</source>
+        <translation>NestEgg Core</translation>
     </message>
 </context>
 <context>
@@ -4062,6 +4326,10 @@ NOTE: 업그레이드 이후에는
         <translation>수신됨</translation>
     </message>
     <message>
+        <source>Stake delegation</source>
+        <translation>Stake delegation</translation>
+    </message>
+    <message>
         <source>Sent to</source>
         <translation>대상 전송</translation>
     </message>
@@ -4263,21 +4531,21 @@ NOTE: 업그레이드 이후에는
     </message>
     <message>
         <source>Welcome to
-NestEGG Wallet</source>
+		NestEgg Core Wallet</source>
         <translation>환영합니다.
-NestEGG Wallet</translation>
+		NestEgg Core Wallet</translation>
     </message>
     <message>
-        <source>EGG is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>EGG 는 많은 경험과 뛰어난 실력을 겸비한 개발자와 암호학자로 구성된 팀이 개발하는 연신적인 Proof of Stake 블록체인 기술을 자랑하는 오픈소스 프로젝트 입니다. </translation>
+        <source>NestEgg is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>NestEgg 는 많은 경험과 뛰어난 실력을 겸비한 개발자와 암호학자로 구성된 팀이 개발하는 연신적인 Proof of Stake 블록체인 기술을 자랑하는 오픈소스 프로젝트 입니다. </translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - EGG believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;EGG 는 Manifesto 선언서에 적힌대로: 프라이버시는 협상이 불가능한 인간의 기본적인 인권중 하나이다. 이로 인해 그 언제나 그 누구에게나 데이터를 공유할수 있는 자유를 얻게 될것이다. EGG 프로젝트는 개인 독립을 추구한다. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - NestEgg believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NestEgg 는 Manifesto 선언서에 적힌대로: 프라이버시는 협상이 불가능한 인간의 기본적인 인권중 하나이다. 이로 인해 그 언제나 그 누구에게나 데이터를 공유할수 있는 자유를 얻게 될것이다. NestEgg 프로젝트는 개인 독립을 추구한다. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>How EGG respects your privacy?</source>
-        <translation>EGG 가 당신의 프라이버시를 존중하는 방법은?</translation>
+        <source>How NestEgg respects your privacy?</source>
+        <translation>NestEgg 가 당신의 프라이버시를 존중하는 방법은?</translation>
     </message>
     <message>
         <source>What is a Masternode?</source>
@@ -4311,8 +4579,8 @@ NestEGG Wallet</translation>
         <translation>JSON-RPC연결 수신을 위해 주어진 주소를 지정합니다. [host]: IPv6 포트 표기법 사용. 이 옵션은 여러번 지정할 수 있습니다. (기본값 : 모든 인터페이스에 지정)</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. NestEGG is probably already running.</source>
-        <translation>        &lt;translation&gt;잠겨진 데이터 디렉토리 %s 를 가져올 수 없습니다. NestEGG는 이미 실행 중입니다.</translation>
+        <source>Cannot obtain a lock on data directory %s. NestEgg Core is probably already running.</source>
+        <translation>        &lt;translation&gt;잠겨진 데이터 디렉토리 %s 를 가져올 수 없습니다. NestEgg Core는 이미 실행 중입니다.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4451,8 +4719,8 @@ NestEGG Wallet</translation>
         <translation>이 제품은 OpenSSL이 개발한 Open SSL 툴킷 &lt;https://www.openssl.org/&gt; 에서 사용하기 위한 프로젝트 소프트웨어, Eric Young이 개발한 암호화 소프트웨어, Thomas Bernard가 개발한 UPnP 소프트웨어가 포함되어 있습니다.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. NestEGG is probably already running.</source>
-        <translation>이 컴퓨터를 %s 로 지정하는것은 불가능합니다. NestEGG는 이미 실행 중입니다.</translation>
+        <source>Unable to bind to %s on this computer. NestEgg Core is probably already running.</source>
+        <translation>이 컴퓨터를 %s 로 지정하는것은 불가능합니다. NestEgg Core는 이미 실행 중입니다.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -4467,8 +4735,8 @@ NestEGG Wallet</translation>
         <translation>경고 : -paytxfee가 매우 높게 설정되었습니다! 이것은 전송할 경우 지불 할 트랜잭션 수수료입니다.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
-        <translation>경고: 컴퓨터의 날짜와 시간이 올바르게 설정되어 있는지 확인해 주세요! 만일 시계가 잘못되어 있다면 NestEGG 코어는 정상적으로 작동하지 않을 수 있습니다.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong NestEgg Core will not work properly.</source>
+        <translation>경고: 컴퓨터의 날짜와 시간이 올바르게 설정되어 있는지 확인해 주세요! 만일 시계가 잘못되어 있다면 NestEgg 코어는 정상적으로 작동하지 않을 수 있습니다.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -4543,6 +4811,10 @@ NestEGG Wallet</translation>
         <translation>Copyright (C) 2015-%i The PIVX Core 개발자</translation>
     </message>
     <message>
+        <source>Copyright (C) 2020-%i NestEgg Core Developers</source>
+        <translation>Copyright (C) 2020-%i NestEgg Core 개발자</translation>
+    </message>
+    <message>
         <source>Corrupted block database detected</source>
         <translation>손상된 블록 데이터베이스가 발견되었습니다</translation>
     </message>
@@ -4577,6 +4849,14 @@ NestEGG Wallet</translation>
     <message>
         <source>Done loading</source>
         <translation>로딩 완료</translation>
+    </message>
+    <message>
+        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>&lt;address&gt; 에서 해시 전송 게시 가능 (SwiftTX로 설정된)</translation>
+    </message>
+    <message>
+        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>&lt;address&gt;에서 Raw 트랜잭션 게시 지원 (SwiftTX를 통해 잠겨진)</translation>
     </message>
     <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
@@ -4671,8 +4951,8 @@ NestEGG Wallet</translation>
         <translation>정보</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. NestEGG is shutting down.</source>
-        <translation>초기화 정확성 검사에 실패 했습니다. NestEGG가 종료됩니다.</translation>
+        <source>Initialization sanity check failed. NestEgg Core is shutting down.</source>
+        <translation>초기화 정확성 검사에 실패 했습니다. NestEgg Core가 종료됩니다.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -4719,12 +4999,20 @@ NestEGG Wallet</translation>
         <translation>지불대상보다 적은 코인 선택됨</translation>
     </message>
     <message>
+        <source>SwiftX options:</source>
+        <translation>SwiftX 옵션:</translation>
+    </message>
+    <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
         <translation>이것은 사전 릴리스 테스트 빌드입니다 - 사용상 책임은 귀하에게 있습니다. - staking이나 상업적인 용도로는 절대 사용하지 마십시오!</translation>
     </message>
     <message>
-        <source>Disable all EGG specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)</source>
-        <translation>EGG의 모든 특정 기능들을 비활성화합니다(마스터노드, 난독화, Budgeting) (0-1, 기본값: %u)</translation>
+        <source>Disable all NestEgg specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>NestEggX의 모든 특정 기능들을 비활성화합니다(마스터노드, 난독화, SwiftTX, Budgeting) (0-1, 기본값: %u)</translation>
+    </message>
+    <message>
+        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
+        <translation>swiftTX 활성화, 잠긴 트랜잭션들에 대한 확인 표시 (bool, 기본값: %s)</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -checklevel found. Checklevel must be level 4.</source>
@@ -4745,6 +5033,10 @@ NestEGG Wallet</translation>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
         <translation>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</translation>
+    </message>
+    <message>
+        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>SwiftTX는 최소 6회 확인이 필요한 입력으로 몇 분 후에 다시 시도해야 할 수 있습니다.</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -4939,8 +5231,8 @@ NestEGG Wallet</translation>
         <translation>재동기화 준비중...</translation>
     </message>
     <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
-        <translation>컴퓨터의 날짜와 시간이 올바르게 설정되어 있는지 확인해 주세요! 만일 시계가 잘못되어 있다면 NestEGG 코어는 정상적으로 작동하지 않을 수 있습니다.</translation>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong NestEgg Core will not work properly.</source>
+        <translation>컴퓨터의 날짜와 시간이 올바르게 설정되어 있는지 확인해 주세요! 만일 시계가 잘못되어 있다면 NestEgg 코어는 정상적으로 작동하지 않을 수 있습니다.</translation>
     </message>
     <message>
         <source>Cannot resolve -%s address: '%s'</source>
@@ -5227,8 +5519,8 @@ NestEGG Wallet</translation>
         <translation>지갑 %s 가 데이터 디렉토리 외부에 존재합니다 %s</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart NestEGG to complete</source>
-        <translation>지갑을 다시 작성해야 합니다: 완료하려면 NestEGG 코어를 재시작해야 합니다</translation>
+        <source>Wallet needed to be rewritten: restart NestEgg Core to complete</source>
+        <translation>지갑을 다시 작성해야 합니다: 완료하려면 NestEgg 코어를 재시작해야 합니다</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -5290,8 +5582,8 @@ NestEGG Wallet</translation>
         <translation>보내기</translation>
     </message>
     <message>
-        <source>EGG address or contact label</source>
-        <translation>EGG 주소 / 연락처 라벨</translation>
+        <source>NestEgg address or contact label</source>
+        <translation>NestEgg 주소 / 연락처 라벨</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -5316,6 +5608,10 @@ NestEGG Wallet</translation>
     <message>
         <source>Reset to default</source>
         <translation>기본값으로 리셋</translation>
+    </message>
+    <message>
+        <source>Include delegated</source>
+        <translation>위임된 코인 포함</translation>
     </message>
 </context>
 </TS>

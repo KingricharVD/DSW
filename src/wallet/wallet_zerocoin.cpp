@@ -1,5 +1,5 @@
 // Copyright (c) 2020 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2020-2021 The NestEgg Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -47,7 +47,7 @@ bool CWallet::AddDeterministicSeed(const uint256& seed)
         if (db.WriteZPIVSeed(hashSeed, ToByteVector(seed))) {
             return true;
         }
-        strErr = "save zEGGseed to wallet";
+        strErr = "save zpivseed to wallet";
     }
     //the use case for this is no password set seed, mint dzEGG,
 
@@ -98,7 +98,7 @@ bool CWallet::GetDeterministicSeed(const uint256& hashSeed, uint256& seedOut)
 void CWallet::doZPivRescan(const CBlockIndex* pindex, const CBlock& block,
         std::set<uint256>& setAddedToWallet, const Consensus::Params& consensus, bool fCheckZPIV)
 {
-    //If this is a zapwallettx, need to read zEGG
+    //If this is a zapwallettx, need to read zpiv
     if (fCheckZPIV && consensus.NetworkUpgradeActive(pindex->nHeight, Consensus::UPGRADE_ZC)) {
         std::list<CZerocoinMint> listMints;
         BlockToZerocoinMintList(block, listMints, true);
@@ -298,7 +298,7 @@ bool CWallet::CreateZerocoinMintTransaction(const CAmount nValue,
         CTxOut outMint;
         CDeterministicMint dMint;
         if (!CreateZPIVOutPut(denomination, outMint, dMint)) {
-            strFailReason = strprintf("%s: failed to create new zEGG output", __func__);
+            strFailReason = strprintf("%s: failed to create new zpiv output", __func__);
             return error(strFailReason.c_str());
         }
         txNew.vout.push_back(outMint);
@@ -329,7 +329,7 @@ bool CWallet::CreateZerocoinMintTransaction(const CAmount nValue,
 
 
     //any change that is less than 0.0100000 will be ignored and given as an extra fee
-    //also assume that a zerocoinspend that is minting the change will not have any change that goes to EGG
+    //also assume that a zerocoinspend that is minting the change will not have any change that goes to Piv
     CAmount nChange = nValueIn - nTotalValue; // Fee already accounted for in nTotalValue
     if (nChange > 1 * CENT) {
         // Fill a vout to ourself using the largest contributing address
@@ -352,7 +352,8 @@ bool CWallet::CreateZerocoinMintTransaction(const CAmount nValue,
         signSuccess = ProduceSignature(
                 TransactionSignatureCreator(this, &txNewConst, nIn, coin.first->vout[coin.second].nValue, SIGHASH_ALL),
                 scriptPubKey,
-                sigdata
+                sigdata,
+                false // fColdStake = false
         );
 
         if (!signSuccess) {
@@ -689,7 +690,7 @@ bool CWallet::CreateZCPublicSpendTransaction(
 
             for (std::pair<CTxDestination,CAmount> pair : addressesTo){
                 CScript scriptZerocoinSpend = GetScriptForDestination(pair.first);
-                //add output to EGG address to the transaction (the actual primary spend taking place)
+                //add output to nestegg address to the transaction (the actual primary spend taking place)
                 // TODO: check value?
                 CTxOut txOutZerocoinSpend(pair.second, scriptZerocoinSpend);
                 txNew.vout.push_back(txOutZerocoinSpend);

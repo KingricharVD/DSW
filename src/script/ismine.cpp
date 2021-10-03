@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2016-2019 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2020-2021 The NestEgg Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -70,6 +70,23 @@ isminetype IsMine(const CKeyStore& keystore, const CScript& scriptPubKey)
             isminetype ret = IsMine(keystore, subscript);
             if(ret != ISMINE_NO)
                 return ret;
+        }
+        break;
+    }
+    case TX_COLDSTAKE: {
+        CKeyID stakeKeyID = CKeyID(uint160(vSolutions[0]));
+        bool stakeKeyIsMine = keystore.HaveKey(stakeKeyID);
+        CKeyID ownerKeyID = CKeyID(uint160(vSolutions[1]));
+        bool spendKeyIsMine = keystore.HaveKey(ownerKeyID);
+
+        if (spendKeyIsMine) {
+            // If the wallet has both keys, ISMINE_SPENDABLE_DELEGATED
+            // takes precedence over ISMINE_COLD
+            return ISMINE_SPENDABLE_DELEGATED;
+        } else if (stakeKeyIsMine) {
+            return ISMINE_COLD;
+        } else {
+            // todo: Include watch only..
         }
         break;
     }

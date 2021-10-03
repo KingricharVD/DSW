@@ -16,7 +16,7 @@ QT_BEGIN_NAMESPACE
 class QNetworkProxy;
 QT_END_NAMESPACE
 
-/** Interface from Qt to configuration data structure for EGG client.
+/** Interface from Qt to configuration data structure for PIVX client.
    To Qt, the options are presented as a list with the different options
    laid out vertically.
    This can be changed to a tree once the settings become sufficiently
@@ -57,6 +57,7 @@ public:
         ShowMasternodesTab,  // bool
         Listen,              // bool
         StakeSplitThreshold,    // CAmount (LongLong)
+        ShowColdStakingScreen,  // bool
         fUseCustomFee,          // bool
         nCustomFee,             // CAmount (LongLong)
         OptionIDRowCount,
@@ -97,6 +98,16 @@ public:
     bool isSSTChanged();
     bool resetSettings;
 
+    bool isColdStakingScreenEnabled() { return showColdStakingScreen; }
+    bool invertColdStakingScreenStatus() {
+        setData(
+                createIndex(ShowColdStakingScreen, 0),
+                !isColdStakingScreenEnabled(),
+                Qt::EditRole
+        );
+        return showColdStakingScreen;
+    }
+
     // Reset
     void setMainDefaultOptions(QSettings& settings, bool reset = false);
     void setWalletDefaultOptions(QSettings& settings, bool reset = false);
@@ -112,6 +123,7 @@ private:
     int nDisplayUnit;
     QString strThirdPartyTxUrls;
     bool fCoinControlFeatures;
+    bool showColdStakingScreen;
     bool fHideCharts;
     bool fHideZeroBalances;
     bool fHideOrphans;
@@ -124,6 +136,7 @@ private:
 Q_SIGNALS:
     void displayUnitChanged(int unit);
     void coinControlFeaturesChanged(bool);
+    void showHideColdStakingScreen(bool);
     void hideChartsChanged(bool);
     void hideZeroBalancesChanged(bool);
     void hideOrphansChanged(bool);

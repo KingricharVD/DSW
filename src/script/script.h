@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2016-2020 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2020-2021 The NestEgg Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -180,6 +180,9 @@ enum opcodetype
     OP_ZEROCOINMINT = 0xc1,
     OP_ZEROCOINSPEND = 0xc2,
     OP_ZEROCOINPUBLICSPEND = 0xc3,
+
+    // cold staking
+    OP_CHECKCOLDSTAKEVERIFY = 0xd1,
 
     OP_INVALIDOPCODE = 0xff,
 };
@@ -619,6 +622,7 @@ public:
 
     bool IsNormalPaymentScript() const;
     bool IsPayToScriptHash() const;
+    bool IsPayToColdStaking() const;
     bool StartsWithOpcode(const opcodetype opcode) const;
     bool IsZerocoinMint() const;
     bool IsZerocoinSpend() const;

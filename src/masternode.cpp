@@ -124,6 +124,16 @@ std::string CMasternode::GetStrMessage() const
     );
 }
 
+std::string CMasternodeBroadcast::GetOldStrMessage() const
+{
+    std::string strMessage;
+
+    std::string vchPubKey(pubKeyCollateralAddress.begin(), pubKeyCollateralAddress.end());
+    std::string vchPubKey2(pubKeyMasternode.begin(), pubKeyMasternode.end());
+    strMessage = addr.ToString() + std::to_string(sigTime) + vchPubKey + vchPubKey2 + std::to_string(protocolVersion);
+
+    return strMessage;
+}
 //
 // When a new masternode broadcast is sent, update our information
 //
@@ -211,20 +221,24 @@ void CMasternode::Check(bool forceCheck)
     }
 
     if (!unitTest) {
-        CValidationState state;
-        CMutableTransaction tx = CMutableTransaction();
-        CScript dummyScript;
-        dummyScript << ToByteVector(pubKeyCollateralAddress) << OP_CHECKSIG;
-        CTxOut vout = CTxOut((CMasternode::GetMasternodeNodeCollateral(chainActive.Height()) - 0.01 * COIN), dummyScript);
-        tx.vin.push_back(vin);
-        tx.vout.push_back(vout);
-        {
-            TRY_LOCK(cs_main, lockMain);
-            if (!lockMain) return;
+      CValidationState state;
+      CMutableTransaction tx = CMutableTransaction();
+      CScript dummyScript;
+      dummyScript << ToByteVector(pubKeyCollateralAddress) << OP_CHECKSIG;
 
-            if (!AcceptableInputs(mempool, state, CTransaction(tx), false, NULL)) {
-                activeState = MASTERNODE_VIN_SPENT;
-                return;
+      CTxOut vout = CTxOut(GetMasternodeCollateral(chainActive.Height()) - (COIN / 100), dummyScript);
+
+      CTxOut vout = CTxOut((CMasternode::GetMasternodeNodeCollateral(chainActive.Height()) - 0.01 * COIN), dummyScript);
+
+      tx.vin.push_back(vin);
+      tx.vout.push_back(vout);
+      {
+          TRY_LOCK(cs_main, lockMain);
+          if (!lockMain) return;
+
+          if (!AcceptableInputs(mempool, state, CTransaction(tx), false, NULL)) {
+              activeState = MASTERNODE_VIN_SPENT;
+              return;
             }
         }
     }
@@ -311,89 +325,113 @@ bool CMasternode::IsInputAssociatedWithPubkey() const
     uint256 hash;
     if(GetTransaction(vin.prevout.hash, txVin, hash, true)) {
         for (CTxOut out : txVin.vout) {
-            if (out.nValue == CMasternode::GetMasternodeNodeCollateral(chainActive.Height()) && out.scriptPubKey == payee) return true;
+
+          if (out.nValue == CMasternode::GetMasternodeCollateral(chainActive.Height()) && out.scriptPubKey == payee) return true;
+
+      if (out.nValue == CMasternode::GetMasternodeNodeCollateral(chainActive.Height()) && out.scriptPubKey == payee) return true;
         }
     }
 
     return false;
 }
 
-CAmount CMasternode::GetMasternodeNodeCollateral(int nHeight) 
+CAmount CMasternode::GetMasternodeCollateral(int nHeight)
 {
-    if(nHeight > 650000) return 200000 * COIN;
-    if(nHeight > 600000) return 175000 * COIN;
-    if(nHeight > 550000) return 150000 * COIN;
-    if(nHeight > 500000) return 125000 * COIN;
-    if(nHeight > 450000) return 100000 * COIN;
-    if(nHeight > 400000) return  75000 * COIN;
-    if(nHeight > 250000) return  50000 * COIN;
-    if(nHeight > 200000) return  40000 * COIN;
-    if(nHeight > 175000) return  30000 * COIN;
-    if(nHeight > 150000) return  20000 * COIN;
-    if(nHeight > 130000) return  10000 * COIN;
-    if(nHeight > 100000) return   5000 * COIN;
-    if(nHeight >  60000) return   2500 * COIN;
-    if(nHeight >  50000) return   1250 * COIN;
-    if(nHeight >  40000) return   1000 * COIN;
-    if(nHeight >  30000) return    750 * COIN;
-    if(nHeight >  20000) return    500 * COIN;
-    if(nHeight >   2000) return     50 * COIN;
-    if(nHeight >    500) return     10 * COIN;
-
-    return 0;
+  if (nHeight <= 2000 && nHeight > 500) {
+    return 10 * COIN;
+} else if (nHeight <= 20000 && nHeight > 2000) {
+    return 50 * COIN;
+} else if (nHeight <= 30000 && nHeight > 20000) {
+    return 500 * COIN;
+} else if (nHeight <= 40000 && nHeight > 30000) {
+    return 750 * COIN;
+} else if (nHeight <= 50000 && nHeight > 40000) {
+    return 1000 * COIN;
+} else if (nHeight <= 60000 && nHeight > 50000) {
+    return 1250 * COIN;
+} else if (nHeight <= 100000 && nHeight > 60000) {
+    return 2500 * COIN;
+} else if (nHeight <= 130000 && nHeight > 100000) {
+    return 5000 * COIN;
+} else if (nHeight <= 150000 && nHeight > 130000) {
+    return 10000 * COIN;
+} else if (nHeight <= 175000 && nHeight > 150000) {
+    return 20000 * COIN;
+} else if (nHeight <= 200000 && nHeight > 175000) {
+    return 30000 * COIN;
+} else if (nHeight <= 250000 && nHeight > 200000) {
+    return 40000 * COIN;
+} else if (nHeight <= 400000 && nHeight > 250000) {
+    return 50000 * COIN;
+} else if (nHeight <= 450000 && nHeight > 400000) {
+    return 75000 * COIN;
+} else if (nHeight <= 500000 && nHeight > 450000) {
+    return 100000 * COIN;
+} else if (nHeight <= 550000 && nHeight > 500000) {
+    return 125000 * COIN;
+} else if (nHeight <= 600000 && nHeight > 550000) {
+    return 150000 * COIN;
+} else if (nHeight <= 650000 && nHeight > 600000) {
+    return 175000 * COIN;
+} else if (nHeight > 650000) {
+    return 200000 * COIN;
+}
 }
 
 CAmount CMasternode::GetBlockValue(int nHeight)
 {
-    // Exceptions made to force a fork
-    if (nHeight == 574010 || nHeight == 585330 || nHeight == 586594) return 801 * COIN;
-
-    if(nHeight > 1200000) return    800 * COIN;
-    if(nHeight > 1000000) return    400 * COIN;
-    if(nHeight >  950000) return    450 * COIN;
-    if(nHeight >  900000) return    500 * COIN;
-    if(nHeight >  850000) return    600 * COIN;
-    if(nHeight >  800000) return    700 * COIN;
-    if(nHeight >  750000) return    800 * COIN;
-    if(nHeight >  700000) return    900 * COIN;
-    if(nHeight >  650000) return   1000 * COIN;
-    if(nHeight >  600000) return    900 * COIN;
-    if(nHeight >  550000) return    800 * COIN;
-    if(nHeight >  500000) return    700 * COIN;
-    if(nHeight >  450000) return    600 * COIN;
-    if(nHeight >  400000) return    500 * COIN;
-    if(nHeight >  300000) return    400 * COIN;
-    if(nHeight >  250000) return    450 * COIN;
-    if(nHeight >  200000) return    500 * COIN;
-    if(nHeight >  175000) return    400 * COIN;
-    if(nHeight >  150000) return    250 * COIN;
-    if(nHeight >  130000) return    150 * COIN;
-    if(nHeight >  100000) return    100 * COIN;
-    if(nHeight >   60000) return     50 * COIN;
-    if(nHeight >   50000) return     25 * COIN;
-    if(nHeight >   40000) return     20 * COIN;
-    if(nHeight >   30000) return     15 * COIN;
-    if(nHeight >   20000) return     10 * COIN;
-    if(nHeight >    2000) return      2 * COIN;
-    if(nHeight >       1) return      1 * COIN;
-    if(nHeight >       0) return 300000 * COIN;
-
-    return 0;
-}
+  if (nHeight <= 2000 && nHeight > 500) {
+        return 10 * COIN;
+    } else if (nHeight <= 20000 && nHeight > 2000) {
+        return 50 * COIN;
+    } else if (nHeight <= 30000 && nHeight > 20000) {
+        return 500 * COIN;
+    } else if (nHeight <= 40000 && nHeight > 30000) {
+        return 750 * COIN;
+    } else if (nHeight <= 50000 && nHeight > 40000) {
+        return 1000 * COIN;
+    } else if (nHeight <= 60000 && nHeight > 50000) {
+        return 1250 * COIN;
+    } else if (nHeight <= 100000 && nHeight > 60000) {
+        return 2500 * COIN;
+    } else if (nHeight <= 130000 && nHeight > 100000) {
+        return 5000 * COIN;
+    } else if (nHeight <= 150000 && nHeight > 130000) {
+        return 10000 * COIN;
+    } else if (nHeight <= 175000 && nHeight > 150000) {
+        return 20000 * COIN;
+    } else if (nHeight <= 200000 && nHeight > 175000) {
+        return 30000 * COIN;
+    } else if (nHeight <= 250000 && nHeight > 200000) {
+        return 40000 * COIN;
+    } else if (nHeight <= 400000 && nHeight > 250000) {
+        return 50000 * COIN;
+    } else if (nHeight <= 450000 && nHeight > 400000) {
+        return 75000 * COIN;
+    } else if (nHeight <= 500000 && nHeight > 450000) {
+        return 100000 * COIN;
+    } else if (nHeight <= 550000 && nHeight > 500000) {
+        return 125000 * COIN;
+    } else if (nHeight <= 600000 && nHeight > 550000) {
+        return 150000 * COIN;
+    } else if (nHeight <= 650000 && nHeight > 600000) {
+        return 175000 * COIN;
+    } else if (nHeight > 650000) {
+        return 200000 * COIN;
+    }
 
 CAmount CMasternode::GetMasternodePayment(int nHeight)
 {
-    if(nHeight > 1200000) return GetBlockValue(nHeight) * 65 / 100;
-
-    return GetBlockValue(nHeight) * 95 / 100;
+    return (95 * CMasternode::GetBlockValue(chainActive.Height())) / 100; // 95% of the block reward
 }
 
+
 void CMasternode::InitMasternodeCollateralList() {
-    CAmount prev = -1; 
+    CAmount prev = -1;
     for(int i = 0; i < 9999999; i++) {
         CAmount c = GetMasternodeNodeCollateral(i);
         if(prev != c) {
-            LogPrint(BCLog::MASTERNODE, "%s: Found collateral %d at block %d\n", __func__, c / COIN, i); 
+            LogPrint(BCLog::MASTERNODE, "%s: Found collateral %d at block %d\n", __func__, c / COIN, i);
             prev = c;
             vecCollaterals.push_back(std::make_pair(i, c));
         }
@@ -602,6 +640,7 @@ bool CMasternodeBroadcast::CheckAndUpdate(int& nDos)
 {
     // make sure signature isn't in the future (past is OK)
     if (sigTime > GetAdjustedTime() + 60 * 60) {
+        LogPrint(BCLog::MASTERNODE, "mnb - Signature rejected, too far into the future %s\n", vin.prevout.hash.ToString());
         LogPrint(BCLog::MASTERNODE, "mnb - Signature rejected, too far into the future %s\n", vin.prevout.ToStringShort());
         nDos = 1;
         return false;
@@ -612,6 +651,7 @@ bool CMasternodeBroadcast::CheckAndUpdate(int& nDos)
     return false;
 
     if (protocolVersion < ActiveProtocol()) {
+        LogPrint(BCLog::MASTERNODE, "mnb - ignoring outdated Masternode %s protocol version %d\n", vin.prevout.hash.ToString(), protocolVersion);
         LogPrint(BCLog::MASTERNODE, "mnb - ignoring outdated Masternode %s protocol version %d\n", vin.prevout.ToStringShort(), protocolVersion);
         return false;
     }
@@ -635,6 +675,7 @@ bool CMasternodeBroadcast::CheckAndUpdate(int& nDos)
     }
 
     if (!vin.scriptSig.empty()) {
+      LogPrint(BCLog::MASTERNODE, "mnb - Ignore Not Empty ScriptSig %s\n", vin.prevout.hash.ToString());
         LogPrint(BCLog::MASTERNODE, "mnb - Ignore Not Empty ScriptSig %s\n", vin.prevout.ToStringShort());
         return false;
     }
@@ -647,13 +688,25 @@ bool CMasternodeBroadcast::CheckAndUpdate(int& nDos)
         return error("%s : Got bad Masternode address signature", __func__);
     }
 
-    if(addr.GetPort() != Params().GetDefaultPort()) {
+    if (addr.GetPort() != Params().GetDefaultPort()) {
         return error(
-            "%s : Invalid port %u for masternode %s, only %d is supported on %s-net.", 
-            __func__, addr.GetPort(), addr.ToString(), Params().GetDefaultPort(), 
-            Params().NetworkIDString());
+            "%s : Invalid port %u for masternode %s, only %d is supported on %s-net.",
+            __func__, addr.GetPort(), addr.ToString(), Params().GetDefaultPort(),
+
+    if (!CheckSignature())
+    {
+        // masternodes older than this proto version use old strMessage format for mnannounce
+        nDos = protocolVersion <= MIN_PEER_MNANNOUNCE ? 0 : 100;
+        return error("%s : Got bad Masternode address signature", __func__);
     }
 
+    if(addr.GetPort() != Params().GetDefaultPort()) {
+        return error(
+            "%s : Invalid port %u for masternode %s, only %d is supported on %s-net.",
+            __func__, addr.GetPort(), addr.ToString(), Params().GetDefaultPort(),
+
+            Params().NetworkIDString());
+    }
     //search existing Masternode list, this is where we update existing Masternodes with new mnb broadcasts
     CMasternode* pmn = mnodeman.Find(vin);
 
@@ -675,7 +728,10 @@ bool CMasternodeBroadcast::CheckAndUpdate(int& nDos)
     //   after that they just need to match
     if (pmn->pubKeyCollateralAddress == pubKeyCollateralAddress && !pmn->IsBroadcastedWithin(MASTERNODE_MIN_MNB_SECONDS)) {
         //take the newest entry
+        LogPrint(BCLog::MASTERNODE, "mnb - Got updated entry for %s\n", vin.prevout.hash.ToString());
+
         LogPrint(BCLog::MASTERNODE, "mnb - Got updated entry for %s\n", vin.prevout.ToStringShort());
+
         if (pmn->UpdateFromNewBroadcast((*this))) {
             pmn->Check();
             if (pmn->IsEnabled()) Relay();
@@ -712,6 +768,7 @@ bool CMasternodeBroadcast::CheckInputsAndAdd(int& nDoS)
     CMutableTransaction tx = CMutableTransaction();
     CScript dummyScript;
     dummyScript << ToByteVector(pubKeyCollateralAddress) << OP_CHECKSIG;
+    CTxOut vout = CTxOut(GetMasternodeCollateral(chainActive.Height()) - (COIN / 100), dummyScript);
     CTxOut vout = CTxOut((CMasternode::GetMasternodeNodeCollateral(chainActive.Height()) - 0.01 * COIN), dummyScript);
     tx.vin.push_back(vin);
     tx.vout.push_back(vout);
@@ -752,7 +809,8 @@ bool CMasternodeBroadcast::CheckInputsAndAdd(int& nDoS)
     GetTransaction(vin.prevout.hash, tx2, hashBlock, true);
     BlockMap::iterator mi = mapBlockIndex.find(hashBlock);
     if (mi != mapBlockIndex.end() && (*mi).second) {
-        CBlockIndex* pMNIndex = (*mi).second;                                                        // block for 1000 EGG tx -> 1 confirmation
+        CBlockIndex* pMNIndex = (*mi).second;
+        CBlockIndex* pMNIndex = (*mi).second;                                                          // block for 1000 EGG tx -> 1 confirmation
         CBlockIndex* pConfIndex = chainActive[pMNIndex->nHeight + MASTERNODE_MIN_CONFIRMATIONS - 1]; // block where tx got MASTERNODE_MIN_CONFIRMATIONS
         if (pConfIndex->GetBlockTime() > sigTime) {
             LogPrint(BCLog::MASTERNODE,"mnb - Bad sigTime %d for Masternode %s (%i conf block is at %d)\n",
@@ -760,7 +818,7 @@ bool CMasternodeBroadcast::CheckInputsAndAdd(int& nDoS)
             return false;
         }
     }
-
+LogPrint(BCLog::MASTERNODE, "mnb - Got NEW Masternode entry - %s - %lli \n", vin.prevout.hash.ToString(), sigTime);
     LogPrint(BCLog::MASTERNODE, "mnb - Got NEW Masternode entry - %s - %lli \n", vin.prevout.ToStringShort(), sigTime);
     CMasternode mn(*this);
     mnodeman.Add(mn);
@@ -827,6 +885,11 @@ std::string CMasternodePing::GetStrMessage() const
 {
     int64_t salt = sporkManager.GetSporkValue(SPORK_103_PING_MESSAGE_SALT);
 
+    if (salt == 0) {
+        return vin.ToString() + blockHash.ToString() + std::to_string(sigTime) + std::to_string(salt);
+    } else {
+        return vin.ToString() + blockHash.ToString() + std::to_string(sigTime);
+
     if(salt == 0) {
         return vin.ToString() + blockHash.ToString() + std::to_string(sigTime);
     } else {
@@ -837,12 +900,14 @@ std::string CMasternodePing::GetStrMessage() const
 bool CMasternodePing::CheckAndUpdate(int& nDos, bool fRequireEnabled, bool fCheckSigTimeOnly)
 {
     if (sigTime > GetAdjustedTime() + 60 * 60) {
+        LogPrint(BCLog::MNPING, "%s: Signature rejected, too far into the future %s\n", __func__, vin.prevout.hash.ToString());
         LogPrint(BCLog::MNPING, "%s: Signature rejected, too far into the future %s\n", __func__, vin.prevout.ToStringShort());
         nDos = 1;
         return false;
     }
 
     if (sigTime <= GetAdjustedTime() - 60 * 60) {
+        LogPrint(BCLog::MNPING, "%s: Signature rejected, too far into the past %s - %d %d \n", __func__, vin.prevout.hash.ToString(), sigTime, GetAdjustedTime());
         LogPrint(BCLog::MNPING, "%s: Signature rejected, too far into the past %s - %d %d \n", __func__, vin.prevout.ToStringShort(), sigTime, GetAdjustedTime());
         nDos = 1;
         return false;
@@ -877,6 +942,7 @@ bool CMasternodePing::CheckAndUpdate(int& nDos, bool fRequireEnabled, bool fChec
             // Check if the ping block hash exists in disk
             BlockMap::iterator mi = mapBlockIndex.find(blockHash);
             if (mi == mapBlockIndex.end() || !(*mi).second) {
+                LogPrint(BCLog::MNPING, "%s: ping block not in disk. Masternode %s block hash %s\n", __func__, vin.prevout.hash.ToString(), blockHash.ToString());
                 LogPrint(BCLog::MNPING, "%s: ping block not in disk. Masternode %s block hash %s\n", __func__, vin.prevout.ToStringShort(), blockHash.ToString());
                 return false;
             }

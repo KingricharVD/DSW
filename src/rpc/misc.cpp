@@ -59,7 +59,7 @@ UniValue getinfo(const JSONRPCRequest& request)
             "  \"version\": xxxxx,             (numeric) the server version\n"
             "  \"protocolversion\": xxxxx,     (numeric) the protocol version\n"
             "  \"walletversion\": xxxxx,       (numeric) the wallet version\n"
-            "  \"balance\": xxxxxxx,           (numeric) the total EGG balance of the wallet (excluding zerocoins)\n"
+            "  \"balance\": xxxxxxx,           (numeric) the total nestegg balance of the wallet (excluding zerocoins)\n"
             "  \"zerocoinbalance\": xxxxxxx,   (numeric) the total zerocoin balance of the wallet\n"
             "  \"staking status\": true|false, (boolean) if the wallet is staking or not\n"
             "  \"blocks\": xxxxxx,             (numeric) the current number of blocks processed in the server\n"
@@ -69,11 +69,23 @@ UniValue getinfo(const JSONRPCRequest& request)
             "  \"difficulty\": xxxxxx,         (numeric) the current difficulty\n"
             "  \"testnet\": true|false,        (boolean) if the server is using testnet or not\n"
             "  \"moneysupply\" : \"supply\"    (numeric) The money supply when this block was added to the blockchain\n"
+            "  \"zEGGsupply\" :\n"
+            "  {\n"
+            "     \"1\" : n,            (numeric) supply of 1 zEGG denomination\n"
+            "     \"5\" : n,            (numeric) supply of 5 zEGG denomination\n"
+            "     \"10\" : n,           (numeric) supply of 10 zEGG denomination\n"
+            "     \"50\" : n,           (numeric) supply of 50 zEGG denomination\n"
+            "     \"100\" : n,          (numeric) supply of 100 zEGG denomination\n"
+            "     \"500\" : n,          (numeric) supply of 500 zEGG denomination\n"
+            "     \"1000\" : n,         (numeric) supply of 1000 zEGG denomination\n"
+            "     \"5000\" : n,         (numeric) supply of 5000 zEGG denomination\n"
+            "     \"total\" : n,        (numeric) The total supply of all zEGG denominations\n"
+            "  }\n"
             "  \"keypoololdest\": xxxxxx,      (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,          (numeric) how many new keys are pre-generated\n"
             "  \"unlocked_until\": ttt,        (numeric) the timestamp in seconds since epoch (midnight Jan 1 1970 GMT) that the wallet is unlocked for transfers, or 0 if the wallet is locked\n"
-            "  \"paytxfee\": x.xxxx,           (numeric) the transaction fee set in EGG/kb\n"
-            "  \"relayfee\": x.xxxx,           (numeric) minimum relay fee for non-free transactions in EGG/kb\n"
+            "  \"paytxfee\": x.xxxx,           (numeric) the transaction fee set in nestegg/kb\n"
+            "  \"relayfee\": x.xxxx,           (numeric) minimum relay fee for non-free transactions in nestegg/kb\n"
             "  \"errors\": \"...\"             (string) any error messages\n"
             "}\n"
 
@@ -136,6 +148,15 @@ UniValue getinfo(const JSONRPCRequest& request)
     }
 
     obj.push_back(Pair("moneysupply",ValueFromAmount(nMoneySupply)));
+    UniValue zpivObj(UniValue::VOBJ);
+    for (auto denom : libzerocoin::zerocoinDenomList) {
+        if (mapZerocoinSupply.empty())
+            zpivObj.push_back(Pair(std::to_string(denom), ValueFromAmount(0)));
+        else
+            zpivObj.push_back(Pair(std::to_string(denom), ValueFromAmount(mapZerocoinSupply.at(denom) * (denom*COIN))));
+    }
+    zpivObj.push_back(Pair("total", ValueFromAmount(GetZerocoinSupply())));
+    obj.push_back(Pair("zEGGsupply", zpivObj));
 
 #ifdef ENABLE_WALLET
     if (pwalletMain) {
@@ -242,10 +263,6 @@ public:
             pwalletMain->GetPubKey(keyID, vchPubKey);
             obj.push_back(Pair("pubkey", HexStr(vchPubKey)));
             obj.push_back(Pair("iscompressed", vchPubKey.IsCompressed()));
-            if(vchPubKey.IsCompressed()) {
-                vchPubKey.Decompress();
-                obj.push_back(Pair("pubkey", HexStr(vchPubKey)));
-            }
         }
         return obj;
     }
@@ -335,21 +352,43 @@ UniValue spork(const JSONRPCRequest& request)
         HelpExampleCli("spork", "show") + HelpExampleRpc("spork", "show"));
 }
 
+// Every possibly address (todo: clean sprout address)
+typedef boost::variant<libzcash::InvalidEncoding, libzcash::SproutPaymentAddress, libzcash::SaplingPaymentAddress, CTxDestination> PPaymentAddress;
+
 class DescribePaymentAddressVisitor : public boost::static_visitor<UniValue>
 {
 public:
-    explicit DescribePaymentAddressVisitor() {}
+    explicit DescribePaymentAddressVisitor(bool _isStaking) : isStaking(_isStaking) {}
+    UniValue operator()(const libzcash::InvalidEncoding &zaddr) const { return UniValue(UniValue::VOBJ); }
+
+    UniValue operator()(const libzcash::SproutPaymentAddress &zaddr) const {
+        return UniValue(UniValue::VOBJ); // todo: Clean Sprout code.
+    }
+
+    UniValue operator()(const libzcash::SaplingPaymentAddress &zaddr) const {
+        UniValue obj(UniValue::VOBJ);
+        obj.push_back(Pair("type", "sapling"));
+        obj.push_back(Pair("diversifier", HexStr(zaddr.d)));
+        obj.push_back(Pair("diversifiedtransmissionkey", zaddr.pk_d.GetHex()));
+#ifdef ENABLE_WALLET
+        if (pwalletMain) {
+            obj.push_back(Pair("ismine", pwalletMain->HaveSpendingKeyForPaymentAddress(zaddr)));
+        }
+#endif
+        return obj;
+    }
 
     UniValue operator()(const CTxDestination &dest) const {
         UniValue ret(UniValue::VOBJ);
-        std::string currentAddress = EncodeDestination(dest);
+        std::string currentAddress = EncodeDestination(dest, isStaking);
         ret.push_back(Pair("address", currentAddress));
         CScript scriptPubKey = GetScriptForDestination(dest);
         ret.push_back(Pair("scriptPubKey", HexStr(scriptPubKey.begin(), scriptPubKey.end())));
 
 #ifdef ENABLE_WALLET
         isminetype mine = pwalletMain ? IsMine(*pwalletMain, dest) : ISMINE_NO;
-        ret.push_back(Pair("ismine", bool(mine & (ISMINE_SPENDABLE_ALL))));
+        ret.push_back(Pair("ismine", bool(mine & (ISMINE_SPENDABLE_ALL | ISMINE_COLD))));
+        ret.push_back(Pair("isstaking", isStaking));
         ret.push_back(Pair("iswatchonly", bool(mine & ISMINE_WATCH_ONLY)));
         UniValue detail = boost::apply_visitor(DescribeAddressVisitor(mine), dest);
         ret.pushKVs(detail);
@@ -360,36 +399,44 @@ public:
     }
 
 private:
+    bool isStaking{false};
 };
 
 UniValue validateaddress(const JSONRPCRequest& request)
 {
     if (request.fHelp || request.params.size() != 1)
         throw std::runtime_error(
-            "validateaddress \"EGGaddress\"\n"
-            "\nReturn information about the given EGG address.\n"
+            "validateaddress \"nesteggaddress\"\n"
+            "\nReturn information about the given nestegg address.\n"
 
             "\nArguments:\n"
-            "1. \"EGGaddress\"     (string, required) The EGG address to validate\n"
+            "1. \"nesteggaddress\"     (string, required) The nestegg address to validate\n"
 
             "\nResult:\n"
             "{\n"
             "  \"isvalid\" : true|false,         (boolean) If the address is valid or not. If not, this is the only property returned.\n"
-            "  \"type\" : \"xxxx\",              (string) \"standard\"\n"
-            "  \"address\" : \"EGG address\",    (string) The EGG address validated\n"
+            "  \"type\" : \"xxxx\",              (string) \"standard\" or \"sapling\"\n"
+            "  \"address\" : \"nesteggaddress\",    (string) The nestegg address validated\n"
             "  \"scriptPubKey\" : \"hex\",       (string) The hex encoded scriptPubKey generated by the address -only if is standard address-\n"
             "  \"ismine\" : true|false,          (boolean) If the address is yours or not\n"
+            "  \"isstaking\" : true|false,       (boolean) If the address is a staking address for NestEgg cold staking -only if is standard address-\n"
             "  \"iswatchonly\" : true|false,     (boolean) If the address is watchonly -only if standard address-\n"
             "  \"isscript\" : true|false,        (boolean) If the key is a script -only if standard address-\n"
             "  \"hex\" : \"hex\",                (string, optional) The redeemscript for the P2SH address -only if standard address-\n"
-            "  \"pubkey\" : \"publickey hex\",    (string) The hex value of the raw public key -only if standard address-\n"
+            "  \"pubkey\" : \"publickeyhex\",    (string) The hex value of the raw public key -only if standard address-\n"
             "  \"iscompressed\" : true|false,    (boolean) If the address is compressed -only if standard address-\n"
-            "  (\"pubkey\" : \"decompressed publickey hex\",    (string) The hex value of the decompressed raw public key -only if standard address)-\n"
             "  \"account\" : \"account\"         (string) DEPRECATED. The account associated with the address, \"\" is the default account\n"
+            // Sapling
+            "  \"payingkey\" : \"hex\",         (string) [sprout] The hex value of the paying key, a_pk -only if is sapling address-\n"
+            "  \"transmissionkey\" : \"hex\",   (string) [sprout] The hex value of the transmission key, pk_enc -only if is sapling address-\n"
+            "  \"diversifier\" : \"hex\",       (string) [sapling] The hex value of the diversifier, d -only if is sapling address-\n"
+            "  \"diversifiedtransmissionkey\" : \"hex\", (string) [sapling] The hex value of pk_d -only if is sapling address-\n"
             "}\n"
 
             "\nExamples:\n" +
-            HelpExampleCli("validateaddress", "\"1PSSGeFHDnKNxiEyFrD1wcEaHr9hrQDDWc\""));
+            HelpExampleCli("validateaddress", "\"1PSSGeFHDnKNxiEyFrD1wcEaHr9hrQDDWc\"") +
+            HelpExampleCli("validateaddress", "\"sapling_address\"") +
+            HelpExampleRpc("validateaddress", "\"1PSSGeFHDnKNxiEyFrD1wcEaHr9hrQDDWc\""));
 
 #ifdef ENABLE_WALLET
     LOCK2(cs_main, pwalletMain ? &pwalletMain->cs_wallet : nullptr);
@@ -397,27 +444,29 @@ UniValue validateaddress(const JSONRPCRequest& request)
     LOCK(cs_main);
 #endif
 
-    std::string currentAddress = request.params[0].get_str();
-    CTxDestination dest = DecodeDestination(currentAddress);
+    std::string strAddress = request.params[0].get_str();
+
+    // First check if it's a regular address
+    bool isStakingAddress = false;
+    CTxDestination dest = DecodeDestination(strAddress, isStakingAddress);
     bool isValid = IsValidDestination(dest);
+
+    PPaymentAddress finalAddress;
+    if (!isValid) {
+        isValid = KeyIO::IsValidPaymentAddressString(strAddress);
+        if (isValid) finalAddress = KeyIO::DecodePaymentAddress(strAddress);
+    } else {
+        finalAddress = dest;
+    }
 
     UniValue ret(UniValue::VOBJ);
     ret.push_back(Pair("isvalid", isValid));
     if (isValid) {
-        ret.push_back(Pair("address", currentAddress));
-        CScript scriptPubKey = GetScriptForDestination(dest);
-        ret.push_back(Pair("scriptPubKey", HexStr(scriptPubKey.begin(), scriptPubKey.end())));
-
-#ifdef ENABLE_WALLET
-        isminetype mine = pwalletMain ? IsMine(*pwalletMain, dest) : ISMINE_NO;
-        ret.push_back(Pair("ismine", bool(mine & (ISMINE_SPENDABLE_ALL))));
-        ret.push_back(Pair("iswatchonly", bool(mine & ISMINE_WATCH_ONLY)));
-        UniValue detail = boost::apply_visitor(DescribeAddressVisitor(mine), dest);
+        ret.push_back(Pair("address", strAddress));
+        UniValue detail = boost::apply_visitor(DescribePaymentAddressVisitor(isStakingAddress), finalAddress);
         ret.pushKVs(detail);
-        if (pwalletMain && pwalletMain->mapAddressBook.count(dest))
-            ret.push_back(Pair("account", pwalletMain->mapAddressBook[dest].name));
-#endif
     }
+
     return ret;
 }
 
@@ -444,7 +493,7 @@ CScript _createmultisig_redeemScript(const UniValue& params)
     for (unsigned int i = 0; i < keys.size(); i++) {
         const std::string& ks = keys[i].get_str();
 #ifdef ENABLE_WALLET
-        // Case 1: EGG address and we have full public key:
+        // Case 1: NestEgg address and we have full public key:
         CTxDestination dest = DecodeDestination(ks);
         if (pwalletMain && IsValidDestination(dest)) {
             const CKeyID* keyID = boost::get<CKeyID>(&dest);
@@ -492,9 +541,9 @@ UniValue createmultisig(const JSONRPCRequest& request)
 
             "\nArguments:\n"
             "1. nrequired      (numeric, required) The number of required signatures out of the n keys or addresses.\n"
-            "2. \"keys\"       (string, required) A json array of keys which are EGG addresses or hex-encoded public keys\n"
+            "2. \"keys\"       (string, required) A json array of keys which are nestegg addresses or hex-encoded public keys\n"
             "     [\n"
-            "       \"key\"    (string) EGG address or hex-encoded public key\n"
+            "       \"key\"    (string) nestegg address or hex-encoded public key\n"
             "       ,...\n"
             "     ]\n"
 
@@ -525,11 +574,11 @@ UniValue verifymessage(const JSONRPCRequest& request)
 {
     if (request.fHelp || request.params.size() != 3)
         throw std::runtime_error(
-            "verifymessage \"EGGaddress\" \"signature\" \"message\"\n"
+            "verifymessage \"nesteggaddress\" \"signature\" \"message\"\n"
             "\nVerify a signed message\n"
 
             "\nArguments:\n"
-            "1. \"EGGaddress\"  (string, required) The EGG address to use for the signature.\n"
+            "1. \"nesteggaddress\"  (string, required) The nestegg address to use for the signature.\n"
             "2. \"signature\"       (string, required) The signature provided by the signer in base 64 encoding (see signmessage).\n"
             "3. \"message\"         (string, required) The message that was signed.\n"
 
@@ -690,6 +739,7 @@ UniValue getstakingstatus(const JSONRPCRequest& request)
             "{\n"
             "  \"staking_status\": true|false,      (boolean) whether the wallet is staking or not\n"
             "  \"staking_enabled\": true|false,     (boolean) whether staking is enabled/disabled in nestegg.conf\n"
+            "  \"coldstaking_enabled\": true|false, (boolean) whether cold-staking is enabled/disabled in nestegg.conf\n"
             "  \"haveconnections\": true|false,     (boolean) whether network connections are present\n"
             "  \"mnsync\": true|false,              (boolean) whether the required masternode/spork data is synced\n"
             "  \"walletunlocked\": true|false,      (boolean) whether the wallet is unlocked\n"
@@ -714,13 +764,15 @@ UniValue getstakingstatus(const JSONRPCRequest& request)
         UniValue obj(UniValue::VOBJ);
         obj.push_back(Pair("staking_status", pwalletMain->pStakerStatus->IsActive()));
         obj.push_back(Pair("staking_enabled", GetBoolArg("-staking", DEFAULT_STAKING)));
+        bool fColdStaking = GetBoolArg("-coldstaking", true);
+        obj.push_back(Pair("coldstaking_enabled", fColdStaking));
         obj.push_back(Pair("haveconnections", (g_connman->GetNodeCount(CConnman::CONNECTIONS_ALL) > 0)));
         obj.push_back(Pair("mnsync", !masternodeSync.NotCompleted()));
         obj.push_back(Pair("walletunlocked", !pwalletMain->IsLocked()));
         std::vector<COutput> vCoins;
         pwalletMain->StakeableCoins(&vCoins);
         obj.push_back(Pair("stakeablecoins", (int)vCoins.size()));
-        obj.push_back(Pair("stakingbalance", ValueFromAmount(pwalletMain->GetStakingBalance())));
+        obj.push_back(Pair("stakingbalance", ValueFromAmount(pwalletMain->GetStakingBalance(fColdStaking))));
         obj.push_back(Pair("stakesplitthreshold", ValueFromAmount(pwalletMain->nStakeSplitThreshold)));
         CStakerStatus* ss = pwalletMain->pStakerStatus;
         if (ss) {

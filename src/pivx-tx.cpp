@@ -47,7 +47,7 @@ static bool AppInitRawTx(int argc, char* argv[])
 
     if (argc < 2 || mapArgs.count("-?") || mapArgs.count("-help")) {
         // First part of help message is specific to this utility
-        std::string strUsage = _("NestEGG nestegg-tx utility version") + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = _("NestEgg Core nestegg-tx utility version") + " " + FormatFullVersion() + "\n\n" +
                                _("Usage:") + "\n" +
                                "  nestegg-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded nestegg transaction") + "\n" +
                                "  nestegg-tx [options] -create [commands]   " + _("Create hex-encoded nestegg transaction") + "\n" +
@@ -454,7 +454,8 @@ static void MutateTxSign(CMutableTransaction& tx, const std::string& flagStr)
             ProduceSignature(
                     MutableTransactionSignatureCreator(&keystore, &mergedTx, i, amount, nHashType),
                     prevPubKey,
-                    sigdata
+                    sigdata,
+                    false // no cold stake
             );
 
         // ... and merge in other signatures:

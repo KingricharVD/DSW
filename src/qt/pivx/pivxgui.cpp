@@ -67,7 +67,7 @@ PIVXGUI::PIVXGUI(const NetworkStyle* networkStyle, QWidget* parent) :
 
     QString windowTitle = QString::fromStdString(GetArg("-windowtitle", ""));
     if (windowTitle.isEmpty()) {
-        windowTitle = tr("NestEGG") + " - ";
+        windowTitle = tr("NestEgg Core") + " - ";
         windowTitle += ((enableWallet) ? tr("Wallet") : tr("Node"));
     }
     windowTitle += " " + networkStyle->getTitleAddText();
@@ -126,6 +126,7 @@ PIVXGUI::PIVXGUI(const NetworkStyle* networkStyle, QWidget* parent) :
         receiveWidget = new ReceiveWidget(this);
         addressesWidget = new AddressesWidget(this);
         masterNodesWidget = new MasterNodesWidget(this);
+        coldStakingWidget = new ColdStakingWidget(this);
         settingsWidget = new SettingsWidget(this);
 
         // Add to parent
@@ -134,6 +135,7 @@ PIVXGUI::PIVXGUI(const NetworkStyle* networkStyle, QWidget* parent) :
         stackedContainer->addWidget(receiveWidget);
         stackedContainer->addWidget(addressesWidget);
         stackedContainer->addWidget(masterNodesWidget);
+        stackedContainer->addWidget(coldStakingWidget);
         stackedContainer->addWidget(settingsWidget);
         stackedContainer->setCurrentWidget(dashboard);
 
@@ -192,12 +194,15 @@ void PIVXGUI::connectActions()
     });
     connect(topBar, &TopBar::showHide, this, &PIVXGUI::showHide);
     connect(topBar, &TopBar::themeChanged, this, &PIVXGUI::changeTheme);
+    connect(topBar, &TopBar::onShowHideColdStakingChanged, navMenu, &NavMenuWidget::onShowHideColdStakingChanged);
     connect(settingsWidget, &SettingsWidget::showHide, this, &PIVXGUI::showHide);
     connect(sendWidget, &SendWidget::showHide, this, &PIVXGUI::showHide);
     connect(receiveWidget, &ReceiveWidget::showHide, this, &PIVXGUI::showHide);
     connect(addressesWidget, &AddressesWidget::showHide, this, &PIVXGUI::showHide);
     connect(masterNodesWidget, &MasterNodesWidget::showHide, this, &PIVXGUI::showHide);
     connect(masterNodesWidget, &MasterNodesWidget::execDialog, this, &PIVXGUI::execDialog);
+    connect(coldStakingWidget, &ColdStakingWidget::showHide, this, &PIVXGUI::showHide);
+    connect(coldStakingWidget, &ColdStakingWidget::execDialog, this, &PIVXGUI::execDialog);
     connect(settingsWidget, &SettingsWidget::execDialog, this, &PIVXGUI::execDialog);
 }
 
@@ -206,7 +211,7 @@ void PIVXGUI::createTrayIcon(const NetworkStyle* networkStyle)
 {
 #ifndef Q_OS_MAC
     trayIcon = new QSystemTrayIcon(this);
-    QString toolTip = tr("NestEGG client") + " " + networkStyle->getTitleAddText();
+    QString toolTip = tr("NestEgg Core client") + " " + networkStyle->getTitleAddText();
     trayIcon->setToolTip(toolTip);
     trayIcon->setIcon(networkStyle->getAppIcon());
     trayIcon->hide();
@@ -252,7 +257,8 @@ void PIVXGUI::setClientModel(ClientModel* clientModel)
         // Receive and report messages from client model
         connect(clientModel, &ClientModel::message, this, &PIVXGUI::message);
         connect(topBar, &TopBar::walletSynced, dashboard, &DashboardWidget::walletSynced);
-        
+        connect(topBar, &TopBar::walletSynced, coldStakingWidget, &ColdStakingWidget::walletSynced);
+
         // Get restart command-line parameters and handle restart
         connect(settingsWidget, &SettingsWidget::handleRestart, [this](QStringList arg){handleRestart(arg);});
 
@@ -359,7 +365,7 @@ void PIVXGUI::messageInfo(const QString& text)
 
 void PIVXGUI::message(const QString& title, const QString& message, unsigned int style, bool* ret)
 {
-    QString strTitle =  tr("NestEGG"); // default title
+    QString strTitle =  tr("NestEgg Core"); // default title
     // Default to information icon
     int nNotifyIcon = Notificator::Information;
 
@@ -409,7 +415,7 @@ void PIVXGUI::message(const QString& title, const QString& message, unsigned int
     } else if (style & CClientUIInterface::MSG_INFORMATION_SNACK) {
         messageInfo(message);
     } else {
-        // Append title to "EGG - "
+        // Append title to "PIVX - "
         if (!msgType.isEmpty())
             strTitle += " - " + msgType;
         notificator->notify((Notificator::Class) nNotifyIcon, strTitle, message);
@@ -428,7 +434,7 @@ bool PIVXGUI::openStandardDialog(QString title, QString body, QString okBtn, QSt
     } else {
         dialog = new DefaultDialog();
         dialog->setText(title, body, okBtn);
-        dialog->setWindowTitle(tr("NestEGG"));
+        dialog->setWindowTitle(tr("NestEgg Core"));
         dialog->adjustSize();
         dialog->raise();
         dialog->exec();
@@ -487,6 +493,11 @@ void PIVXGUI::goToMasterNodes()
     showTop(masterNodesWidget);
 }
 
+void PIVXGUI::goToColdStaking()
+{
+    showTop(coldStakingWidget);
+}
+
 void PIVXGUI::goToSettings(){
     showTop(settingsWidget);
 }
@@ -498,13 +509,6 @@ void PIVXGUI::goToSettingsInfo()
     goToSettings();
 }
 
-void PIVXGUI::goToDebugConsole()
-{
-    navMenu->selectSettings();
-    settingsWidget->showDebugConsole();
-    goToSettings();
-}
-
 void PIVXGUI::goToReceive()
 {
     showTop(receiveWidget);
@@ -513,11 +517,6 @@ void PIVXGUI::goToReceive()
 void PIVXGUI::openNetworkMonitor()
 {
     settingsWidget->openNetworkMonitor();
-}
-
-void PIVXGUI::showPeers()
-{
-    settingsWidget->showPeers();
 }
 
 void PIVXGUI::showTop(QWidget* view)
@@ -614,11 +613,13 @@ bool PIVXGUI::addWallet(const QString& name, WalletModel* walletModel)
     sendWidget->setWalletModel(walletModel);
     addressesWidget->setWalletModel(walletModel);
     masterNodesWidget->setWalletModel(walletModel);
+    coldStakingWidget->setWalletModel(walletModel);
     settingsWidget->setWalletModel(walletModel);
 
     // Connect actions..
     connect(walletModel, &WalletModel::message, this, &PIVXGUI::message);
     connect(masterNodesWidget, &MasterNodesWidget::message, this, &PIVXGUI::message);
+    connect(coldStakingWidget, &ColdStakingWidget::message, this, &PIVXGUI::message);
     connect(topBar, &TopBar::message, this, &PIVXGUI::message);
     connect(sendWidget, &SendWidget::message,this, &PIVXGUI::message);
     connect(receiveWidget, &ReceiveWidget::message,this, &PIVXGUI::message);

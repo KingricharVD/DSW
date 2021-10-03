@@ -97,7 +97,7 @@ bool CTxOut::GetKeyIDFromUTXO(CKeyID& keyIDRet) const
         keyIDRet = CPubKey(vSolutions[0]).GetID();
         return true;
     }
-    if (whichType == TX_PUBKEYHASH) {
+    if (whichType == TX_PUBKEYHASH || whichType == TX_COLDSTAKE) {
         keyIDRet = CKeyID(uint160(vSolutions[0]));
         return true;
     }
@@ -182,7 +182,7 @@ bool CTransaction::HasZerocoinMintOutputs() const
 
 bool CTransaction::HasZerocoinPublicSpendInputs() const
 {
-    // The wallet only allows publicSpend inputs in the same tx and not a combination between EGG and zEGG
+    // The wallet only allows publicSpend inputs in the same tx and not a combination between piv and zpiv
     for(const CTxIn& txin : vin) {
         if (txin.IsZerocoinPublicSpend())
             return true;
@@ -202,12 +202,46 @@ bool CTransaction::IsCoinStake() const
     return (vout.size() >= 2 && vout[0].IsEmpty());
 }
 
+bool CTransaction::CheckColdStake(const CScript& script) const
+{
+
+    // tx is a coinstake tx
+    if (!IsCoinStake())
+        return false;
+
+    // all inputs have the same scriptSig
+    CScript firstScript = vin[0].scriptSig;
+    if (vin.size() > 1) {
+        for (unsigned int i=1; i<vin.size(); i++)
+            if (vin[i].scriptSig != firstScript) return false;
+    }
+
+    // all outputs except first (coinstake marker) and last (masternode payout)
+    // have the same pubKeyScript and it matches the script we are spending
+    if (vout[1].scriptPubKey != script) return false;
+    if (vin.size() > 3) {
+        for (unsigned int i=2; i<vout.size()-1; i++)
+            if (vout[i].scriptPubKey != script) return false;
+    }
+
+    return true;
+}
+
+bool CTransaction::HasP2CSOutputs() const
+{
+    for(const CTxOut& txout : vout) {
+        if (txout.scriptPubKey.IsPayToColdStaking())
+            return true;
+    }
+    return false;
+}
+
 CAmount CTransaction::GetValueOut() const
 {
     CAmount nValueOut = 0;
     for (std::vector<CTxOut>::const_iterator it(vout.begin()); it != vout.end(); ++it)
     {
-        // EGG: previously MoneyRange() was called here. This has been replaced with negative check and boundary wrap check.
+        // PIVX: previously MoneyRange() was called here. This has been replaced with negative check and boundary wrap check.
         if (it->nValue < 0)
             throw std::runtime_error("CTransaction::GetValueOut() : value out of range : less than 0");
 

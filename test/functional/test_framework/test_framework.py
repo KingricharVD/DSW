@@ -632,8 +632,8 @@ class PivxTestFramework():
                     nBlocks += 1
                     # Mint zerocoins with node-2 at block 301 and with node-3 at block 302
                     if nBlocks == 301 or nBlocks == 302:
-                        # mints 7 zerocoins, one for each denom (tot 6666 EGG), fee = 0.01 * 8
-                        # consumes 27 utxos (tot 6750 EGG), change = 6750 - 6666 - fee
+                        # mints 7 zerocoins, one for each denom (tot 6666 PIV), fee = 0.01 * 8
+                        # consumes 27 utxos (tot 6750 PIV), change = 6750 - 6666 - fee
                         res.append(self.nodes[nBlocks-299].mintzerocoin(6666))
                         self.sync_all()
                         # lock the change output (so it's not used as stake input in generate_pos)
@@ -679,7 +679,7 @@ class PivxTestFramework():
             initialize_datadir(self.options.tmpdir, i)
 
 
-    ### nestegg Specific TestFramework ###
+    ### NestEgg Specific TestFramework ###
     ###################################
     def init_dummy_key(self):
         self.DUMMY_KEY = CECKey()
@@ -694,7 +694,7 @@ class PivxTestFramework():
         # 62 pow + 20 pos (26 immature)
         # - Nodes 3 gets 84 blocks:
         # 64 pow + 20 pos (34 immature)
-        # - Nodes 2 and 3 have 6666 EGG worth of zerocoins
+        # - Nodes 2 and 3 have 6666 PIV worth of zerocoins
         zc_tot = sum(vZC_DENOMS)
         zc_fee = len(vZC_DENOMS) * 0.01
         used_utxos = (zc_tot // 250) + 1
@@ -757,9 +757,9 @@ class PivxTestFramework():
                  nHeight:                   (int) height of the previous block. used only if zpos=True for
                                             stake checksum. Optional, if not provided rpc_conn's height is used.
         :return: prevouts:         ({bytes --> (int, bytes, int)} dictionary)
-                                   maps CStake "uniqueness" (i.e. serialized COutPoint -or hash stake, for zEGG-)
+                                   maps CStake "uniqueness" (i.e. serialized COutPoint -or hash stake, for zpiv-)
                                    to (amount, prevScript, timeBlockFrom).
-                                   For zEGG prevScript is replaced with serialHash hex string.
+                                   For zpiv prevScript is replaced with serialHash hex string.
         """
         assert_greater_than(len(self.nodes), node_id)
         rpc_conn = self.nodes[node_id]
@@ -790,9 +790,9 @@ class PivxTestFramework():
         """ makes a list of CTransactions each spending an input from spending PrevOuts to an output to_pubKey
         :param   node_id:            (int) index of the CTestNode used as rpc connection. Must own spendingPrevOuts.
                  spendingPrevouts:   ({bytes --> (int, bytes, int)} dictionary)
-                                     maps CStake "uniqueness" (i.e. serialized COutPoint -or hash stake, for zEGG-)
+                                     maps CStake "uniqueness" (i.e. serialized COutPoint -or hash stake, for zpiv-)
                                      to (amount, prevScript, timeBlockFrom).
-                                     For zEGG prevScript is replaced with serialHash hex string.
+                                     For zpiv prevScript is replaced with serialHash hex string.
                  to_pubKey           (bytes) recipient public key
         :return: block_txes:         ([CTransaction] list)
         """
@@ -805,7 +805,7 @@ class PivxTestFramework():
                 _, serialHash, _ = spendingPrevOuts[uniqueness]
                 raw_spend = rpc_conn.createrawzerocoinspend(serialHash, "", False)
             else:
-                # spend EGG
+                # spend PIV
                 value_out = int(spendingPrevOuts[uniqueness][0] - DEFAULT_FEE * COIN)
                 scriptPubKey = CScript([to_pubKey, OP_CHECKSIG])
                 prevout = COutPoint()
@@ -835,9 +835,9 @@ class PivxTestFramework():
                  prevHash:          (string) hex string of the previous block hash
                  prevModifier       (string) hex string of the previous block stake modifier
                  stakeableUtxos:    ({bytes --> (int, bytes, int)} dictionary)
-                                    maps CStake "uniqueness" (i.e. serialized COutPoint -or hash stake, for zEGG-)
+                                    maps CStake "uniqueness" (i.e. serialized COutPoint -or hash stake, for zpiv-)
                                     to (amount, prevScript, timeBlockFrom).
-                                    For zEGG prevScript is replaced with serialHash hex string.
+                                    For zpiv prevScript is replaced with serialHash hex string.
                  startTime:         (int) epoch time to be used as blocktime (iterated in solve_stake)
                  privKeyWIF:        (string) private key to be used for staking/signing
                                     If empty string, it will be used the pk from the stake input
@@ -861,7 +861,7 @@ class PivxTestFramework():
         # Find valid kernel hash - iterates stakeableUtxos, then block.nTime
         block.solve_stake(stakeableUtxos, int(prevModifier, 16))
 
-        # Check if this is a zPoS block or regular stake - sign stake tx
+        # Check if this is a zPoS block or regular/cold stake - sign stake tx
         block_sig_key = CECKey()
         isZPoS = is_zerocoin(block.prevoutStake)
         if isZPoS:
@@ -889,7 +889,7 @@ class PivxTestFramework():
                     # Use pk of the input. Ask sk from rpc_conn
                     rawtx = rpc_conn.getrawtransaction('{:064x}'.format(prevout.hash), True)
                     privKeyWIF = rpc_conn.dumpprivkey(rawtx["vout"][prevout.n]["scriptPubKey"]["addresses"][0])
-                # Use the provided privKeyWIF 
+                # Use the provided privKeyWIF (cold staking).
                 # export the corresponding private key to sign block
                 privKey, compressed = wif_to_privkey(privKeyWIF)
                 block_sig_key.set_compressed(compressed)

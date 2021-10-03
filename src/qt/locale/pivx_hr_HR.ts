@@ -122,12 +122,12 @@
         <translation>Adrese za primanje</translation>
     </message>
     <message>
-        <source>These are your EGG addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>To su vaše EGG adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
+        <source>These are your NestEgg addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>To su vaše NestEgg adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
     </message>
     <message>
-        <source>These are your EGG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>To su vaše EGG adrese za primanje uplata. Preporuča se upotreba nove adrese primatelja za svaku transakciju.</translation>
+        <source>These are your NestEgg addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>To su vaše NestEgg adrese za primanje uplata. Preporuča se upotreba nove adrese primatelja za svaku transakciju.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -360,8 +360,8 @@ za staking</translation>
         <translation>PONIŠTI</translation>
     </message>
     <message>
-        <source>EGG will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your EGGs from being stolen by malware infecting your computer.</source>
-        <translation>EGG će se sada zatvoriti kako bi se dovršio proces šifriranja. Ne zaboravite da šifriranje Vašeg novčanika ne može u potpunosti zaštititi vaše EGG od krađje zlonamjernog softvera koji zarazi vaše računalo.</translation>
+        <source>NestEgg will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your EGGs from being stolen by malware infecting your computer.</source>
+        <translation>NestEgg će se sada zatvoriti kako bi se dovršio proces šifriranja. Ne zaboravite da šifriranje Vašeg novčanika ne može u potpunosti zaštititi vaše EGG od krađje zlonamjernog softvera koji zarazi vaše računalo.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -429,6 +429,33 @@ za staking</translation>
     <message>
         <source>Banned Until</source>
         <translation>Blokiran do</translation>
+    </message>
+</context>
+<context>
+    <name>CSRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Obrazac</translation>
+    </message>
+    <message>
+        <source>Savings</source>
+        <translation>Ušteđjevina</translation>
+    </message>
+    <message>
+        <source>0,00 EGG</source>
+        <translation>0,00 EGG</translation>
+    </message>
+    <message>
+        <source>address</source>
+        <translation>adresa</translation>
+    </message>
+    <message>
+        <source>Not Staking</source>
+        <translation>Staking neaktivan</translation>
+    </message>
+    <message>
+        <source>Own delegation</source>
+        <translation>Vlastita delegacija</translation>
     </message>
 </context>
 <context>
@@ -637,6 +664,10 @@ za staking</translation>
         <translation>da</translation>
     </message>
     <message>
+        <source>delegated to %1 for cold staking</source>
+        <translation>delegirano %1 za cold staking</translation>
+    </message>
+    <message>
         <source>Select All</source>
         <translation>Označi sve</translation>
     </message>
@@ -679,6 +710,227 @@ za staking</translation>
     <message>
         <source>(change)</source>
         <translation>(promjena)</translation>
+    </message>
+</context>
+<context>
+    <name>ColdStakingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Obrazac</translation>
+    </message>
+    <message>
+        <source>Owner address (optional, if empty a new address will be created)</source>
+        <translation>Adresa vlasnika (neobavezno, ako ostavite prazno nova adresa će biti napravljena)</translation>
+    </message>
+    <message>
+        <source>Total Staking:</source>
+        <translation>Ukupan staking:</translation>
+    </message>
+    <message>
+        <source>Cold Staking</source>
+        <translation>Cold Staking</translation>
+    </message>
+    <message>
+        <source>Staker</source>
+        <translation>Staker</translation>
+    </message>
+    <message>
+        <source>Delegation</source>
+        <translation>Delegacija</translation>
+    </message>
+    <message>
+        <source>Delegate</source>
+        <translation>Delegiraj</translation>
+    </message>
+    <message>
+        <source>Clear All</source>
+        <translation>Očisti sve</translation>
+    </message>
+    <message>
+        <source>Delegated balance history</source>
+        <translation>Povijest delegiranih iznosa</translation>
+    </message>
+    <message>
+        <source>No delegations yet</source>
+        <translation>Nema još delegacija</translation>
+    </message>
+    <message>
+        <source>Total Staking: %1</source>
+        <translation>Ukupan staking: %1</translation>
+    </message>
+    <message>
+        <source>Error loading delegations: %1</source>
+        <translation>Greška pri učitavanju delegacija: %1</translation>
+    </message>
+    <message>
+        <source>You can delegate your EGGs, letting a hot node (24/7 online node)
+stake on your behalf, while you keep the keys securely offline.</source>
+        <translation>Možete delegirati svoje EGG-ove, dopuštajući hot node-u (24/7 online node) da stake-a za Vas, dok su Vaši ključevi offline na sigurnom.</translation>
+    </message>
+    <message>
+        <source>Enter owner address</source>
+        <translation>Unesi adresu vlasnika</translation>
+    </message>
+    <message>
+        <source>Accept EGG delegation / Delegate EGG</source>
+        <translation>Prihvati EGG delegaciju / Delegiraj EGG</translation>
+    </message>
+    <message>
+        <source>Cold Staking address</source>
+        <translation>Cold Staking adresa</translation>
+    </message>
+    <message>
+        <source>No receive addresses available, you can go to the receive screen and create some there!</source>
+        <translation>Nema dostupnih adresa, možete otići na zaslon primanja i tamo ih stvoriti!</translation>
+    </message>
+    <message>
+        <source>No contacts available, you can go to the contacts screen and add some there!</source>
+        <translation>Nema dostupnih kontakata, možete otići na zaslon s kontaktima i tamo ih dodati!</translation>
+    </message>
+    <message>
+        <source>Cannot send delegation, wallet locked</source>
+        <translation>Ne mogu poslati delegaciju, novčanik je zaključan</translation>
+    </message>
+    <message>
+        <source>Cold staking is networkely disabled</source>
+        <translation>Cold staking je mrežno onemogućen</translation>
+    </message>
+    <message>
+        <source>Coin Control</source>
+        <translation>Upravljanje novčićima</translation>
+    </message>
+    <message>
+        <source>Create Cold Staking Address</source>
+        <translation>Stvori Cold Staking adresu</translation>
+    </message>
+    <message>
+        <source>My Cold Staking Addresses</source>
+        <translation>Moje Cold Staking adrese</translation>
+    </message>
+    <message>
+        <source>Invalid entry</source>
+        <translation>Neispravan unos</translation>
+    </message>
+    <message>
+        <source>Invalid entry, minimum delegable amount is </source>
+        <translation>Neispravan unos, minimalni delegirajući iznos je</translation>
+    </message>
+    <message>
+        <source>Owner address invalid</source>
+        <translation>Neispravna adresa vlasnika</translation>
+    </message>
+    <message>
+        <source>ALERT!</source>
+        <translation>PAŽNJA!</translation>
+    </message>
+    <message>
+        <source>Delegating to an external owner address!
+
+The delegated coins will NOT be spendable by this wallet.
+Spending these coins will need to be done from the wallet or
+device containing the owner address.
+
+Do you wish to proceed?</source>
+        <translation>Preusmjeravanje na vanjsku adresu vlasnik!
+
+Delegirani novčići NEĆE se moći potrošiti s ovim novčanikom.
+Potrošnja ovih novčića morat će se obaviti iz novčanika ili uredjaja koji sadržava adresu vlasnika.
+
+Želite li nastaviti?</translation>
+    </message>
+    <message>
+        <source>Staking address corresponds to this wallet, change it to an external node</source>
+        <translation>Adresa za staking odgovara ovom novčaniku, promijenite je na vanjsku adresu</translation>
+    </message>
+    <message>
+        <source>Cannot create transaction.</source>
+        <translation>Neuspjelo stvaranje transakcije.</translation>
+    </message>
+    <message>
+        <source>Coins delegated</source>
+        <translation>Novčići delegirani</translation>
+    </message>
+    <message>
+        <source>You don't have any %1 to select.</source>
+        <translation>Nemate ni jedan %1 za odabrati.</translation>
+    </message>
+    <message>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>Ne može se izvršiti operacija, novčanik je zaključan</translation>
+    </message>
+    <message>
+        <source>URI copied to clipboard</source>
+        <translation>URI kopiran u medjuspremnik</translation>
+    </message>
+    <message>
+        <source>Address copied to clipboard</source>
+        <translation>Adresa kopirana u medjuspremnik</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopiraj</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Uredi</translation>
+    </message>
+    <message>
+        <source>Stake</source>
+        <translation>Stakeaj</translation>
+    </message>
+    <message>
+        <source>Blacklist</source>
+        <translation>Crna lista</translation>
+    </message>
+    <message>
+        <source>Edit Label</source>
+        <translation>Uredi naziv</translation>
+    </message>
+    <message>
+        <source>Copy owner
+address</source>
+        <translation>Kopiraj adresu
+vlasnika</translation>
+    </message>
+    <message>
+        <source>Address copied</source>
+        <translation>Adresa kopirana</translation>
+    </message>
+    <message>
+        <source>Edit Cold Address Label</source>
+        <translation>Uredi naziv Cold adrese</translation>
+    </message>
+    <message>
+        <source>Whitelist failed, please check the logs</source>
+        <translation>Dodavanje na popis dozvoljenih neuspjelo, molimo provjerite zapisnik</translation>
+    </message>
+    <message>
+        <source> staking!</source>
+        <translation>staking!</translation>
+    </message>
+    <message>
+        <source>Blacklist failed, please check the logs</source>
+        <translation>Dodavanje na popis zabranjenih neuspjelo, molimo provjerite zapisnik</translation>
+    </message>
+    <message>
+        <source> blacklisted from staking</source>
+        <translation>na crnoj listi za staking</translation>
+    </message>
+    <message>
+        <source>Owner address copied</source>
+        <translation>Adresa vlasnika kopirana</translation>
+    </message>
+    <message>
+        <source>Edit Owner Address Label</source>
+        <translation>Uredi oznaku adrese vlasnika</translation>
+    </message>
+    <message>
+        <source>Address label saved</source>
+        <translation>Naziv adrese spremljen</translation>
+    </message>
+    <message>
+        <source>Error storing address label</source>
+        <translation>Greška pri spremanju oznake adrese</translation>
     </message>
 </context>
 <context>
@@ -827,8 +1079,8 @@ Automatski će se pokrenuti čim novčanik dobije dovoljno potvrda o neiskorišt
         <translation>Uredi adresu pošiljatelja</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EGG address.</source>
-        <translation>Unesena adresa "%1" nije ispravna EGG adresa.</translation>
+        <source>The entered address "%1" is not a valid NestEgg address.</source>
+        <translation>Unesena adresa "%1" nije ispravna NestEgg adresa.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -880,16 +1132,16 @@ Automatski će se pokrenuti čim novčanik dobije dovoljno potvrda o neiskorišt
         <translation>verzija</translation>
     </message>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>NestEgg Core</source>
+        <translation>NestEgg Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About NestEGG</source>
-        <translation>O NestEGG-u</translation>
+        <source>About NestEgg Core</source>
+        <translation>O NestEgg Core-u</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -943,16 +1195,16 @@ Automatski će se pokrenuti čim novčanik dobije dovoljno potvrda o neiskorišt
         <translation>Dobrodošli</translation>
     </message>
     <message>
-        <source>Welcome to NestEGG.</source>
-        <translation>Dobrodošli u NestEGG.</translation>
+        <source>Welcome to NestEgg Core.</source>
+        <translation>Dobrodošli u NestEgg Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where NestEGG will store its data.</source>
-        <translation>Budući da je prvi put pokrenut program, možete odabrati gdje će NestEGG pohraniti svoje podatke.</translation>
+        <source>As this is the first time the program is launched, you can choose where NestEgg Core will store its data.</source>
+        <translation>Budući da je prvi put pokrenut program, možete odabrati gdje će NestEgg Core pohraniti svoje podatke.</translation>
     </message>
     <message>
-        <source>NestEGG will download and store a copy of the EGG block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>NestEGG preuzima i pohranjuje kopiju EGG blok-lanca. Barem će %1GB podataka biti pohranjeno u ovom direktoriju i to će s vremenom rasti. Novčanik će također biti pohranjena u ovom direktoriju.</translation>
+        <source>NestEgg Core will download and store a copy of the NestEgg block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>NestEgg Core preuzima i pohranjuje kopiju NestEgg blok-lanca. Barem će %1GB podataka biti pohranjeno u ovom direktoriju i to će s vremenom rasti. Novčanik će također biti pohranjena u ovom direktoriju.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -971,8 +1223,8 @@ Automatski će se pokrenuti čim novčanik dobije dovoljno potvrda o neiskorišt
         <translation>OK</translation>
     </message>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>NestEgg Core</source>
+        <translation>NestEgg Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1075,8 +1327,8 @@ Automatski će se pokrenuti čim novčanik dobije dovoljno potvrda o neiskorišt
         <translation>Stvori novi Masternode Controller</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a EGG Masternode you must dedicate a collateral amount of EGG (the unit of EGG) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Da biste stvoriti EGG Masternode, morate odvojiti 10,000 EGG (jedinica EGG-a) prema mreži (međjutim, ti novčići su i dalje vaši i nikad neće napustiti vaše vlasništvo). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt; Možete isključiti node i otključati novčiće u bilo kojem trenutku.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a NestEgg Masternode you must dedicate 25,000 EGG (the unit of NestEgg) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Da biste stvoriti NestEgg Masternode, morate odvojiti 25,000 EGG (jedinica NestEgg-a) prema mreži (međjutim, ti novčići su i dalje vaši i nikad neće napustiti vaše vlasništvo). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt; Možete isključiti node i otključati novčiće u bilo kojem trenutku.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Set Masternode Name</source>
@@ -1095,8 +1347,8 @@ Automatski će se pokrenuti čim novčanik dobije dovoljno potvrda o neiskorišt
         <translation>Obavezno imajte tu količinu novčića.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of collateral amount will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Transakcija od 10,000 EGG će biti napravljena&lt;/p&gt;&lt;p&gt;u novu praznu adresu u Vašem novčaniku.&lt;/p&gt;&lt;p&gt;Adresa je označena pod imenom Masternode-a.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 25,000 EGG will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Transakcija od 25,000 EGG će biti napravljena&lt;/p&gt;&lt;p&gt;u novu praznu adresu u Vašem novčaniku.&lt;/p&gt;&lt;p&gt;Adresa je označena pod imenom Masternode-a.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Address of the node that must always be online running the actual master node.</source>
@@ -1421,6 +1673,12 @@ NODES</source>
 NODEOVI</translation>
     </message>
     <message>
+        <source>COLD
+STAKING</source>
+        <translation>COLD
+STAKING</translation>
+    </message>
+    <message>
         <source>SETTINGS
 </source>
         <translation>POSTAVKE
@@ -1520,8 +1778,8 @@ NODEOVI</translation>
         <translation>Ako onemogućite potrošnju nepotvrđjenog ostatka, ostatak od transakcije &lt;br/&gt;ne može se koristiti dok ta transakcija nema barem jednu potvrdu. &lt;br/&gt;Ovo takođjer utječe na izračun vašeg salda.</translation>
     </message>
     <message>
-        <source>Automatically open the EGG client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatski otvorite EGG klijentski ulaz na ruteru. To funkcionira samo kada vaš ruter podržava UPnP i omogućen je.</translation>
+        <source>Automatically open the NestEgg client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatski otvorite NestEgg klijentski ulaz na ruteru. To funkcionira samo kada vaš ruter podržava UPnP i omogućen je.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1540,12 +1798,12 @@ NODEOVI</translation>
         <translation>Stručnjak</translation>
     </message>
     <message>
-        <source>Automatically start EGG after logging in to the system.</source>
-        <translation>Automatski pokrenite EGG nakon prijave u sustav.</translation>
+        <source>Automatically start NestEgg after logging in to the system.</source>
+        <translation>Automatski pokrenite NestEgg nakon prijave u sustav.</translation>
     </message>
     <message>
-        <source>&amp;Start EGG on system login</source>
-        <translation>&amp;Pokrenite EGG pri pokretanju sustava</translation>
+        <source>&amp;Start NestEgg on system login</source>
+        <translation>&amp;Pokrenite NestEgg pri pokretanju sustava</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1572,14 +1830,14 @@ NODEOVI</translation>
         <translation>&amp;Mreža</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting EGG.</source>
-        <translation>Jezik korisničkog sučelja možete postaviti ovdje. Postavke će stupiti na snagu nakon ponovnog pokretanja EGG novčanika.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting NestEgg.</source>
+        <translation>Jezik korisničkog sučelja možete postaviti ovdje. Postavke će stupiti na snagu nakon ponovnog pokretanja NestEgg novčanika.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-        https://discord.gg/zgcXB76</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>Jezik nedostaje ili prijevod nije potpun? Pomozite s prijevodom ovdje:
-        https://discord.gg/zgcXB76</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1622,8 +1880,8 @@ NODEOVI</translation>
         <translation>Prag razdvajanja Stake-a:</translation>
     </message>
     <message>
-        <source>Connect to the EGG network through a SOCKS5 proxy.</source>
-        <translation>Povežite se s EGG mrežom putem SOCKS5 proxy poslužitelja.</translation>
+        <source>Connect to the NestEgg network through a SOCKS5 proxy.</source>
+        <translation>Povežite se s NestEgg mrežom putem SOCKS5 proxy poslužitelja.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1769,8 +2027,8 @@ NODEOVI</translation>
 <context>
     <name>PIVXGUI</name>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>NestEgg Core</source>
+        <translation>NestEgg Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -1797,8 +2055,8 @@ NODEOVI</translation>
         <translation>Napusti aplikaciju</translation>
     </message>
     <message>
-        <source>NestEGG client</source>
-        <translation>NestEGG Klijent</translation>
+        <source>NestEgg Core client</source>
+        <translation>NestEgg Core Klijent</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1864,12 +2122,12 @@ Adresa: %4
         <translation>Nevažeća adresa za plaćanje %1</translation>
     </message>
     <message>
-        <source>Cannot start nestegg: click-to-pay handler</source>
-        <translation>Ne može se pokrenuti nestegg: clik-to-pay handler</translation>
+        <source>Cannot start NestEgg: click-to-pay handler</source>
+        <translation>Ne može se pokrenuti NestEgg: clik-to-pay handler</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid EGG address or malformed URI parameters.</source>
-        <translation>URI se ne može analizirati! To može biti uzrokovana nevažećom EGG adresom ili nepravilnim URI parametrima.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid NestEgg address or malformed URI parameters.</source>
+        <translation>URI se ne može analizirati! To može biti uzrokovana nevažećom NestEgg adresom ili nepravilnim URI parametrima.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -1958,8 +2216,8 @@ Adresa: %4
         <translation>Iznos</translation>
     </message>
     <message>
-        <source>Enter EGG address (e.g. %1)</source>
-        <translation>Upišite EGG adresu (npr. %1)</translation>
+        <source>Enter NestEgg address (e.g. %1)</source>
+        <translation>Upišite NestEgg adresu (npr. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2002,12 +2260,12 @@ Adresa: %4
         <translation>%1 ms</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EGG can no longer continue safely and will quit.</source>
-        <translation>Dogodila se fatalna pogreška. EGG ne može sigurno nastaviti i izaći će.</translation>
+        <source>A fatal error occurred. NestEgg can no longer continue safely and will quit.</source>
+        <translation>Dogodila se fatalna pogreška. NestEgg ne može sigurno nastaviti i izaći će.</translation>
     </message>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>NestEgg Core</source>
+        <translation>NestEgg Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
@@ -2026,8 +2284,8 @@ Adresa: %4
         <translation>Greška pri čitanju masternode konfiguracijske datoteke: %1</translation>
     </message>
     <message>
-        <source>NestEGG didn't yet exit safely...</source>
-        <translation>NestEGG nije ugašen sigurno...</translation>
+        <source>NestEgg Core didn't yet exit safely...</source>
+        <translation>NestEgg Core nije ugašen sigurno...</translation>
     </message>
     <message>
         <source>Contact</source>
@@ -2036,6 +2294,18 @@ Adresa: %4
     <message>
         <source>Receiving</source>
         <translation>Primanje</translation>
+    </message>
+    <message>
+        <source>Delegator</source>
+        <translation>Delegator</translation>
+    </message>
+    <message>
+        <source>Cold Staking</source>
+        <translation>Cold Staking</translation>
+    </message>
+    <message>
+        <source>Cold Staking Contact</source>
+        <translation>Cold Staking kontakt</translation>
     </message>
     <message>
         <source>Hidden</source>
@@ -2098,8 +2368,20 @@ Adresa: %4
         <translation>Sebi</translation>
     </message>
     <message>
+        <source>Cold stakes</source>
+        <translation>Cold stake-ovi</translation>
+    </message>
+    <message>
         <source>Hot stakes</source>
         <translation>Hot stake-ovi</translation>
+    </message>
+    <message>
+        <source>Delegated</source>
+        <translation>Delegirano</translation>
+    </message>
+    <message>
+        <source>Delegations</source>
+        <translation>Delegacije</translation>
     </message>
     <message>
         <source>by Label</source>
@@ -2237,8 +2519,8 @@ Adresa: %4
         <translation>Block chain</translation>
     </message>
     <message>
-        <source>Open the EGG debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Otvorite EGG debug log datoteku iz aktualnog direktorija podataka. To može potrajati nekoliko sekundi za velike datoteke zapisnika.</translation>
+        <source>Open the NestEgg debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Otvorite NestEgg debug log datoteku iz aktualnog direktorija podataka. To može potrajati nekoliko sekundi za velike datoteke zapisnika.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -2436,7 +2718,7 @@ Adresa: %4
         <source>Deletes all local blockchain folders so the wallet synchronizes from scratch.</source>
         <translation>Briše sve lokalne blockchain direktorije pa se novčanik sinkronizira od početka.</translation>
     </message>
-    <message>   
+    <message>
         <source>The buttons below will restart the wallet with command-line options to repair the wallet, fix issues with corrupt blockhain files or missing/obsolete transactions.</source>
         <translation>Donji gumbi će ponovo pokrenuti novčanik pomoću opcija naredbenog retka za popravak lisnice, popraviti probleme s korumpiranim datotekama blockchaina ili nedostajućim / zastarjelim transakcijama.</translation>
     </message>
@@ -2461,8 +2743,8 @@ Adresa: %4
         <translation>Iz:</translation>
     </message>
     <message>
-        <source>Welcome to the EGG RPC console.</source>
-        <translation>Dobrodošli na EGG RPC konzolu.</translation>
+        <source>Welcome to the NestEgg RPC console.</source>
+        <translation>Dobrodošli na NestEgg RPC konzolu.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -2773,6 +3055,14 @@ Adresa: %4
         <translation>GENERIRAJ</translation>
     </message>
     <message>
+        <source>Creates an address to receive coin delegations and be able to stake them.</source>
+        <translation>Stvara adresu za primanje delegacija novčića i mogućnost njihovog stake-anja.</translation>
+    </message>
+    <message>
+        <source>New Cold Staking Address</source>
+        <translation>Nova Cold Staking adresa</translation>
+    </message>
+    <message>
         <source>Amount (optional)</source>
         <translation>Iznos (neobavezno)</translation>
     </message>
@@ -2804,8 +3094,8 @@ Adresa: %4
         <translation>Prilagođjena adresa za ostatak</translation>
     </message>
     <message>
-        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" EGG address</source>
-        <translation>Ostatak vrijednosti koja proizlazi iz ulaza umanjen za izlaznu vrijednost ide na EGG adresu za "ostatak"</translation>
+        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" NestEgg address</source>
+        <translation>Ostatak vrijednosti koja proizlazi iz ulaza umanjen za izlaznu vrijednost ide na NestEgg adresu za "ostatak"</translation>
     </message>
     <message>
         <source>SAVE</source>
@@ -2925,6 +3215,10 @@ Do you want to continue?</source>
         <translation>Neispravan unos, prethodni unosi moraju biti ispravni prije dodavanja novog</translation>
     </message>
     <message>
+        <source>Possibly spend coins delegated for cold-staking (currently available: %1</source>
+        <translation>Moguća potrošnja novčića delegiranih za cold-staking (trenutno dostupno: %1</translation>
+    </message>
+    <message>
         <source>Invalid entry</source>
         <translation>Neispravan unos</translation>
     </message>
@@ -2939,6 +3233,14 @@ Do you want to continue?</source>
     <message>
         <source>Cannot create transaction.</source>
         <translation>Neuspjelo stvaranje transakcije.</translation>
+    </message>
+    <message>
+        <source>WARNING:
+Transaction spends a cold-stake delegation, voiding it.
+These coins will no longer be cold-staked.</source>
+        <translation>UPOZORENJE:
+Transakcija troši cold-stake delegaciju, uklanjajući ju.
+Ovi novčići više neće biti cold-stakeani.</translation>
     </message>
     <message>
         <source>Transaction sent</source>
@@ -3115,8 +3417,8 @@ Do you want to continue?</source>
         <translation>DEŠIFRIRAJ KLJUČ</translation>
     </message>
     <message>
-        <source>EGG address</source>
-        <translation>EGG adresa</translation>
+        <source>NestEgg address</source>
+        <translation>NestEgg adresa</translation>
     </message>
     <message>
         <source>Enter address</source>
@@ -3248,8 +3550,8 @@ Verify that you have installed a predetermined text editor.</source>
 Provjerite jeste li instalirali unaprijed određjeni uređjivač teksta.</translation>
     </message>
     <message>
-        <source>Welcome to the EGG RPC console.</source>
-        <translation>Dobrodošli na EGG RPC konzolu.</translation>
+        <source>Welcome to the NestEgg RPC console.</source>
+        <translation>Dobrodošli na NestEgg RPC konzolu.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
@@ -3358,12 +3660,12 @@ Provjerite jeste li instalirali unaprijed određjeni uređjivač teksta.</transl
         <translation>Izvezi popis adresa</translation>
     </message>
     <message>
-        <source>PIVX_tx_csv_export(*.csv)</source>
-        <translation>PIVX_transakcije_csv_izvoz(*.csv)</translation>
+        <source>NestEgg_tx_csv_export(*.csv)</source>
+        <translation>NestEgg_transakcije_csv_izvoz(*.csv)</translation>
     </message>
     <message>
-        <source>PIVX_addresses_csv_export(*.csv)</source>
-        <translation>PIVX_adrese_csv_izvoz(*.csv)</translation>
+        <source>NestEgg_addresses_csv_export(*.csv)</source>
+        <translation>NestEgg_adrese_csv_izvoz(*.csv)</translation>
     </message>
     <message>
         <source>Please select a folder to export the csv file first.</source>
@@ -3433,50 +3735,50 @@ Došlo je do greške prilikom spremanja popisa adresa u %1. Molimo pokušajte po
         <translation>Obrazac</translation>
     </message>
     <message>
-        <source>1) What is EGG?</source>
-        <translation>1) Što je EGG?</translation>
+        <source>1) What is NestEgg?</source>
+        <translation>1) Što je NestEgg?</translation>
     </message>
     <message>
         <source>2) Why are my EGG unspendable?</source>
         <translation>2) Zašto se moji EGG ne mogu potrošiti?</translation>
     </message>
     <message>
-        <source>https://sappcoin.com/</source>
-        <translation>https://sappcoin.com/</translation>
+        <source>https://nesteggcoin.com/</source>
+        <translation>https://nesteggcoin.com/</translation>
     </message>
     <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is EGG?</source>
-        <translation>Što je EGG?</translation>
+        <source>What is NestEgg?</source>
+        <translation>Što je NestEgg?</translation>
     </message>
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           EGG is a form of digital online money using blockchain technology
+                           NestEgg is a form of digital online money using blockchain technology
                            that can be easily transferred globally, instantly, and with near
-                           zero fees.  EGG incorporates market leading security &amp;
+                           zero fees.  NestEgg incorporates market leading security &amp;
                            privacy and is also the first PoS (Proof of Stake) Cryptocurrency
                            to implement ZeroCoin(zEGG) and Zerocoin staking.
                            &lt;/p&gt;&lt;p align="justify"&gt;
-                           EGG utilizes a Proof of Stake (PoS) consensus system algorithm,
-                           allowing all owners of EGG to participate in earning block rewards
+                           NestEgg utilizes a Proof of Stake (PoS) consensus system algorithm,
+                           allowing all owners of NestEgg to participate in earning block rewards
                            while securing the network with full node wallets, as well as to
                            run Masternodes to create and vote on proposals.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-EGG je oblik digitalnog online novca koji koristi blockchain tehnologiju
+NestEgg je oblik digitalnog online novca koji koristi blockchain tehnologiju
 koji se lako može slati i primati globalno, trenutno, i gotovo bez naknade.
-EGG uključuje vodeću sigurnost  i privatnost na tržištu
+NestEgg uključuje vodeću sigurnost  i privatnost na tržištu
 i takođjer je prva PoS (Proof of Stake) kriptovaluta
 koja je implementirala ZeroCoin (zEGG) i Zerocoin staking.
 &lt;/p&gt;&lt;p align="justify"&gt;
-EGG koristi algoritam konsenzusa Proof of Stake (PoS),
-omogućujući svim vlasnicima EGG-a sudjelovanje u zarađi blokovih nagrada
+NestEgg koristi algoritam konsenzusa Proof of Stake (PoS),
+omogućujući svim vlasnicima NestEgg-a sudjelovanje u zarađi blokovih nagrada
 dok osiguravaju mrežu full node novčanicima, kao i
 vodjenje Masternode-ova za stvaranje i glasanje o prijedlozima.
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
@@ -3493,19 +3795,19 @@ vodjenje Masternode-ova za stvaranje i glasanje o prijedlozima.
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           Newly received EGG requires 6 confirmations on the network
+                           Newly received NestEgg requires 6 confirmations on the network
                            to become eligible for spending which can take ~6 minutes.
                            &lt;/p&gt;&lt;p align="justify"&gt;
-                           Your EGG wallet also needs to be completely synchronized
+                           Your NestEgg wallet also needs to be completely synchronized
                            to see and spend balances on the network.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-Novoprimljeni EGG zahtjeva 6 potvrda na mreži
+Novoprimljeni NestEgg zahtjeva 6 potvrda na mreži
 da bi se mogao potrošiti što može potrajati ~6 minuta.
 &lt;/p&gt;&lt;p align="justify"&gt;
-Vaš EGG novčanik takođjer treba biti u potpunosti sinkroniziran
+Vaš NestEgg novčanik takođjer treba biti u potpunosti sinkroniziran
 da biste vidjeli i mogli potrošiti sredstva na mreži.
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
 </translation>
@@ -3543,19 +3845,20 @@ da biste vidjeli i mogli potrošiti sredstva na mreži.
         <translation>Što je Masternode Controller?</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the collateral amount can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Masternode Controller novčanik je mjesto gdje zalog od 10,000 EGG može stajati tijekom Controller-Remote podešavanja masternode-a. To je novčanik koji može aktivirati Remote masternode novčanik(e) i omogućiti Vam držanje zaloga novčića offline dok Remote masternode novčanik ostaje online.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the 25,000 EGG collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Masternode Controller novčanik je mjesto gdje zalog od 25,000 EGG može stajati tijekom Controller-Remote podešavanja masternode-a. To je novčanik koji može aktivirati Remote masternode novčanik(e) i omogućiti Vam držanje zaloga novčića offline dok Remote masternode novčanik ostaje online.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           A masternode is a computer running a full node EGG wallet with a
-                           required amount of secured collateral to provide extra services
+                           A masternode is a computer running a full node NestEgg core wallet with a
+                           requirement of 25,000 EGG secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
                            &lt;/p&gt;&lt;p align="justify"&gt;
 
                            &lt;ul&gt;
+                           &lt;li&gt;Instant transactions (SwiftX)&lt;/li&gt;
                            &lt;li&gt;A decentralized governance (Proposal Voting)&lt;/li&gt;
                            &lt;li&gt;A decentralized budgeting system (Treasury)&lt;/li&gt;
                            &lt;li&gt;Validation of transactions within each block&lt;/li&gt;
@@ -3571,17 +3874,17 @@ da biste vidjeli i mogli potrošiti sredstva na mreži.
                            Masternode Perks:
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;Participate in EGG Governance&lt;/li&gt;
+                           &lt;li&gt;Participate in NestEgg Governance&lt;/li&gt;
                            &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
                            &lt;li&gt;Commodity option for future sale&lt;/li&gt;
-                           &lt;li&gt;Help secure the EGG network&lt;/li&gt;
+                           &lt;li&gt;Help secure the NestEgg network&lt;/li&gt;
                            &lt;/ul&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
 
                            Requirements:
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;Enough collateral balance per single Masternode instance&lt;/li&gt;
+                           &lt;li&gt;25,000 EGG per single Masternode instance&lt;/li&gt;
                            &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
                            &lt;li&gt;Need dedicated IP address&lt;/li&gt;
                            &lt;li&gt;Masternode wallet to remain online&lt;/li&gt;
@@ -3590,13 +3893,14 @@ da biste vidjeli i mogli potrošiti sredstva na mreži.
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-Masternode je računalo koje pokreće full node NestEGG novčanik sa
-zahtjevanih 10,000 EGG-a osiguranog zaloga da pruži dodatne usluge
+Masternode je računalo koje pokreće full node NestEgg Core novčanik sa
+zahtjevanih 25,000 EGG-a osiguranog zaloga da pruži dodatne usluge
 mreži, i zauzvrat redovito primi dio nagrade blokova.
 Te usluge uključuju:
 &lt;/p&gt;&lt;p align="justify"&gt;
 
 &lt;ul&gt;
+&lt;li&gt;Trenutne transakcije (SwiftX)&lt;/li&gt;
 &lt;li&gt;Decentralizirano upravljanje (glasanje o zahtjevima)&lt;/li&gt;
 &lt;li&gt;Decentralizirani sustav proračuna (riznica)&lt;/li&gt;
 &lt;li&gt;Validacija transakcija unutar svakog bloka&lt;/li&gt;
@@ -3612,17 +3916,17 @@ vlasnicima masternode-ova umanjeno za troškove održavanja.
 Povlastice masternode-ova:
 &lt;/p&gt;&lt;p align="justify"&gt;
 &lt;ul&gt;
-&lt;li&gt;Sudjelovanje u upravljanju EGG-a&lt;/li&gt;
+&lt;li&gt;Sudjelovanje u upravljanju NestEgg-a&lt;/li&gt;
 &lt;li&gt;Zaradjivanje Masternode nagrada&lt;/li&gt;
 &lt;li&gt;Robna opcija za buduću prodaju&lt;/li&gt;
-&lt;li&gt;Pomaže u osiguravanju EGG mreže&lt;/li&gt;
+&lt;li&gt;Pomaže u osiguravanju NestEgg mreže&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/p&gt;&lt;p align="justify"&gt;
 
 Zahtjevi:
 &lt;/p&gt;&lt;p align="justify"&gt;
 &lt;ul&gt;
-&lt;li&gt;10,000 EGG po svakom Masternode-u&lt;/li&gt;
+&lt;li&gt;25,000 EGG po svakom Masternode-u&lt;/li&gt;
 &lt;li&gt;Mora biti pohranjem u Core novčaniku&lt;/li&gt;
 &lt;li&gt;Mora biti jedinstvena IP adresa&lt;/li&gt;
 &lt;li&gt;Masternode novčanik treba ostati online&lt;/li&gt;
@@ -3797,8 +4101,8 @@ Zahtjevi:
         <translation>Number of script verification threads</translation>
     </message>
     <message>
-        <source>Start EGG on system login</source>
-        <translation>Pokrenite EGG pri pokretanju računala</translation>
+        <source>Start NestEgg on system login</source>
+        <translation>Pokrenite NestEgg pri pokretanju računala</translation>
     </message>
     <message>
         <source>Minimize to the tray instead of the taskbar</source>
@@ -3885,8 +4189,8 @@ Jeste li sigurni?
         <translation>PotvrdniOkvir</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other EGG addresses after it matures.</source>
-        <translation>MultiSend vam omogućuje da automatski pošaljete do 100% svog uloga ili nagrade masternode na popis drugih EGG adresa nakon što sazriju.</translation>
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other NestEgg addresses after it matures.</source>
+        <translation>MultiSend vam omogućuje da automatski pošaljete do 100% svog uloga ili nagrade masternode na popis drugih NestEgg adresa nakon što sazriju.</translation>
     </message>
     <message>
         <source>Active</source>
@@ -4008,8 +4312,8 @@ Označite jedan ili oba polja za potvrdu da biste poslali staking i/ili masterno
         <translation>Poruka</translation>
     </message>
     <message>
-        <source>EGG address or contact label</source>
-        <translation>EGG adresa ili naziv kontakta</translation>
+        <source>NestEgg address or contact label</source>
+        <translation>NestEgg adresa ili naziv kontakta</translation>
     </message>
     <message>
         <source>Enter address</source>
@@ -4293,8 +4597,8 @@ Označite jedan ili oba polja za potvrdu da biste poslali staking i/ili masterno
         <translation>Najčešće postavljena pitanja</translation>
     </message>
     <message>
-        <source>About EGG</source>
-        <translation>O EGG-u</translation>
+        <source>About NestEgg</source>
+        <translation>O NestEgg-u</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -4360,11 +4664,11 @@ Jeste li sigurni?
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>NestEGG is shutting down...</source>
-        <translation>NestEGG se zatvara...</translation>
+        <source>NestEgg Core is shutting down...</source>
+        <translation>NestEgg Core se zatvara...</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window dieggears.</source>
         <translation>Nemojte isključivati računalo dok ovaj prozor ne nestane.</translation>
     </message>
 </context>
@@ -4390,8 +4694,8 @@ Jeste li sigurni?
         <translation>Učitavanje...</translation>
     </message>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>NestEgg Core</source>
+        <translation>NestEgg Core</translation>
     </message>
 </context>
 <context>
@@ -4681,8 +4985,16 @@ se nova sigurnosna kopija.
         <translation>z%1 Stake</translation>
     </message>
     <message>
+        <source>%1 Cold Stake</source>
+        <translation>%1 Cold Stake</translation>
+    </message>
+    <message>
         <source>%1 Stake on behalf of</source>
         <translation>%1 Stake u korist</translation>
+    </message>
+    <message>
+        <source>Stake delegation</source>
+        <translation>Stake delegacija</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4695,6 +5007,10 @@ se nova sigurnosna kopija.
     <message>
         <source>Payment to yourself</source>
         <translation>Plaćanje sebi</translation>
+    </message>
+    <message>
+        <source>Stake delegation spent by</source>
+        <translation>Stake delegacija potrošena od strane</translation>
     </message>
     <message>
         <source>Mined</source>
@@ -4900,25 +5216,25 @@ se nova sigurnosna kopija.
     </message>
     <message>
         <source>Welcome to
-NestEGG Wallet</source>
+		NestEgg Core Wallet</source>
         <translation>Dobrodošli u
-        NestEGG temeljni novčanik</translation>
+		NestEgg temeljni novčanik</translation>
     </message>
     <message>
-        <source>EGG is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>EGG je najinovativnija blockchain tehnologija na svijetu bazirana na Proof of Stake tehnologiji. Razvijena je od strane vrlo iskusnih programera i kriptografa.</translation>
+        <source>NestEgg is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>NestEgg je najinovativnija blockchain tehnologija na svijetu bazirana na Proof of Stake tehnologiji. Razvijena je od strane vrlo iskusnih programera i kriptografa.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - EGG believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kao što kaže naš manifest: Privatnost je temeljno ljudsko pravo o kojemu se ne pregovara; korisnicima daje slobodu dijeljenja svojih podataka kad god i s kim god žele - EGG vjeruje u suverenitet.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - NestEgg believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kao što kaže naš manifest: Privatnost je temeljno ljudsko pravo o kojemu se ne pregovara; korisnicima daje slobodu dijeljenja svojih podataka kad god i s kim god žele - NestEgg vjeruje u suverenitet.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>The masternode network is EGG's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
-        <translation>Masternode mreža je mreža drugog sloja EGG-a na vrhu blockchaina koja omogućuje našem DAO-u pružanje decentraliziranog upravljanja i riznice.</translation>
+        <source>The masternode network is NestEgg's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
+        <translation>Masternode mreža je mreža drugog sloja NestEgg-a na vrhu blockchaina koja omogućuje našem DAO-u pružanje decentraliziranog upravljanja i riznice.</translation>
     </message>
     <message>
-        <source>How EGG respects your privacy?</source>
-        <translation>Kako EGG poštuje Vašu privatnost?</translation>
+        <source>How NestEgg respects your privacy?</source>
+        <translation>Kako NestEgg poštuje Vašu privatnost?</translation>
     </message>
     <message>
         <source>What is a Masternode?</source>
@@ -4952,8 +5268,8 @@ NestEGG Wallet</source>
         <translation>Pridržavajte se na navedenu adresu da biste slušali veze JSON-RPC. Koristite [host]: port notation za IPv6. Ova se opcija može odrediti više puta (zadano: vezati se na sva sučelja)</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. NestEGG is probably already running.</source>
-        <translation>Nije moguće dobiti zaključavanje na direktoriju podataka %s. NestEGG vjerojatno već radi.</translation>
+        <source>Cannot obtain a lock on data directory %s. NestEgg Core is probably already running.</source>
+        <translation>Nije moguće dobiti zaključavanje na direktoriju podataka %s. NestEgg Core vjerojatno već radi.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4978,6 +5294,10 @@ NestEGG Wallet</source>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
         <translation>Distribuirano pod MIT softverskom licencom, pogledajte priloženu datoteku COPYING ili &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
+    </message>
+    <message>
+        <source>Enable cold staking functionality (0-1, default: %u). Disabled if staking=0</source>
+        <translation>Omogući cold staking funkcionalnost (0-1, zadano: %u). Onemogućeno ako je staking=0</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -5112,8 +5432,8 @@ NestEGG Wallet</source>
         <translation>Ukupna duljina teksta mrežne verzije (%i) prelazi maksimalnu duljinu (%i). Smanjite broj ili veličinu uacommentsa.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. NestEGG is probably already running.</source>
-        <translation>Nije moguće vezati se na %s na ovom računalu. NestEGG vjerojatno već radi.</translation>
+        <source>Unable to bind to %s on this computer. NestEgg Core is probably already running.</source>
+        <translation>Nije moguće vezati se na %s na ovom računalu. NestEgg Core vjerojatno već radi.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5128,8 +5448,8 @@ NestEGG Wallet</source>
         <translation>Upozorenje: -paytxfee je vrlo visoka! To je transakcijska naknada koju ćete platiti ako šaljete transakciju.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
-        <translation>Upozorenje: Provjerite jesu li datum i vrijeme vašeg računala točni! Ako je vaš sat pogrešan, NestEGG neće raditi ispravno.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong NestEgg Core will not work properly.</source>
+        <translation>Upozorenje: Provjerite jesu li datum i vrijeme vašeg računala točni! Ako je vaš sat pogrešan, NestEgg Core neće raditi ispravno.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5208,6 +5528,10 @@ NestEGG Wallet</source>
         <translation>Autorska prava (C) 2015-%i The PIVX Core Developers</translation>
     </message>
     <message>
+        <source>Copyright (C) 2020-%i NestEgg Core Developers</source>
+        <translation>Autorska prava (C) 2020-%i NestEgg Core Developers</translation>
+    </message>
+    <message>
         <source>Corrupted block database detected</source>
         <translation>Otkriven oštećen blok podataka</translation>
     </message>
@@ -5243,6 +5567,14 @@ NestEGG Wallet</source>
     <message>
         <source>Done loading</source>
         <translation>Završeno učitavanje</translation>
+    </message>
+    <message>
+        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Omogući objavu hasha transakcije (zaključano putem usluge SwiftX) u &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Omogući objavljivanje neobrađjene transakcije (zaključano putem usluge SwiftX) u &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
@@ -5337,8 +5669,8 @@ NestEGG Wallet</source>
         <translation>Informacije</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. NestEGG is shutting down.</source>
-        <translation>Provjera ispravnosti inicijalizacije nije uspjela. NestEGG se zatvara.</translation>
+        <source>Initialization sanity check failed. NestEgg Core is shutting down.</source>
+        <translation>Provjera ispravnosti inicijalizacije nije uspjela. NestEgg Core se zatvara.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5385,12 +5717,20 @@ NestEGG Wallet</source>
         <translation>Odabrana vrijednost novčića je manja od količine za plačanje</translation>
     </message>
     <message>
+        <source>SwiftX options:</source>
+        <translation>SwiftX opcije:</translation>
+    </message>
+    <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
         <translation>Ovo je priprema za testiranje prije puštanja - upotrebljavajte na vlastiti rizik - nemojte ga koristiti za staking ili trgovinske aplikacije!</translation>
     </message>
     <message>
-        <source>Disable all EGG specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)</source>
-        <translation>Onemogući sve specifične funkcije EGG (Masternodes, Zerocoin, Budgeting) (0-1, zadano: %u)</translation>
+        <source>Disable all NestEgg specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Onemogući sve specifične funkcije NestEgg (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, zadano: %u)</translation>
+    </message>
+    <message>
+        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
+        <translation>Omogućite SwiftX, prikažite potvrde za zaključane transakcije (bool, zadano: %s)</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -checklevel found. Checklevel must be level 4.</source>
@@ -5411,6 +5751,10 @@ NestEGG Wallet</source>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
         <translation>Navedite put prilagođenog sigurnosnog kopiranja da biste dodali kopiju sigurnosne kopije lisnice. Ako je postavljeno kao dir, svaka sigurnosna kopija generira vremensku datoteku. Ako je postavljen kao datoteka, prepisat će na tu datoteku svaku kopiju.</translation>
+    </message>
+    <message>
+        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>SwiftX zahtijeva ulaze s najmanje 6 potvrda, možda ćete morati pričekati nekoliko minuta i pokušati ponovo.</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -5625,8 +5969,8 @@ NestEGG Wallet</source>
         <translation>Priprema za resinkronizaciju...</translation>
     </message>
     <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
-        <translation>Provjerite jesu li datum i vrijeme vašeg računala točni! Ako je vaš sat pogrešan, NestEGG neće raditi ispravno.</translation>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong NestEgg Core will not work properly.</source>
+        <translation>Provjerite jesu li datum i vrijeme vašeg računala točni! Ako je vaš sat pogrešan, NestEgg Core neće raditi ispravno.</translation>
     </message>
     <message>
         <source>Specify location of debug log file: this can be an absolute path or a path relative to the data directory (default: %s)</source>
@@ -5959,8 +6303,8 @@ NestEGG Wallet</source>
         <translation>Novčanik %s nalazi se izvan direktorija podataka %s</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart NestEGG to complete</source>
-        <translation>Potrebno je prepisati novčanik: ponovo pokrenite NestEGG</translation>
+        <source>Wallet needed to be rewritten: restart NestEgg Core to complete</source>
+        <translation>Potrebno je prepisati novčanik: ponovo pokrenite NestEgg Core</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -6030,8 +6374,8 @@ NestEGG Wallet</source>
         <translation>Pošalji javne novčiće (EGG)</translation>
     </message>
     <message>
-        <source>EGG address or contact label</source>
-        <translation>EGG adresa ili naziv kontakta</translation>
+        <source>NestEgg address or contact label</source>
+        <translation>NestEgg adresa ili naziv kontakta</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -6056,6 +6400,10 @@ NestEGG Wallet</source>
     <message>
         <source>Reset to default</source>
         <translation>Resetiraj na početno stanje</translation>
+    </message>
+    <message>
+        <source>Include delegated</source>
+        <translation>Uključi delegirane</translation>
     </message>
 </context>
 </TS>

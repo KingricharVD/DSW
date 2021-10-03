@@ -64,7 +64,10 @@ public:
     void setShowZcTxes(bool fOnlyZc);
 
     /** Only stakes txes **/
-    void setOnlyStakesandMN(bool fOnlyStakesandMN);
+    void setOnlyStakes(bool fOnlyStakes);
+
+    /** Shows only p2cs-p2cs && xxx-p2cs **/
+    void setOnlyColdStakes(bool fOnlyColdStakes);
 
     int rowCount(const QModelIndex& parent = QModelIndex()) const;
     static bool isOrphan(const int status, const int type);
@@ -85,11 +88,12 @@ private:
     bool showInactive;
     bool fHideOrphans = true;
     bool fOnlyZc = false;
-    bool fOnlyStakesandMN = false;
+    bool fOnlyStakes = false;
+    bool fOnlyColdStaking = false;
 
     bool isZcTx(int type) const;
     bool isStakeTx(int type) const;
-	bool isMasternodeRewardTx(int type) const;
+    bool isColdStake(int type) const;
 };
 
 #endif // BITCOIN_QT_TRANSACTIONFILTERPROXY_H

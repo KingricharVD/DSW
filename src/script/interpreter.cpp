@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2017-2020 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2020-2021 The NestEgg Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -956,6 +956,15 @@ bool EvalScript(std::vector<std::vector<unsigned char> >& stack, const CScript& 
                             popstack(stack);
                         else
                             return set_error(serror, SCRIPT_ERR_CHECKMULTISIGVERIFY);
+                    }
+                }
+                break;
+
+                case OP_CHECKCOLDSTAKEVERIFY:
+                {
+                    // check it is used in a valid cold stake transaction.
+                    if(!checker.CheckColdStake(script)) {
+                        return set_error(serror, SCRIPT_ERR_CHECKCOLDSTAKEVERIFY);
                     }
                 }
                 break;

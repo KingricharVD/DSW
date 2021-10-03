@@ -199,12 +199,13 @@ void TxDetailDialog::onOutputsClicked()
             if (tx) {
                 int i = 0;
                 for (const CTxOut &out : tx->vout) {
-                    QString labelRes;
-                    CTxDestination dest;
-                    if (ExtractDestination(out.scriptPubKey, dest)) {
-                        std::string address = EncodeDestination(dest);
-                        labelRes = QString::fromStdString(address);
-                        labelRes = labelRes.left(16) + "..." + labelRes.right(16);
+                  QString labelRes;
+                CTxDestination dest;
+                bool isCsAddress = out.scriptPubKey.IsPayToColdStaking();
+                if (ExtractDestination(out.scriptPubKey, dest, isCsAddress)) {
+                    std::string address = EncodeDestination(dest, isCsAddress);
+                    labelRes = QString::fromStdString(address);
+                    labelRes = labelRes.left(16) + "..." + labelRes.right(16);
                     } else {
                         labelRes = tr("Unknown");
                     }

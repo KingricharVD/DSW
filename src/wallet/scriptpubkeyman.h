@@ -1,6 +1,6 @@
 // Copyright (c) 2019 The Bitcoin Core developers
 // Copyright (c) 2020 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2020-2021 The NestEgg Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,10 +12,8 @@
 #include "wallet/walletdb.h"
 
 //! Default for -keypool
-static const uint32_t DEFAULT_KEYPOOL_SIZE      = 100;
-static const uint32_t BIP32_HARDENED_KEY_LIMIT  = 0x80000000;
-// https://github.com/satoshilabs/slips/blob/master/slip-0044.md
-static const uint32_t BIP32_HDCHAIN             = 0x340; 
+static const unsigned int DEFAULT_KEYPOOL_SIZE = 100;
+static const uint32_t BIP32_HARDENED_KEY_LIMIT = 0x80000000;
 
 /*
  * A class implementing ScriptPubKeyMan manages some (or all) scriptPubKeys used in a wallet.
@@ -59,7 +57,7 @@ public:
     unsigned int GetKeyPoolSize() const;
 
     /* Staking key pool size */
-    unsigned int GetECommerceKeyPoolSize() const;
+    unsigned int GetStakingKeyPoolSize() const;
 
     /* Whether the wallet has or not keys in the pool */
     bool CanGetAddresses(const uint8_t& type = HDChain::ChangeType::EXTERNAL);
@@ -138,7 +136,7 @@ private:
     // Key pool maps
     std::set<int64_t> setInternalKeyPool;
     std::set<int64_t> setExternalKeyPool;
-    std::set<int64_t> setECommerceKeyPool;
+    std::set<int64_t> setStakingKeyPool;
     int64_t m_max_keypool_index = 0;
     std::map<CKeyID, int64_t> m_pool_key_to_index;
     // Tracks keypool indexes to CKeyIDs of keys that have been taken out of the keypool but may be returned to it

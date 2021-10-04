@@ -189,6 +189,7 @@ BITCOIN_CORE_H = \
   invalid_serials.json.h \
   legacy/stakemodifier.h \
   kernel.h \
+	swifttx.h \
   key.h \
   key_io.h \
   keystore.h \
@@ -357,6 +358,7 @@ libbitcoin_wallet_a_SOURCES = \
   addressbook.cpp \
   crypter.cpp \
   key_io.cpp \
+	swifttx.cpp \
   masternode.cpp \
   masternode-budget.cpp \
   masternode-payments.cpp \

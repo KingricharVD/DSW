@@ -376,6 +376,7 @@ CAmount CMasternode::GetMasternodeCollateral(int nHeight)
 } else if (nHeight > 650000) {
     return 200000 * COIN;
 }
+CAmount CMasternode::GetMasternodePayment()
 }
 
 CAmount CMasternode::GetBlockValue(int nHeight)

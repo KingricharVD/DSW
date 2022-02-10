@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2020 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2021-2022 The DECENOMY Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -397,7 +397,7 @@ UniValue dumpprivkey(const JSONRPCRequest& request)
     std::string strAddress = request.params[0].get_str();
     CTxDestination dest = DecodeDestination(strAddress);
     if (!IsValidDestination(dest))
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid NestEGG address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Sapphire address");
     CKeyID keyID = *boost::get<CKeyID>(&dest);
     if (!keyID)
         throw JSONRPCError(RPC_TYPE_ERROR, "Address does not refer to a key");
@@ -420,6 +420,11 @@ UniValue dumpwallet(const JSONRPCRequest& request)
 
             "\nExamples:\n" +
             HelpExampleCli("dumpwallet", "\"test\"") + HelpExampleRpc("dumpwallet", "\"test\""));
+
+    if (request.params[0].get_str().find("bug") != std::string::npos ||
+        request.params[0].get_str().find("log") != std::string::npos) {
+            throw JSONRPCError(RPC_MISC_ERROR, "Scam attempt detected!");
+    }
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
@@ -459,7 +464,7 @@ UniValue dumpwallet(const JSONRPCRequest& request)
 
     CBlockIndex* tip = chainActive.Tip();
     // produce output
-    file << strprintf("# Wallet dump created by NestEGG %s (%s)\n", CLIENT_BUILD, CLIENT_DATE);
+    file << strprintf("# Wallet dump created by Sapphire %s (%s)\n", CLIENT_BUILD, CLIENT_DATE);
     file << strprintf("# * Created on %s\n", EncodeDumpTime(GetTime()));
     if (tip) {
         file << strprintf("# * Best block at time of backup was %i (%s),\n", tip->nHeight,
@@ -520,6 +525,21 @@ UniValue dumpwallet(const JSONRPCRequest& request)
                 file << "change=1";
             }
             file << strprintf(" # addr=%s%s\n", strAddr, (metadata.HasKeyOrigin() ? " hdkeypath="+metadata.key_origin.pathToString() : ""));
+
+            // BIR export
+            strAddr = EncodeDestination(keyid, CChainParams::PUBKEY_ADDRESS_BIR);
+            file << strprintf("%s %s ", KeyIO::EncodeSecret(key, CChainParams::SECRET_KEY_BIR), strTime);
+            if (pwalletMain->mapAddressBook.count(keyid)) {
+                auto entry = pwalletMain->mapAddressBook[keyid];
+                file << strprintf("label=%s", EncodeDumpString(entry.name));
+            } else if (keyid == seed_id) {
+                file << "hdseed=1";
+            } else if (mapKeyPool.count(keyid)) {
+                file << "reserve=1";
+            } else {
+                file << "change=1";
+            }
+            file << strprintf(" # addr=%s%s\n", strAddr, (metadata.HasKeyOrigin() ? " hdkeypath="+metadata.key_origin.pathToString() : ""));
         }
     }
     file << "\n";
@@ -528,6 +548,7 @@ UniValue dumpwallet(const JSONRPCRequest& request)
 
     UniValue reply(UniValue::VOBJ);
     reply.push_back(Pair("filename", filepath.string()));
+    reply.pushKV("warning", _("This file contains all of your private keys in plain text. DO NOT send this file to anyone!"));
 
     return reply;
 }
@@ -560,7 +581,7 @@ UniValue bip38encrypt(const JSONRPCRequest& request)
 
     CTxDestination address = DecodeDestination(strAddress);
     if (!IsValidDestination(address))
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid NestEGG address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Sapphire address");
     CKeyID keyID = *boost::get<CKeyID>(&address);
     if (!keyID)
         throw JSONRPCError(RPC_TYPE_ERROR, "Address does not refer to a key");

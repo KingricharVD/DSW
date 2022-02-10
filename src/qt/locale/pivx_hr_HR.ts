@@ -122,12 +122,12 @@
         <translation>Adrese za primanje</translation>
     </message>
     <message>
-        <source>These are your EGG addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>To su vaše EGG adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
+        <source>These are your SAPP addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>To su vaše SAPP adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
     </message>
     <message>
-        <source>These are your EGG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>To su vaše EGG adrese za primanje uplata. Preporuča se upotreba nove adrese primatelja za svaku transakciju.</translation>
+        <source>These are your SAPP addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>To su vaše SAPP adrese za primanje uplata. Preporuča se upotreba nove adrese primatelja za svaku transakciju.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -360,8 +360,8 @@ za staking</translation>
         <translation>PONIŠTI</translation>
     </message>
     <message>
-        <source>EGG will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your EGGs from being stolen by malware infecting your computer.</source>
-        <translation>EGG će se sada zatvoriti kako bi se dovršio proces šifriranja. Ne zaboravite da šifriranje Vašeg novčanika ne može u potpunosti zaštititi vaše EGG od krađje zlonamjernog softvera koji zarazi vaše računalo.</translation>
+        <source>SAPP will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your SAPPs from being stolen by malware infecting your computer.</source>
+        <translation>SAPP će se sada zatvoriti kako bi se dovršio proces šifriranja. Ne zaboravite da šifriranje Vašeg novčanika ne može u potpunosti zaštititi vaše SAPP od krađje zlonamjernog softvera koji zarazi vaše računalo.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -457,8 +457,8 @@ za staking</translation>
         <translation>Odabir novčića</translation>
     </message>
     <message>
-        <source>Select EGG Outputs to Spend</source>
-        <translation>Odaberi EGG za potrošiti</translation>
+        <source>Select SAPP Outputs to Spend</source>
+        <translation>Odaberi SAPP za potrošiti</translation>
     </message>
     <message>
         <source>Dust:</source>
@@ -485,8 +485,8 @@ za staking</translation>
         <translation>Iznos</translation>
     </message>
     <message>
-        <source>0.00 EGG</source>
-        <translation>0.00 EGG</translation>
+        <source>0.00 SAPP</source>
+        <translation>0.00 SAPP</translation>
     </message>
     <message>
         <source>0</source>
@@ -707,8 +707,8 @@ za staking</translation>
         <translation>Statistika stakinga</translation>
     </message>
     <message>
-        <source>How to get EGG</source>
-        <translation>Kako dobiti EGG</translation>
+        <source>How to get SAPP</source>
+        <translation>Kako dobiti SAPP</translation>
     </message>
     <message>
         <source>Sort by</source>
@@ -731,8 +731,8 @@ za staking</translation>
         <translation>Filtriraj prema</translation>
     </message>
     <message>
-        <source>Amount of EGG and zEGG staked.</source>
-        <translation>Iznos EGG i zEGG koji se stakea.</translation>
+        <source>Amount of SAPP and zSAPP staked.</source>
+        <translation>Iznos SAPP i zSAPP koji se stakea.</translation>
     </message>
     <message>
         <source>Please wait until the wallet is fully synced to see your correct balance</source>
@@ -827,8 +827,8 @@ Automatski će se pokrenuti čim novčanik dobije dovoljno potvrda o neiskorišt
         <translation>Uredi adresu pošiljatelja</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EGG address.</source>
-        <translation>Unesena adresa "%1" nije ispravna EGG adresa.</translation>
+        <source>The entered address "%1" is not a valid SAPP address.</source>
+        <translation>Unesena adresa "%1" nije ispravna SAPP adresa.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -880,16 +880,16 @@ Automatski će se pokrenuti čim novčanik dobije dovoljno potvrda o neiskorišt
         <translation>verzija</translation>
     </message>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>Sapphire</source>
+        <translation>Sapphire</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About NestEGG</source>
-        <translation>O NestEGG-u</translation>
+        <source>About Sapphire</source>
+        <translation>O Sapphire-u</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -943,16 +943,16 @@ Automatski će se pokrenuti čim novčanik dobije dovoljno potvrda o neiskorišt
         <translation>Dobrodošli</translation>
     </message>
     <message>
-        <source>Welcome to NestEGG.</source>
-        <translation>Dobrodošli u NestEGG.</translation>
+        <source>Welcome to Sapphire.</source>
+        <translation>Dobrodošli u Sapphire.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where NestEGG will store its data.</source>
-        <translation>Budući da je prvi put pokrenut program, možete odabrati gdje će NestEGG pohraniti svoje podatke.</translation>
+        <source>As this is the first time the program is launched, you can choose where Sapphire will store its data.</source>
+        <translation>Budući da je prvi put pokrenut program, možete odabrati gdje će Sapphire pohraniti svoje podatke.</translation>
     </message>
     <message>
-        <source>NestEGG will download and store a copy of the EGG block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>NestEGG preuzima i pohranjuje kopiju EGG blok-lanca. Barem će %1GB podataka biti pohranjeno u ovom direktoriju i to će s vremenom rasti. Novčanik će također biti pohranjena u ovom direktoriju.</translation>
+        <source>Sapphire will download and store a copy of the SAPP block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>Sapphire preuzima i pohranjuje kopiju SAPP blok-lanca. Barem će %1GB podataka biti pohranjeno u ovom direktoriju i to će s vremenom rasti. Novčanik će također biti pohranjena u ovom direktoriju.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -971,8 +971,8 @@ Automatski će se pokrenuti čim novčanik dobije dovoljno potvrda o neiskorišt
         <translation>OK</translation>
     </message>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>Sapphire</source>
+        <translation>Sapphire</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1075,8 +1075,8 @@ Automatski će se pokrenuti čim novčanik dobije dovoljno potvrda o neiskorišt
         <translation>Stvori novi Masternode Controller</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a EGG Masternode you must dedicate a collateral amount of EGG (the unit of EGG) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Da biste stvoriti EGG Masternode, morate odvojiti 10,000 EGG (jedinica EGG-a) prema mreži (međjutim, ti novčići su i dalje vaši i nikad neće napustiti vaše vlasništvo). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt; Možete isključiti node i otključati novčiće u bilo kojem trenutku.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a SAPP Masternode you must dedicate a collateral amount of SAPP (the unit of SAPP) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Da biste stvoriti SAPP Masternode, morate odvojiti 10,000 SAPP (jedinica SAPP-a) prema mreži (međjutim, ti novčići su i dalje vaši i nikad neće napustiti vaše vlasništvo). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt; Možete isključiti node i otključati novčiće u bilo kojem trenutku.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Set Masternode Name</source>
@@ -1096,7 +1096,7 @@ Automatski će se pokrenuti čim novčanik dobije dovoljno potvrda o neiskorišt
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of collateral amount will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Transakcija od 10,000 EGG će biti napravljena&lt;/p&gt;&lt;p&gt;u novu praznu adresu u Vašem novčaniku.&lt;/p&gt;&lt;p&gt;Adresa je označena pod imenom Masternode-a.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Transakcija od 10,000 SAPP će biti napravljena&lt;/p&gt;&lt;p&gt;u novu praznu adresu u Vašem novčaniku.&lt;/p&gt;&lt;p&gt;Adresa je označena pod imenom Masternode-a.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Address of the node that must always be online running the actual master node.</source>
@@ -1520,8 +1520,8 @@ NODEOVI</translation>
         <translation>Ako onemogućite potrošnju nepotvrđjenog ostatka, ostatak od transakcije &lt;br/&gt;ne može se koristiti dok ta transakcija nema barem jednu potvrdu. &lt;br/&gt;Ovo takođjer utječe na izračun vašeg salda.</translation>
     </message>
     <message>
-        <source>Automatically open the EGG client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatski otvorite EGG klijentski ulaz na ruteru. To funkcionira samo kada vaš ruter podržava UPnP i omogućen je.</translation>
+        <source>Automatically open the SAPP client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatski otvorite SAPP klijentski ulaz na ruteru. To funkcionira samo kada vaš ruter podržava UPnP i omogućen je.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1540,12 +1540,12 @@ NODEOVI</translation>
         <translation>Stručnjak</translation>
     </message>
     <message>
-        <source>Automatically start EGG after logging in to the system.</source>
-        <translation>Automatski pokrenite EGG nakon prijave u sustav.</translation>
+        <source>Automatically start SAPP after logging in to the system.</source>
+        <translation>Automatski pokrenite SAPP nakon prijave u sustav.</translation>
     </message>
     <message>
-        <source>&amp;Start EGG on system login</source>
-        <translation>&amp;Pokrenite EGG pri pokretanju sustava</translation>
+        <source>&amp;Start SAPP on system login</source>
+        <translation>&amp;Pokrenite SAPP pri pokretanju sustava</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1572,8 +1572,8 @@ NODEOVI</translation>
         <translation>&amp;Mreža</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting EGG.</source>
-        <translation>Jezik korisničkog sučelja možete postaviti ovdje. Postavke će stupiti na snagu nakon ponovnog pokretanja EGG novčanika.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting SAPP.</source>
+        <translation>Jezik korisničkog sučelja možete postaviti ovdje. Postavke će stupiti na snagu nakon ponovnog pokretanja SAPP novčanika.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
@@ -1586,44 +1586,44 @@ NODEOVI</translation>
         <translation>Mapiranje porta koristeći &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of EGG units to zEGG</source>
-        <translation>Omogući automatsko stvaranje EGG jedinica na zEGG</translation>
+        <source>Enable automatic minting of SAPP units to zSAPP</source>
+        <translation>Omogući automatsko stvaranje SAPP jedinica na zSAPP</translation>
     </message>
     <message>
-        <source>Enable zEGG Automint</source>
-        <translation>Omogući automatsko stvaranje zEGG-a</translation>
+        <source>Enable zSAPP Automint</source>
+        <translation>Omogući automatsko stvaranje zSAPP-a</translation>
     </message>
     <message>
-        <source>Enable automatic zEGG minting from specific addresses</source>
-        <translation>Omogući automatsko stvaranje zEGG-a s određjenih adresa</translation>
+        <source>Enable automatic zSAPP minting from specific addresses</source>
+        <translation>Omogući automatsko stvaranje zSAPP-a s određjenih adresa</translation>
     </message>
     <message>
         <source>Enable Automint Addresses</source>
         <translation>Omogući Automint adrese</translation>
     </message>
     <message>
-        <source>Percentage of incoming EGG which get automatically converted to zEGG via Zerocoin Protocol (min: 10%)</source>
-        <translation>Postotak dolaznih EGG koji se automatski pretvara u zEGG putem Zerocoin Protokola (min: 10%)</translation>
+        <source>Percentage of incoming SAPP which get automatically converted to zSAPP via Zerocoin Protocol (min: 10%)</source>
+        <translation>Postotak dolaznih SAPP koji se automatski pretvara u zSAPP putem Zerocoin Protokola (min: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zEGG</source>
-        <translation>Postotak automatski stvorenog zEGG-a</translation>
+        <source>Percentage of autominted zSAPP</source>
+        <translation>Postotak automatski stvorenog zSAPP-a</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough EGG for this denomination is available</source>
-        <translation>Pričekajte s automatskom pretvorbom u Zerocoin dok ne bude dostupno dovoljno EGG-a za ovu denominaciju</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough SAPP for this denomination is available</source>
+        <translation>Pričekajte s automatskom pretvorbom u Zerocoin dok ne bude dostupno dovoljno SAPP-a za ovu denominaciju</translation>
     </message>
     <message>
-        <source>Preferred Automint zEGG Denomination</source>
-        <translation>Preferirana denominacija za automatsko stvaranje zEGG-a</translation>
+        <source>Preferred Automint zSAPP Denomination</source>
+        <translation>Preferirana denominacija za automatsko stvaranje zSAPP-a</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
         <translation>Prag razdvajanja Stake-a:</translation>
     </message>
     <message>
-        <source>Connect to the EGG network through a SOCKS5 proxy.</source>
-        <translation>Povežite se s EGG mrežom putem SOCKS5 proxy poslužitelja.</translation>
+        <source>Connect to the SAPP network through a SOCKS5 proxy.</source>
+        <translation>Povežite se s SAPP mrežom putem SOCKS5 proxy poslužitelja.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1769,8 +1769,8 @@ NODEOVI</translation>
 <context>
     <name>PIVXGUI</name>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>Sapphire</source>
+        <translation>Sapphire</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -1797,8 +1797,8 @@ NODEOVI</translation>
         <translation>Napusti aplikaciju</translation>
     </message>
     <message>
-        <source>NestEGG client</source>
-        <translation>NestEGG Klijent</translation>
+        <source>Sapphire client</source>
+        <translation>Sapphire Klijent</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1868,8 +1868,8 @@ Adresa: %4
         <translation>Ne može se pokrenuti sapphire: clik-to-pay handler</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid EGG address or malformed URI parameters.</source>
-        <translation>URI se ne može analizirati! To može biti uzrokovana nevažećom EGG adresom ili nepravilnim URI parametrima.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid SAPP address or malformed URI parameters.</source>
+        <translation>URI se ne može analizirati! To može biti uzrokovana nevažećom SAPP adresom ili nepravilnim URI parametrima.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -1958,8 +1958,8 @@ Adresa: %4
         <translation>Iznos</translation>
     </message>
     <message>
-        <source>Enter EGG address (e.g. %1)</source>
-        <translation>Upišite EGG adresu (npr. %1)</translation>
+        <source>Enter SAPP address (e.g. %1)</source>
+        <translation>Upišite SAPP adresu (npr. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2002,12 +2002,12 @@ Adresa: %4
         <translation>%1 ms</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EGG can no longer continue safely and will quit.</source>
-        <translation>Dogodila se fatalna pogreška. EGG ne može sigurno nastaviti i izaći će.</translation>
+        <source>A fatal error occurred. SAPP can no longer continue safely and will quit.</source>
+        <translation>Dogodila se fatalna pogreška. SAPP ne može sigurno nastaviti i izaći će.</translation>
     </message>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>Sapphire</source>
+        <translation>Sapphire</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
@@ -2026,8 +2026,8 @@ Adresa: %4
         <translation>Greška pri čitanju masternode konfiguracijske datoteke: %1</translation>
     </message>
     <message>
-        <source>NestEGG didn't yet exit safely...</source>
-        <translation>NestEGG nije ugašen sigurno...</translation>
+        <source>Sapphire didn't yet exit safely...</source>
+        <translation>Sapphire nije ugašen sigurno...</translation>
     </message>
     <message>
         <source>Contact</source>
@@ -2237,8 +2237,8 @@ Adresa: %4
         <translation>Block chain</translation>
     </message>
     <message>
-        <source>Open the EGG debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Otvorite EGG debug log datoteku iz aktualnog direktorija podataka. To može potrajati nekoliko sekundi za velike datoteke zapisnika.</translation>
+        <source>Open the SAPP debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Otvorite SAPP debug log datoteku iz aktualnog direktorija podataka. To može potrajati nekoliko sekundi za velike datoteke zapisnika.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -2381,8 +2381,8 @@ Adresa: %4
         <translation>Put prilagođenog sigurnosnog kopiranja:</translation>
     </message>
     <message>
-        <source>Custom zEGG Backup Path:</source>
-        <translation>Prilagođeni put zEGG sigurnosne kopije:</translation>
+        <source>Custom zSAPP Backup Path:</source>
+        <translation>Prilagođeni put zSAPP sigurnosne kopije:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -2461,8 +2461,8 @@ Adresa: %4
         <translation>Iz:</translation>
     </message>
     <message>
-        <source>Welcome to the EGG RPC console.</source>
-        <translation>Dobrodošli na EGG RPC konzolu.</translation>
+        <source>Welcome to the SAPP RPC console.</source>
+        <translation>Dobrodošli na SAPP RPC konzolu.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -2725,8 +2725,8 @@ Adresa: %4
         <translation>Iznos</translation>
     </message>
     <message>
-        <source>EGG</source>
-        <translation>EGG</translation>
+        <source>SAPP</source>
+        <translation>SAPP</translation>
     </message>
     <message>
         <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
@@ -2804,8 +2804,8 @@ Adresa: %4
         <translation>Prilagođjena adresa za ostatak</translation>
     </message>
     <message>
-        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" EGG address</source>
-        <translation>Ostatak vrijednosti koja proizlazi iz ulaza umanjen za izlaznu vrijednost ide na EGG adresu za "ostatak"</translation>
+        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" SAPP address</source>
+        <translation>Ostatak vrijednosti koja proizlazi iz ulaza umanjen za izlaznu vrijednost ide na SAPP adresu za "ostatak"</translation>
     </message>
     <message>
         <source>SAVE</source>
@@ -2831,8 +2831,8 @@ Adresa: %4
         <translation>Preporučeno</translation>
     </message>
     <message>
-        <source>EGG/kilobyte</source>
-        <translation>EGG/kilobajt</translation>
+        <source>SAPP/kilobyte</source>
+        <translation>SAPP/kilobajt</translation>
     </message>
     <message>
         <source>0.00 KB</source>
@@ -3115,8 +3115,8 @@ Do you want to continue?</source>
         <translation>DEŠIFRIRAJ KLJUČ</translation>
     </message>
     <message>
-        <source>EGG address</source>
-        <translation>EGG adresa</translation>
+        <source>SAPP address</source>
+        <translation>SAPP adresa</translation>
     </message>
     <message>
         <source>Enter address</source>
@@ -3248,8 +3248,8 @@ Verify that you have installed a predetermined text editor.</source>
 Provjerite jeste li instalirali unaprijed određjeni uređjivač teksta.</translation>
     </message>
     <message>
-        <source>Welcome to the EGG RPC console.</source>
-        <translation>Dobrodošli na EGG RPC konzolu.</translation>
+        <source>Welcome to the SAPP RPC console.</source>
+        <translation>Dobrodošli na SAPP RPC konzolu.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
@@ -3433,12 +3433,12 @@ Došlo je do greške prilikom spremanja popisa adresa u %1. Molimo pokušajte po
         <translation>Obrazac</translation>
     </message>
     <message>
-        <source>1) What is EGG?</source>
-        <translation>1) Što je EGG?</translation>
+        <source>1) What is SAPP?</source>
+        <translation>1) Što je SAPP?</translation>
     </message>
     <message>
-        <source>2) Why are my EGG unspendable?</source>
-        <translation>2) Zašto se moji EGG ne mogu potrošiti?</translation>
+        <source>2) Why are my SAPP unspendable?</source>
+        <translation>2) Zašto se moji SAPP ne mogu potrošiti?</translation>
     </message>
     <message>
         <source>https://sappcoin.com/</source>
@@ -3449,34 +3449,34 @@ Došlo je do greške prilikom spremanja popisa adresa u %1. Molimo pokušajte po
         <translation>1</translation>
     </message>
     <message>
-        <source>What is EGG?</source>
-        <translation>Što je EGG?</translation>
+        <source>What is SAPP?</source>
+        <translation>Što je SAPP?</translation>
     </message>
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           EGG is a form of digital online money using blockchain technology
+                           SAPP is a form of digital online money using blockchain technology
                            that can be easily transferred globally, instantly, and with near
-                           zero fees.  EGG incorporates market leading security &amp;
+                           zero fees.  SAPP incorporates market leading security &amp;
                            privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement ZeroCoin(zEGG) and Zerocoin staking.
+                           to implement ZeroCoin(zSAPP) and Zerocoin staking.
                            &lt;/p&gt;&lt;p align="justify"&gt;
-                           EGG utilizes a Proof of Stake (PoS) consensus system algorithm,
-                           allowing all owners of EGG to participate in earning block rewards
+                           SAPP utilizes a Proof of Stake (PoS) consensus system algorithm,
+                           allowing all owners of SAPP to participate in earning block rewards
                            while securing the network with full node wallets, as well as to
                            run Masternodes to create and vote on proposals.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-EGG je oblik digitalnog online novca koji koristi blockchain tehnologiju
+SAPP je oblik digitalnog online novca koji koristi blockchain tehnologiju
 koji se lako može slati i primati globalno, trenutno, i gotovo bez naknade.
-EGG uključuje vodeću sigurnost  i privatnost na tržištu
+SAPP uključuje vodeću sigurnost  i privatnost na tržištu
 i takođjer je prva PoS (Proof of Stake) kriptovaluta
-koja je implementirala ZeroCoin (zEGG) i Zerocoin staking.
+koja je implementirala ZeroCoin (zSAPP) i Zerocoin staking.
 &lt;/p&gt;&lt;p align="justify"&gt;
-EGG koristi algoritam konsenzusa Proof of Stake (PoS),
-omogućujući svim vlasnicima EGG-a sudjelovanje u zarađi blokovih nagrada
+SAPP koristi algoritam konsenzusa Proof of Stake (PoS),
+omogućujući svim vlasnicima SAPP-a sudjelovanje u zarađi blokovih nagrada
 dok osiguravaju mrežu full node novčanicima, kao i
 vodjenje Masternode-ova za stvaranje i glasanje o prijedlozima.
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
@@ -3487,25 +3487,25 @@ vodjenje Masternode-ova za stvaranje i glasanje o prijedlozima.
         <translation>2</translation>
     </message>
     <message>
-        <source>Why are my EGG unspendable?</source>
-        <translation>Zašto se moji EGG ne mogu potrošiti?</translation>
+        <source>Why are my SAPP unspendable?</source>
+        <translation>Zašto se moji SAPP ne mogu potrošiti?</translation>
     </message>
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           Newly received EGG requires 6 confirmations on the network
+                           Newly received SAPP requires 6 confirmations on the network
                            to become eligible for spending which can take ~6 minutes.
                            &lt;/p&gt;&lt;p align="justify"&gt;
-                           Your EGG wallet also needs to be completely synchronized
+                           Your SAPP wallet also needs to be completely synchronized
                            to see and spend balances on the network.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-Novoprimljeni EGG zahtjeva 6 potvrda na mreži
+Novoprimljeni SAPP zahtjeva 6 potvrda na mreži
 da bi se mogao potrošiti što može potrajati ~6 minuta.
 &lt;/p&gt;&lt;p align="justify"&gt;
-Vaš EGG novčanik takođjer treba biti u potpunosti sinkroniziran
+Vaš SAPP novčanik takođjer treba biti u potpunosti sinkroniziran
 da biste vidjeli i mogli potrošiti sredstva na mreži.
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
 </translation>
@@ -3515,8 +3515,8 @@ da biste vidjeli i mogli potrošiti sredstva na mreži.
         <translation>3</translation>
     </message>
     <message>
-        <source>How do I stake EGG?</source>
-        <translation>Kako stakeat EGG?</translation>
+        <source>How do I stake SAPP?</source>
+        <translation>Kako stakeat SAPP?</translation>
     </message>
     <message>
         <source>4</source>
@@ -3544,12 +3544,12 @@ da biste vidjeli i mogli potrošiti sredstva na mreži.
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the collateral amount can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Masternode Controller novčanik je mjesto gdje zalog od 10,000 EGG može stajati tijekom Controller-Remote podešavanja masternode-a. To je novčanik koji može aktivirati Remote masternode novčanik(e) i omogućiti Vam držanje zaloga novčića offline dok Remote masternode novčanik ostaje online.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Masternode Controller novčanik je mjesto gdje zalog od 10,000 SAPP može stajati tijekom Controller-Remote podešavanja masternode-a. To je novčanik koji može aktivirati Remote masternode novčanik(e) i omogućiti Vam držanje zaloga novčića offline dok Remote masternode novčanik ostaje online.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           A masternode is a computer running a full node EGG wallet with a
+                           A masternode is a computer running a full node SAPP wallet with a
                            required amount of secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
@@ -3571,10 +3571,10 @@ da biste vidjeli i mogli potrošiti sredstva na mreži.
                            Masternode Perks:
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;Participate in EGG Governance&lt;/li&gt;
+                           &lt;li&gt;Participate in SAPP Governance&lt;/li&gt;
                            &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
                            &lt;li&gt;Commodity option for future sale&lt;/li&gt;
-                           &lt;li&gt;Help secure the EGG network&lt;/li&gt;
+                           &lt;li&gt;Help secure the SAPP network&lt;/li&gt;
                            &lt;/ul&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
 
@@ -3590,8 +3590,8 @@ da biste vidjeli i mogli potrošiti sredstva na mreži.
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-Masternode je računalo koje pokreće full node NestEGG novčanik sa
-zahtjevanih 10,000 EGG-a osiguranog zaloga da pruži dodatne usluge
+Masternode je računalo koje pokreće full node Sapphire novčanik sa
+zahtjevanih 10,000 SAPP-a osiguranog zaloga da pruži dodatne usluge
 mreži, i zauzvrat redovito primi dio nagrade blokova.
 Te usluge uključuju:
 &lt;/p&gt;&lt;p align="justify"&gt;
@@ -3612,17 +3612,17 @@ vlasnicima masternode-ova umanjeno za troškove održavanja.
 Povlastice masternode-ova:
 &lt;/p&gt;&lt;p align="justify"&gt;
 &lt;ul&gt;
-&lt;li&gt;Sudjelovanje u upravljanju EGG-a&lt;/li&gt;
+&lt;li&gt;Sudjelovanje u upravljanju SAPP-a&lt;/li&gt;
 &lt;li&gt;Zaradjivanje Masternode nagrada&lt;/li&gt;
 &lt;li&gt;Robna opcija za buduću prodaju&lt;/li&gt;
-&lt;li&gt;Pomaže u osiguravanju EGG mreže&lt;/li&gt;
+&lt;li&gt;Pomaže u osiguravanju SAPP mreže&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/p&gt;&lt;p align="justify"&gt;
 
 Zahtjevi:
 &lt;/p&gt;&lt;p align="justify"&gt;
 &lt;ul&gt;
-&lt;li&gt;10,000 EGG po svakom Masternode-u&lt;/li&gt;
+&lt;li&gt;10,000 SAPP po svakom Masternode-u&lt;/li&gt;
 &lt;li&gt;Mora biti pohranjem u Core novčaniku&lt;/li&gt;
 &lt;li&gt;Mora biti jedinstvena IP adresa&lt;/li&gt;
 &lt;li&gt;Masternode novčanik treba ostati online&lt;/li&gt;
@@ -3797,8 +3797,8 @@ Zahtjevi:
         <translation>Number of script verification threads</translation>
     </message>
     <message>
-        <source>Start EGG on system login</source>
-        <translation>Pokrenite EGG pri pokretanju računala</translation>
+        <source>Start SAPP on system login</source>
+        <translation>Pokrenite SAPP pri pokretanju računala</translation>
     </message>
     <message>
         <source>Minimize to the tray instead of the taskbar</source>
@@ -3885,8 +3885,8 @@ Jeste li sigurni?
         <translation>PotvrdniOkvir</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other EGG addresses after it matures.</source>
-        <translation>MultiSend vam omogućuje da automatski pošaljete do 100% svog uloga ili nagrade masternode na popis drugih EGG adresa nakon što sazriju.</translation>
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other SAPP addresses after it matures.</source>
+        <translation>MultiSend vam omogućuje da automatski pošaljete do 100% svog uloga ili nagrade masternode na popis drugih SAPP adresa nakon što sazriju.</translation>
     </message>
     <message>
         <source>Active</source>
@@ -4008,8 +4008,8 @@ Označite jedan ili oba polja za potvrdu da biste poslali staking i/ili masterno
         <translation>Poruka</translation>
     </message>
     <message>
-        <source>EGG address or contact label</source>
-        <translation>EGG adresa ili naziv kontakta</translation>
+        <source>SAPP address or contact label</source>
+        <translation>SAPP adresa ili naziv kontakta</translation>
     </message>
     <message>
         <source>Enter address</source>
@@ -4293,8 +4293,8 @@ Označite jedan ili oba polja za potvrdu da biste poslali staking i/ili masterno
         <translation>Najčešće postavljena pitanja</translation>
     </message>
     <message>
-        <source>About EGG</source>
-        <translation>O EGG-u</translation>
+        <source>About SAPP</source>
+        <translation>O SAPP-u</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -4360,8 +4360,8 @@ Jeste li sigurni?
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>NestEGG is shutting down...</source>
-        <translation>NestEGG se zatvara...</translation>
+        <source>Sapphire is shutting down...</source>
+        <translation>Sapphire se zatvara...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4390,8 +4390,8 @@ Jeste li sigurni?
         <translation>Učitavanje...</translation>
     </message>
     <message>
-        <source>NestEGG</source>
-        <translation>NestEGG</translation>
+        <source>Sapphire</source>
+        <translation>Sapphire</translation>
     </message>
 </context>
 <context>
@@ -4900,25 +4900,25 @@ se nova sigurnosna kopija.
     </message>
     <message>
         <source>Welcome to
-NestEGG Wallet</source>
+Sapphire Wallet</source>
         <translation>Dobrodošli u
-        NestEGG temeljni novčanik</translation>
+        Sapphire temeljni novčanik</translation>
     </message>
     <message>
-        <source>EGG is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>EGG je najinovativnija blockchain tehnologija na svijetu bazirana na Proof of Stake tehnologiji. Razvijena je od strane vrlo iskusnih programera i kriptografa.</translation>
+        <source>SAPP is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>SAPP je najinovativnija blockchain tehnologija na svijetu bazirana na Proof of Stake tehnologiji. Razvijena je od strane vrlo iskusnih programera i kriptografa.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - EGG believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kao što kaže naš manifest: Privatnost je temeljno ljudsko pravo o kojemu se ne pregovara; korisnicima daje slobodu dijeljenja svojih podataka kad god i s kim god žele - EGG vjeruje u suverenitet.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - SAPP believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kao što kaže naš manifest: Privatnost je temeljno ljudsko pravo o kojemu se ne pregovara; korisnicima daje slobodu dijeljenja svojih podataka kad god i s kim god žele - SAPP vjeruje u suverenitet.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>The masternode network is EGG's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
-        <translation>Masternode mreža je mreža drugog sloja EGG-a na vrhu blockchaina koja omogućuje našem DAO-u pružanje decentraliziranog upravljanja i riznice.</translation>
+        <source>The masternode network is SAPP's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
+        <translation>Masternode mreža je mreža drugog sloja SAPP-a na vrhu blockchaina koja omogućuje našem DAO-u pružanje decentraliziranog upravljanja i riznice.</translation>
     </message>
     <message>
-        <source>How EGG respects your privacy?</source>
-        <translation>Kako EGG poštuje Vašu privatnost?</translation>
+        <source>How SAPP respects your privacy?</source>
+        <translation>Kako SAPP poštuje Vašu privatnost?</translation>
     </message>
     <message>
         <source>What is a Masternode?</source>
@@ -4952,8 +4952,8 @@ NestEGG Wallet</source>
         <translation>Pridržavajte se na navedenu adresu da biste slušali veze JSON-RPC. Koristite [host]: port notation za IPv6. Ova se opcija može odrediti više puta (zadano: vezati se na sva sučelja)</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. NestEGG is probably already running.</source>
-        <translation>Nije moguće dobiti zaključavanje na direktoriju podataka %s. NestEGG vjerojatno već radi.</translation>
+        <source>Cannot obtain a lock on data directory %s. Sapphire is probably already running.</source>
+        <translation>Nije moguće dobiti zaključavanje na direktoriju podataka %s. Sapphire vjerojatno već radi.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -5112,8 +5112,8 @@ NestEGG Wallet</source>
         <translation>Ukupna duljina teksta mrežne verzije (%i) prelazi maksimalnu duljinu (%i). Smanjite broj ili veličinu uacommentsa.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. NestEGG is probably already running.</source>
-        <translation>Nije moguće vezati se na %s na ovom računalu. NestEGG vjerojatno već radi.</translation>
+        <source>Unable to bind to %s on this computer. Sapphire is probably already running.</source>
+        <translation>Nije moguće vezati se na %s na ovom računalu. Sapphire vjerojatno već radi.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5128,8 +5128,8 @@ NestEGG Wallet</source>
         <translation>Upozorenje: -paytxfee je vrlo visoka! To je transakcijska naknada koju ćete platiti ako šaljete transakciju.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
-        <translation>Upozorenje: Provjerite jesu li datum i vrijeme vašeg računala točni! Ako je vaš sat pogrešan, NestEGG neće raditi ispravno.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Sapphire will not work properly.</source>
+        <translation>Upozorenje: Provjerite jesu li datum i vrijeme vašeg računala točni! Ako je vaš sat pogrešan, Sapphire neće raditi ispravno.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5337,8 +5337,8 @@ NestEGG Wallet</source>
         <translation>Informacije</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. NestEGG is shutting down.</source>
-        <translation>Provjera ispravnosti inicijalizacije nije uspjela. NestEGG se zatvara.</translation>
+        <source>Initialization sanity check failed. Sapphire is shutting down.</source>
+        <translation>Provjera ispravnosti inicijalizacije nije uspjela. Sapphire se zatvara.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5369,8 +5369,8 @@ NestEGG Wallet</source>
         <translation>Nevažeća mrežna maska specificirana u kategoriji -whitelist: '%s'</translation>
     </message>
     <message>
-        <source>Recalculating EGG supply...</source>
-        <translation>Preračunavanje EGG-a u optjecaju...</translation>
+        <source>Recalculating SAPP supply...</source>
+        <translation>Preračunavanje SAPP-a u optjecaju...</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5389,8 +5389,8 @@ NestEGG Wallet</source>
         <translation>Ovo je priprema za testiranje prije puštanja - upotrebljavajte na vlastiti rizik - nemojte ga koristiti za staking ili trgovinske aplikacije!</translation>
     </message>
     <message>
-        <source>Disable all EGG specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)</source>
-        <translation>Onemogući sve specifične funkcije EGG (Masternodes, Zerocoin, Budgeting) (0-1, zadano: %u)</translation>
+        <source>Disable all SAPP specific functionality (Masternodes, Zerocoin, Budgeting) (0-1, default: %u)</source>
+        <translation>Onemogući sve specifične funkcije SAPP (Masternodes, Zerocoin, Budgeting) (0-1, zadano: %u)</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -checklevel found. Checklevel must be level 4.</source>
@@ -5625,8 +5625,8 @@ NestEGG Wallet</source>
         <translation>Priprema za resinkronizaciju...</translation>
     </message>
     <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong NestEGG will not work properly.</source>
-        <translation>Provjerite jesu li datum i vrijeme vašeg računala točni! Ako je vaš sat pogrešan, NestEGG neće raditi ispravno.</translation>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong Sapphire will not work properly.</source>
+        <translation>Provjerite jesu li datum i vrijeme vašeg računala točni! Ako je vaš sat pogrešan, Sapphire neće raditi ispravno.</translation>
     </message>
     <message>
         <source>Specify location of debug log file: this can be an absolute path or a path relative to the data directory (default: %s)</source>
@@ -5831,8 +5831,8 @@ NestEGG Wallet</source>
         <translation>Sinkronizacija sporkova...</translation>
     </message>
     <message>
-        <source>Syncing zEGG wallet...</source>
-        <translation>Sinkronizacija zEGG novčanika...</translation>
+        <source>Syncing zSAPP wallet...</source>
+        <translation>Sinkronizacija zSAPP novčanika...</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -5943,8 +5943,8 @@ NestEGG Wallet</source>
         <translation>Korisničko ime za JSON-RPC veze</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zEGG</source>
-        <translation>Vrijednost je niža od najmanje dostupne denominacije (= 1) zEGG-a</translation>
+        <source>Value is below the smallest available denomination (= 1) of zSAPP</source>
+        <translation>Vrijednost je niža od najmanje dostupne denominacije (= 1) zSAPP-a</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -5959,8 +5959,8 @@ NestEGG Wallet</source>
         <translation>Novčanik %s nalazi se izvan direktorija podataka %s</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart NestEGG to complete</source>
-        <translation>Potrebno je prepisati novčanik: ponovo pokrenite NestEGG</translation>
+        <source>Wallet needed to be rewritten: restart Sapphire to complete</source>
+        <translation>Potrebno je prepisati novčanik: ponovo pokrenite Sapphire</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -6026,12 +6026,12 @@ NestEGG Wallet</source>
         <translation>Pošalji</translation>
     </message>
     <message>
-        <source>Send public coins (EGG)</source>
-        <translation>Pošalji javne novčiće (EGG)</translation>
+        <source>Send public coins (SAPP)</source>
+        <translation>Pošalji javne novčiće (SAPP)</translation>
     </message>
     <message>
-        <source>EGG address or contact label</source>
-        <translation>EGG adresa ili naziv kontakta</translation>
+        <source>SAPP address or contact label</source>
+        <translation>SAPP adresa ili naziv kontakta</translation>
     </message>
     <message>
         <source>Amount</source>

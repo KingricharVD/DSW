@@ -1,10 +1,10 @@
 ![Example-Logo](https://avatars.githubusercontent.com/u/60038376?v=4)
 
-# NestEGG Masternode Setup Guide
+# Sapphire Masternode Setup Guide
 ***
 ## Required
-1) **EGG collateral value at current block** ([consult the collateral table](../../README.md#rewards-breakdown))
-2) **Local Wallet https://github.com/sappcoin-com/EGG/releases**
+1) **SAPP collateral value at current block** ([consult the collateral table](../../README.md#rewards-breakdown))
+2) **Local Wallet https://github.com/sappcoin-com/SAPP/releases**
 3) **VPS with UBUNTU 18.04** (it is possible to work on other versions but it is not tested)
 4) **Putty https://www.putty.org/**
 5) **Text editor on your local pc to save data for copy/paste**
@@ -21,7 +21,7 @@ You will then receive your private key, save it in a txt to use it later.
           w8723KqiiqtiLH6y2ktjfwzuSrNucGAbagpmTmCn1KnNEeQTJKf
 * Still at Debug Console type ***getmasternodeoutputs*** and save txhash and outputidx on a txt
   ```
-  Exemple:
+  Example:
           "txhash" : "12fce79c1a5623aa5b5830abff1a9feb6a682b75ee9fe22c647725a3gef42saa",
 		         "outputidx" : 0
 
@@ -30,7 +30,7 @@ You will then receive your private key, save it in a txt to use it later.
 * Once logged in your vps, *copy/paste* each line one by one with *Enter*
 
 ```
-wget -q https://raw.githubusercontent.com/sappcoin-com/EGG/master/contrib/masternodesetup/masternodesetup.sh
+wget -q https://raw.githubusercontent.com/sappcoin-com/SAPP/master/contrib/masternodesetup/masternodesetup.sh
 ```
 
 ```
@@ -58,10 +58,10 @@ Do not close your terminal/ command prompt window at this point.
 
 * Open the Masternode Configuration file (tools – open masternode configuration file) and add a new line (without #) using this template (bold needs to be changed) in the final save it and close the editor
 
-**ALIAS VPS_IP**:20434 **masternodeprivkey TXhash Output**
+**ALIAS VPS_IP**:45328 **masternodeprivkey TXhash Output**
 
 		Example:
-		MN1 125.67.32.10:20434 w8723KqiiqtiLH6y2ktjfwzuSrNucGAbagpmTmCn1KnNEeQTJKf 12fce79c1a5623aa5b5830abff1a9feb6a682b75ee9fe22c647725a3gef42saa 0
+		MN1 125.67.32.10:45328 w8723KqiiqtiLH6y2ktjfwzuSrNucGAbagpmTmCn1KnNEeQTJKf 12fce79c1a5623aa5b5830abff1a9feb6a682b75ee9fe22c647725a3gef42saa 0
 
 * Close and Re-open Local Wallet, and at Masternode Tab you will find your MN with status MISSING
 
@@ -81,4 +81,4 @@ sapphire-cli getmasternodestatus
 
 You need to get **"status" : 4** 
 
-## Congratulations your NestEGG node it's running
+## Congratulations your Sapphire node it's running

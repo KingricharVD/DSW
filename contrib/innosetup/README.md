@@ -35,13 +35,13 @@ Create a project folder with the following elements
 * Open the Inno Setup Compiler
 * Create a new project using the `wizard`
 * Fill in the following data:
-    * Application Name: `NestEGG Core`
+    * Application Name: `Sapphire Core`
     * Application Version: `1.2.0.0`
-    * Application Publisher: `2020 NestEGG Core Developers`
+    * Application Publisher: `2020 Sapphire Core Developers`
     * Application Website: `https://sappcoin.com/`
 * Setup the destination folder:
     * Program Files Folder
-    * Folder name: `NestEGG`
+    * Folder name: `Sapphire`
 * Add application files:
     * Select the file `sap-pt.exe` as main executable from the `package` folder
     * Add the folder package in the other application files

@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2015 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2020 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2021-2022 The DECENOMY Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -17,6 +17,7 @@
 #include "uint256.h"
 
 #include <vector>
+#include <map>
 
 struct CDNSSeedData {
     std::string name, host;
@@ -31,7 +32,7 @@ struct SeedSpec6 {
 
 /**
  * CChainParams defines various tweakable parameters of a given instance of the
- * NestEGG system. There are three: the main network on which people trade goods
+ * Sapphire system. There are three: the main network on which people trade goods
  * and services, the public test network which gets reset from time to time and
  * a regression test mode which is intended for private networks only. It has
  * minimal difficulty to ensure that blocks can be found instantly.
@@ -46,6 +47,9 @@ public:
         EXT_PUBLIC_KEY, // BIP32
         EXT_SECRET_KEY, // BIP32
         EXT_COIN_TYPE,  // BIP44
+
+        PUBKEY_ADDRESS_BIR,
+        SECRET_KEY_BIR,
 
         MAX_BASE58_TYPES
     };

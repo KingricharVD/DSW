@@ -1,13 +1,13 @@
 [Desktop Entry]
 Version=1.0
-Name=NestEGG
-Comment= EGG P2P Cryptocurrency
-Comment[fr]= EGG, monnaie virtuelle cryptographique pair à pair
-Comment[tr]= EGG, eşten eşe kriptografik sanal para birimi
+Name=Sapphire
+Comment= SAPP P2P Cryptocurrency
+Comment[fr]= SAPP, monnaie virtuelle cryptographique pair à pair
+Comment[tr]= SAPP, eşten eşe kriptografik sanal para birimi
 Exec=sapphire-qt %u
 Terminal=false
 Type=Application
 Icon=pivx128
 MimeType=x-scheme-handler/pivx;
 Categories=Office;Finance;
-StartupWMClass=NestEGG-qt
+StartupWMClass=Sapphire-qt

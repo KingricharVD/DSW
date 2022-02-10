@@ -454,7 +454,7 @@
             <enum>Qt::NoFocus</enum>
            </property>
            <property name="text">
-            <string>How to get EGG</string>
+            <string>How to get SAPP</string>
            </property>
           </widget>
          </item>
@@ -519,7 +519,7 @@
             <item>
              <widget class="QLabel" name="labelMessage">
               <property name="text">
-               <string>Amount of EGG staked.</string>
+               <string>Amount of SAPP staked.</string>
               </property>
              </widget>
             </item>
@@ -567,7 +567,7 @@
                 <item>
                     <widget class="QLabel" name="labelAmountPiv">
                         <property name="text">
-                            <string notr="true">0 EGG</string>
+                            <string notr="true">0 SAPP</string>
                         </property>
                         <property name="alignment">
                             <set>Qt::AlignCenter</set>
@@ -694,7 +694,7 @@
                 <item>
                  <widget class="QLabel" name="labelPiv">
                   <property name="text">
-                   <string notr="true">EGG</string>
+                   <string notr="true">SAPP</string>
                   </property>
                  </widget>
                 </item>
@@ -736,7 +736,7 @@
                 <item>
                     <widget class="QLabel" name="labelMNRewards">
                         <property name="text">
-                            <string>EGG MN</string>
+                            <string>SAPP MN</string>
                         </property>
                     </widget>
                 </item>

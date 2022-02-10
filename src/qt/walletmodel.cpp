@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2020 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2021-2022 The DECENOMY Core Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -313,7 +313,7 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
                 return InvalidAmount;
             }
             total += subtotal;
-        } else { // User-entered EGG address / amount:
+        } else { // User-entered SAPP address / amount:
             if (!validateAddress(rcp.address)) {
                 return InvalidAddress;
             }
@@ -730,11 +730,11 @@ bool WalletModel::updateAddressBookPurpose(const QString &addressStr, const std:
 bool WalletModel::getKeyId(const CTxDestination& address, CKeyID& keyID)
 {
     if (!IsValidDestination(address))
-        return error("Invalid EGG address");
+        return error("Invalid SAPP address");
 
     const CKeyID* inKeyID = boost::get<CKeyID>(&address);
     if (!inKeyID)
-        return error("Unable to get KeyID from EGG address");
+        return error("Unable to get KeyID from SAPP address");
 
     keyID = *inKeyID;
     return true;

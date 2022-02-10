@@ -5,7 +5,7 @@
 // Copyright (c) 2013-2014 The NovaCoin Developers
 // Copyright (c) 2014-2018 The BlackCoin Developers
 // Copyright (c) 2015-2020 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2021-2022 The DECENOMY Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -60,7 +60,7 @@
 
 
 #if defined(NDEBUG)
-#error "NestEGG cannot be compiled without assertions."
+#error "Sapphire cannot be compiled without assertions."
 #endif
 
 /**
@@ -99,36 +99,10 @@ bool fCheckBlockIndex = false;
 bool fVerifyingBlocks = false;
 size_t nCoinCacheUsage = 5000 * 300;
 
-// banned addresses
-std::set<std::string> bannedAddresses = {
-    "Sd2xcwvvtRH8P8sLemSiPjadTfBd9myPbW",
-    "STFSLXfG31Xr8Symk78aG6jCu391yp8kWD",
-    "SbPoXEFrMJwes3mysfgGzP2mAtw1SmrC7H",
-    "ScM5iV4aJEwMipWGHHcS8E1qLsarwk6DuK",
-    "Sfv6SUgcSgmmpwp3UypfYgnK1x97rfC9Dj",
-    "SY6UdUKC8yxci8vXgvQYMgeUNRDvymEhM3",
-    "SdaX6DR3gdpakcFrKJfCDB6GJjC4J9XJ8M",
-    "Sh412EAoGLvn1WnTUCZbHiUGCk2dzmdQoA",
-    "ST74xpmzemL4ELiBpyDmirzgahujSUiYmM",
-    "SaWmWbLSghhn8JAE8JQfdLQy9cvf1ADKUD",
-    "Sic7sZBNkijna4zNLSVgTBkfr2ebP6c9wk",
-    "Sh8N9R2Li5Wm5B7g3xxfEotp9Vpp38baJM",
-    "SVAjKY5p9NPSNwG7PLK3VzeXUdJjm2W7CY",
-    "SQfMZVatpQR9b3KdKp992nxeEZNWkcz7d2",
-    "SNAgLi7pfHD6BDAkQQ74ixtT4o59wkqP8Y",
-    "SS6ZgTuvafGX98YqeHdu79wpGrR1KxuqMw",
-    "SMoP6U7uazpLdqZ18GQFVNNuV77UTK16wh",
-    "SjfZFjCv2PxNKQeDgW1RmsFjSpq5PngaZc",
-    "SPop7eX3kMjwojy1k1EHAqBoodhbski4tR",
-    "Sf3KBrFqmD3PBHrwTpdsFgUTctEz9mQn5Z",
-};
-
-int bannedAddressesStartHeight = 586593;
-
 /* If the tip is older than this (in seconds), the node is considered to be in initial block download. */
 int64_t nMaxTipAge = DEFAULT_MAX_TIP_AGE;
 
-/** Fees smaller than this (in uEGG) are considered zero fee (for relaying, mining and transaction creation)
+/** Fees smaller than this (in uSAPP) are considered zero fee (for relaying, mining and transaction creation)
  * We are ~100 times smaller then bitcoin now (2015-06-23), set minRelayTxFee only 10 times higher
  * so it's still 10 times lower comparing to bitcoin.
  */
@@ -903,16 +877,17 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState &state, const C
         return state.Invalid(false, REJECT_ALREADY_KNOWN, "txn-already-in-mempool");
     }
 
-    // ----------- banned transaction scanning -----------
-    if (!bannedAddresses.empty()) {
+    // ----------- burn address scanning -----------
+    if (!consensus.mBurnAddresses.empty()) {
         for (unsigned int i = 0; i < tx.vin.size(); ++i) {
             uint256 hashBlock;
             CTransaction txPrev;
             if (GetTransaction(tx.vin[i].prevout.hash, txPrev, hashBlock, true)) { // get the vin's previous transaction
                 CTxDestination source;
                 if (ExtractDestination(txPrev.vout[tx.vin[i].prevout.n].scriptPubKey, source)) { // extract the destination of the previous transaction's vout[n]
-                    std::string addr = EncodeDestination(source);
-                    if (bannedAddresses.find(addr) != bannedAddresses.end()) {
+                    const std::string addr = EncodeDestination(source);
+                    if (consensus.mBurnAddresses.find(addr) != consensus.mBurnAddresses.end() &&
+                        consensus.mBurnAddresses.at(addr) < chainHeight) {
                         return state.DoS(0, false, REJECT_INVALID, "bad-txns-invalid-outputs");
                     }
                 }
@@ -978,9 +953,9 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState &state, const C
                     return state.Invalid(false, REJECT_INVALID, "bad-txns-invalid-inputs");
             }
 
-            // Reject legacy zEGG mints
+            // Reject legacy zSAPP mints
             if (!Params().IsRegTestNet() && tx.HasZerocoinMintOutputs())
-                return state.Invalid(error("%s : tried to include zEGG mint output in tx %s",
+                return state.Invalid(error("%s : tried to include zSAPP mint output in tx %s",
                         __func__, tx.GetHash().GetHex()), REJECT_INVALID, "bad-zc-spend-mint");
 
             // Bring the best block into scope
@@ -2041,9 +2016,9 @@ DisconnectResult DisconnectBlock(CBlock& block, CBlockIndex* pindex, CCoinsViewC
         return DISCONNECT_FAILED;
     }
 
-    //Track zEGG money supply
+    //Track zSAPP money supply
     if (!UpdateZPIVSupplyDisconnect(block, pindex)) {
-        error("%s: Failed to calculate new zEGG supply", __func__);
+        error("%s: Failed to calculate new zSAPP supply", __func__);
         return DISCONNECT_FAILED;
     }
 
@@ -2388,7 +2363,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         setDirtyBlockIndex.insert(pindex);
     }
 
-    //Record zEGG serials
+    //Record zSAPP serials
     if (pwalletMain) {
         std::set<uint256> setAddedTx;
         for (const std::pair<libzerocoin::CoinSpend, uint256>& pSpend : vSpends) {
@@ -2433,13 +2408,13 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     // add this block to the view's block chain
     view.SetBestBlock(pindex->GetBlockHash());
 
-    // Update zEGG money supply map
+    // Update zSAPP money supply map
     if (!UpdateZPIVSupplyConnect(block, pindex, fJustCheck)) {
-        return state.DoS(100, error("%s: Failed to calculate new zEGG supply for block=%s height=%d", __func__,
+        return state.DoS(100, error("%s: Failed to calculate new zSAPP supply for block=%s height=%d", __func__,
                                     block.GetHash().GetHex(), pindex->nHeight), REJECT_INVALID);
     }
 
-    // A one-time event where the zEGG supply was off (due to serial duplication off-chain on main net)
+    // A one-time event where the zSAPP supply was off (due to serial duplication off-chain on main net)
     if (Params().NetworkID() == CBaseChainParams::MAIN && pindex->nHeight == consensus.height_last_ZC_WrappedSerials + 1
             && GetZerocoinSupply() != consensus.ZC_WrappedSerialsSupply + GetWrapppedSerialInflationAmount()) {
         RecalculatePIVSupply(consensus.vUpgrades[Consensus::UPGRADE_ZC].nActivationHeight, false);
@@ -2454,7 +2429,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         nMoneySupply -= nLocked;
     }
 
-    // Update EGG money supply
+    // Update SAPP money supply
     nMoneySupply += (nValueOut - nValueIn);
 
     int64_t nTime3 = GetTimeMicros();
@@ -3404,7 +3379,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                 nHeight = (*mi).second->nHeight + 1;
         }
 
-        // NestEGG
+        // Sapphire
         // It is entierly possible that we don't have enough data and this could fail
         // (i.e. the block could indeed be valid). Store the block for later consideration
         // but issue an initial reject message.
@@ -3436,7 +3411,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
             return state.Invalid(false, state.GetRejectCode(), state.GetRejectReason(),
                                              strprintf("Transaction check failed (tx hash %s) %s", tx.GetHash().ToString(), state.GetDebugMessage()));
 
-        // double check that there are no double spent zEGG spends in this block
+        // double check that there are no double spent zSAPP spends in this block
         if (tx.HasZerocoinSpendInputs()) {
             for (const CTxIn& txIn : tx.vin) {
                 bool isPublicSpend = txIn.IsZerocoinPublicSpend();
@@ -3458,7 +3433,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                         spend = TxInToZerocoinSpend(txIn);
                     }
                     if (std::count(vBlockSerials.begin(), vBlockSerials.end(), spend.getCoinSerialNumber()))
-                        return state.DoS(100, error("%s : Double spending of zEGG serial %s in block\n Block: %s",
+                        return state.DoS(100, error("%s : Double spending of zSAPP serial %s in block\n Block: %s",
                                                     __func__, spend.getCoinSerialNumber().GetHex(), block.ToString()));
                     vBlockSerials.emplace_back(spend.getCoinSerialNumber());
                 }
@@ -3602,6 +3577,7 @@ bool IsTransactionInChain(const uint256& txId, int& nHeightTx)
 bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIndex* const pindexPrev)
 {
     const int nHeight = pindexPrev == nullptr ? 0 : pindexPrev->nHeight + 1;
+    const Consensus::Params& consensus = Params().GetConsensus();
 
     // Check that all transactions are finalized
     for (const CTransaction& tx : block.vtx) {
@@ -3610,8 +3586,8 @@ bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIn
         }
     }
 
-    // Check that all transactions are not banned
-    if (nHeight > bannedAddressesStartHeight && !bannedAddresses.empty()) {
+    // ----------- burn address scanning -----------
+    if (!consensus.mBurnAddresses.empty()) {
         for (const CTransaction& tx : block.vtx) {
             if (!tx.IsCoinBase()) {
                 for (unsigned int i = 0; i < tx.vin.size(); ++i) {
@@ -3620,10 +3596,10 @@ bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIn
                     if (GetTransaction(tx.vin[i].prevout.hash, txPrev, hashBlock, true)) { // get the vin's previous transaction
                         CTxDestination source;
                         if (ExtractDestination(txPrev.vout[tx.vin[i].prevout.n].scriptPubKey, source)) { // extract the destination of the previous transaction's vout[n]
-                            std::string addr = EncodeDestination(source);
-
-                            if (bannedAddresses.find(addr) != bannedAddresses.end()) {
-                                return state.DoS(100, error("%s : Banned address %s tried to send a transaction %s (rejecting it).", __func__, addr.c_str(), txPrev.GetHash().ToString().c_str()), REJECT_INVALID, "bad-txns-banned");
+                            const std::string addr = EncodeDestination(source);
+                            if (consensus.mBurnAddresses.find(addr) != consensus.mBurnAddresses.end() &&
+                                consensus.mBurnAddresses.at(addr) < nHeight) {
+                                return state.DoS(100, error("%s : Burned address %s tried to send a transaction %s (rejecting it).", __func__, addr.c_str(), txPrev.GetHash().ToString().c_str()), REJECT_INVALID, "bad-txns-banned");
                             }
                         }
                     }
@@ -3907,7 +3883,7 @@ bool AcceptBlock(const CBlock& block, CValidationState& state, CBlockIndex** ppi
             // Split height
             splitHeight = prev->nHeight;
 
-            // Now that this loop if completed. Check if we have zEGG inputs.
+            // Now that this loop if completed. Check if we have zSAPP inputs.
             if(hasZPIVInputs) {
                 for (const CTxIn& zPivInput : zPIVInputs) {
                     libzerocoin::CoinSpend spend = TxInToZerocoinSpend(zPivInput);
@@ -3930,7 +3906,7 @@ bool AcceptBlock(const CBlock& block, CValidationState& state, CBlockIndex** ppi
 
                     if (!ContextualCheckZerocoinSpendNoSerialCheck(stakeTxIn, &spend, pindex->nHeight, UINT256_ZERO))
                         return state.DoS(100,error("%s: forked chain ContextualCheckZerocoinSpend failed for tx %s", __func__,
-                                                   stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zEGG");
+                                                   stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zSAPP");
 
                 }
             }
@@ -3954,7 +3930,7 @@ bool AcceptBlock(const CBlock& block, CValidationState& state, CBlockIndex** ppi
                         libzerocoin::CoinSpend spend = TxInToZerocoinSpend(zPivInput);
                         if (!ContextualCheckZerocoinSpend(stakeTxIn, &spend, pindex->nHeight, UINT256_ZERO))
                             return state.DoS(100,error("%s: main chain ContextualCheckZerocoinSpend failed for tx %s", __func__,
-                                    stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zEGG");
+                                    stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zSAPP");
                 }
 
         }
@@ -5174,7 +5150,21 @@ bool static ProcessMessage(CNode* pfrom, std::string strCommand, CDataStream& vR
             pfrom->cleanSubVer = cleanSubVer;
         }
 
-        if (pfrom->cleanSubVer.find(CLIENT_NAME) == std::string::npos) {
+        auto shortFromName = pfrom->cleanSubVer.substr(0, pfrom->cleanSubVer.find(':')).substr(0, pfrom->cleanSubVer.find(' '));
+        auto shortName = CLIENT_NAME.substr(0, CLIENT_NAME.find(' '));
+
+        for (auto & c: shortFromName) c = toupper(c);
+        for (auto & c: shortName) c = toupper(c);
+
+        shortFromName.erase(
+            std::remove_if(
+                shortFromName.begin(), 
+                shortFromName.end(), 
+                []( char const& c ) -> bool { return !std::isalnum(c); }), 
+            shortFromName.end()
+        );
+
+        if (shortName.find(shortFromName) == std::string::npos) {
             LOCK(cs_main);
             Misbehaving(pfrom->GetId(), 100);
             pfrom->fDisconnect = true;
@@ -5248,7 +5238,7 @@ bool static ProcessMessage(CNode* pfrom, std::string strCommand, CDataStream& vR
             pfrom->fDisconnect = true;
         }
 
-        // NestEGG: We use certain sporks during IBD, so check to see if they are
+        // Sapphire: We use certain sporks during IBD, so check to see if they are
         // available. If not, ask the first peer connected for them.
         // TODO: Move this to an instant broadcast of the sporks.
         bool fMissingSporks = !pSporkDB->SporkExists(SPORK_14_MIN_PROTOCOL_ACCEPTED);

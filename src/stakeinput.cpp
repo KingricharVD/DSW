@@ -1,5 +1,5 @@
 // Copyright (c) 2017-2020 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2021-2022 The DECENOMY Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,7 +14,7 @@
 bool CPivStake::InitFromTxIn(const CTxIn& txin)
 {
     if (txin.IsZerocoinSpend())
-        return error("%s: unable to initialize CEGGStake from zerocoin spend", __func__);
+        return error("%s: unable to initialize CSAPPStake from zerocoin spend", __func__);
 
     // Find the previous transaction in database
     uint256 hashBlock;
@@ -121,7 +121,7 @@ bool CPivStake::CreateTxOuts(CWallet* pwallet, std::vector<CTxOut>& vout, CAmoun
 
 CDataStream CPivStake::GetUniqueness() const
 {
-    //The unique identifier for a EGG stake is the outpoint
+    //The unique identifier for a SAPP stake is the outpoint
     CDataStream ss(SER_NETWORK, 0);
     ss << nPosition << txFrom.GetHash();
     return ss;

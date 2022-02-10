@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2020 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2021-2022 The DECENOMY Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -38,7 +38,7 @@ bool bSpendZeroConfChange = DEFAULT_SPEND_ZEROCONF_CHANGE;
 const char * DEFAULT_WALLET_DAT = "wallet.dat";
 
 /**
- * Fees smaller than this (in uEGG) are considered zero fee (for transaction creation)
+ * Fees smaller than this (in uSAPP) are considered zero fee (for transaction creation)
  * We are ~100 times smaller then bitcoin now (2015-06-23), set minTxFee 10 times higher
  * so it's still 10 times lower comparing to bitcoin.
  * Override with -mintxfee
@@ -361,7 +361,7 @@ bool CWallet::Unlock(const CKeyingMaterial& vMasterKeyIn)
             if (CWalletDB(strWalletFile).ReadCurrentSeedHash(hashSeed)) {
                 uint256 nSeed;
                 if (!GetDeterministicSeed(hashSeed, nSeed)) {
-                    return error("Failed to read zEGG seed from DB. Wallet is probably corrupt.");
+                    return error("Failed to read zSAPP seed from DB. Wallet is probably corrupt.");
                 }
                 zwallet->SetMasterSeed(nSeed, false);
             }
@@ -1454,7 +1454,7 @@ int CWallet::ScanForWalletTransactions(CBlockIndex* pindexStart, bool fUpdate, b
                     ret++;
             }
 
-            // Will try to rescan it if zEGG upgrade is active.
+            // Will try to rescan it if zSAPP upgrade is active.
             doZPivRescan(pindex, block, setAddedToWallet, consensus, fCheckZPIV);
 
             pindex = chainActive.Next(pindex);
@@ -2337,7 +2337,7 @@ bool CWallet::CreateTransaction(const std::vector<CRecipient>& vecSend,
                 if (nChange > 0) {
                     // Fill a vout to ourself
                     // TODO: pass in scriptChange instead of reservekey so
-                    // change transaction isn't always pay-to-EGG-address
+                    // change transaction isn't always pay-to-SAPP-address
                     bool combineChange = false;
 
                     // coin control: send change to custom address
@@ -3521,7 +3521,7 @@ std::string CWallet::GetWalletHelpString(bool showDebug)
     strUsage += HelpMessageGroup(_("Mining/Staking options:"));
     strUsage += HelpMessageOpt("-gen", strprintf(_("Generate coins (default: %u)"), DEFAULT_GENERATE));
     strUsage += HelpMessageOpt("-genproclimit=<n>", strprintf(_("Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)"), DEFAULT_GENERATE_PROCLIMIT));
-    strUsage += HelpMessageOpt("-minstakesplit=<amt>", strprintf(_("Minimum positive amount (in EGG) allowed by GUI and RPC for the stake split threshold (default: %s)"), FormatMoney(DEFAULT_MIN_STAKE_SPLIT_THRESHOLD)));
+    strUsage += HelpMessageOpt("-minstakesplit=<amt>", strprintf(_("Minimum positive amount (in SAPP) allowed by GUI and RPC for the stake split threshold (default: %s)"), FormatMoney(DEFAULT_MIN_STAKE_SPLIT_THRESHOLD)));
     strUsage += HelpMessageOpt("-staking=<n>", strprintf(_("Enable staking functionality (0-1, default: %u)"), DEFAULT_STAKING));
     if (showDebug) {
         strUsage += HelpMessageGroup(_("Wallet debugging/testing options:"));
@@ -3569,10 +3569,10 @@ CWallet* CWallet::CreateWalletFromFile(const std::string walletFile)
             UIWarning(strprintf(_("Warning: error reading %s! All keys read correctly, but transaction data"
                          " or address book entries might be missing or incorrect."), walletFile));
         } else if (nLoadWalletRet == DB_TOO_NEW) {
-            UIError(strprintf(_("Error loading %s: Wallet requires newer version of NestEGG"), walletFile));
+            UIError(strprintf(_("Error loading %s: Wallet requires newer version of Sapphire"), walletFile));
             return nullptr;
         } else if (nLoadWalletRet == DB_NEED_REWRITE) {
-            UIError(_("Wallet needed to be rewritten: restart NestEGG to complete"));
+            UIError(_("Wallet needed to be rewritten: restart Sapphire to complete"));
             return nullptr;
         } else {
             UIError(strprintf(_("Error loading %s\n"), walletFile));
@@ -3716,8 +3716,8 @@ CWallet* CWallet::CreateWalletFromFile(const std::string walletFile)
     fVerifyingBlocks = false;
 
     if (!zwalletInstance->GetMasterSeed().IsNull()) {
-        //Inititalize zEGGWallet
-        uiInterface.InitMessage(_("Syncing zEGG wallet..."));
+        //Inititalize zSAPPWallet
+        uiInterface.InitMessage(_("Syncing zSAPP wallet..."));
 
         //Load zerocoin mint hashes to memory
         walletInstance->zpivTracker->Init();
@@ -3897,7 +3897,7 @@ void CWallet::SetNull()
     // Stake split threshold
     nStakeSplitThreshold = DEFAULT_STAKE_SPLIT_THRESHOLD;
 
-    // User-defined fee EGG/kb
+    // User-defined fee SAPP/kb
     fUseCustomFee = false;
     nCustomFee = CWallet::minTxFee.GetFeePerK();
 

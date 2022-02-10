@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2020 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2021-2022 The DECENOMY Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -266,11 +266,11 @@ UniValue stop(const JSONRPCRequest& jsonRequest)
     if (jsonRequest.fHelp || jsonRequest.params.size() > 1)
         throw std::runtime_error(
             "stop\n"
-            "\nStop NestEGG server.");
+            "\nStop Sapphire server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "NestEGG server stopping";
+    return "Sapphire server stopping";
 }
 
 
@@ -319,6 +319,7 @@ static const CRPCCommand vRPCCommands[] =
         {"blockchain", "invalidateblock", &invalidateblock, true },
         {"blockchain", "reconsiderblock", &reconsiderblock, true },
         {"blockchain", "verifychain", &verifychain, true },
+        {"blockchain", "getburnaddresses", &getburnaddresses, true },
 
         /* Mining */
         {"mining", "getblocktemplate", &getblocktemplate, true },
@@ -360,7 +361,7 @@ static const CRPCCommand vRPCCommands[] =
         { "hidden",             "waitforblock",           &waitforblock,           true },
         { "hidden",             "waitforblockheight",     &waitforblockheight,     true },
 
-        /* EGG features */
+        /* SAPP features */
         {"sapphire", "listmasternodes", &listmasternodes, true },
         {"sapphire", "getmasternodecount", &getmasternodecount, true },
         {"sapphire", "createmasternodebroadcast", &createmasternodebroadcast, true },
@@ -568,6 +569,12 @@ std::string JSONRPCExecBatch(const UniValue& vReq)
 
 UniValue CRPCTable::execute(const JSONRPCRequest &request) const
 {
+    // Return immediately if in warmup
+    std::string strWarmupStatus;
+    if (RPCIsInWarmup(&strWarmupStatus)) {
+        throw JSONRPCError(RPC_IN_WARMUP, "RPC in warm-up: " + strWarmupStatus);
+    }
+
     // Find method
     const CRPCCommand* pcmd = tableRPC[request.strMethod];
     if (!pcmd)
@@ -605,7 +612,7 @@ std::string HelpExampleRpc(std::string methodname, std::string args)
 {
     return "> curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", "
            "\"method\": \"" +
-           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:51473/\n";
+           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:45329/\n";
 }
 
 void RPCSetTimerInterfaceIfUnset(RPCTimerInterface *iface)

@@ -1,5 +1,5 @@
 // Copyright (c) 2019-2020 The PIVX developers
-// Copyright (c) 2021 The NestEGG Core Developers
+// Copyright (c) 2021-2022 The DECENOMY Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -550,7 +550,7 @@ void TopBar::loadWalletModel()
     connect(walletModel, &WalletModel::encryptionStatusChanged, this, &TopBar::refreshStatus);
     // Ask for passphrase if needed
     connect(walletModel, &WalletModel::requireUnlock, this, &TopBar::unlockWallet);
-    // update the display unit, to not use the default ("EGG")
+    // update the display unit, to not use the default ("SAPP")
     updateDisplayUnit();
 
     refreshStatus();
@@ -676,7 +676,7 @@ void TopBar::updateBalances(const interfaces::WalletBalances& newBalance)
 
     CAmount nAvailableBalance = newBalance.balance - nLockedBalance;
 
-    // EGG
+    // SAPP
     // Top
     ui->labelAmountTopPiv->setText(GUIUtil::formatBalance(nAvailableBalance, nDisplayUnit));
     // Expanded

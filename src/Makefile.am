@@ -22,6 +22,7 @@ endif
 BITCOIN_CONFIG_INCLUDES=-I$(builddir)/config
 BITCOIN_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
 
+BITCOIN_INCLUDES += -I$(srcdir)/rust/include
 BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
 BITCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
 
@@ -33,6 +34,12 @@ LIBBITCOIN_CRYPTO=crypto/libbitcoin_crypto.a
 LIBBITCOIN_ZEROCOIN=libzerocoin/libbitcoin_zerocoin.a
 LIBBITCOINQT=qt/libbitcoinqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
+LIBEGGLING=libsapling.a
+if ENABLE_ONLINE_RUST
+LIBRUSTZCASH=$(top_builddir)/target/release/librustzcash.a
+else
+LIBRUSTZCASH=$(top_builddir)/target/$(RUST_TARGET)/release/librustzcash.a
+endif
 
 if ENABLE_ZMQ
 LIBBITCOIN_ZMQ=libbitcoin_zmq.a
@@ -42,6 +49,48 @@ LIBBITCOINCONSENSUS=libbitcoinconsensus.la
 endif
 if ENABLE_WALLET
 LIBBITCOIN_WALLET=libbitcoin_wallet.a
+endif
+
+RUST_ENV_VARS = RUSTC="$(RUSTC)" TERM=dumb
+RUST_BUILD_OPTS = --release
+
+if ENABLE_ONLINE_RUST
+# Ensure that .cargo/config does not exist
+CARGO_CONFIGURED = $(top_srcdir)/.cargo/.configured-for-online
+$(CARGO_CONFIGURED):
+	$(AM_V_at)rm -f $(top_srcdir)/.cargo/.configured-for-offline $(top_srcdir)/.cargo/config
+	$(AM_V_at)touch $@
+
+else
+# Enable dependency vendoring
+RUST_BUILD_OPTS += --locked --offline
+if HAVE_RUST_TARGET
+RUST_BUILD_OPTS += --target $(RUST_TARGET)
+endif
+
+CARGO_CONFIGURED = $(top_srcdir)/.cargo/.configured-for-offline
+$(CARGO_CONFIGURED): $(top_srcdir)/.cargo/config.offline
+	$(AM_V_at)rm -f $(top_srcdir)/.cargo/.configured-for-online
+	$(AM_V_at)cp $< $(top_srcdir)/.cargo/config
+	$(AM_V_at)echo "directory = \"$(RUST_VENDORED_SOURCES)\"" >> $(top_srcdir)/.cargo/config
+	$(AM_V_at)touch $@
+endif
+
+cargo-build: $(CARGO_CONFIGURED)
+	$(RUST_ENV_VARS) $(CARGO) build $(RUST_BUILD_OPTS) --manifest-path $(top_srcdir)/Cargo.toml
+
+if TARGET_WINDOWS
+LIBRUSTZCASH_WIN=$(top_builddir)/target/$(RUST_TARGET)/release/rustzcash.lib
+
+$(LIBRUSTZCASH_WIN): cargo-build
+
+# This ensures that the Rust library is correctly linked in by libtool.
+# See https://github.com/rust-lang/rust/issues/69904 for the underlying cause.
+$(LIBRUSTZCASH): $(LIBRUSTZCASH_WIN)
+	$(AM_V_at)cp $< $@
+
+else
+$(LIBRUSTZCASH): cargo-build
 endif
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*.h) $(wildcard secp256k1/src/*.c) $(wildcard secp256k1/include/*)
@@ -58,6 +107,7 @@ EXTRA_LIBRARIES += \
   $(LIBBITCOIN_CLI) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_ZMQ)
+	$(LIBEGGLING)
 
 lib_LTLIBRARIES = $(LIBBITCOINCONSENSUS)
 
@@ -67,15 +117,26 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += sapphired
+  bin_PROGRAMS += nesteggd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += sapphire-cli sapphire-tx
+  bin_PROGRAMS += nestegg-cli nestegg-tx
 endif
+LIBEGGLING_H = \
+  sapling/sapling.h \
+  bech32.h \
+  sapling/key_io_sapling.h \
+  sapling/util.h \
+  sapling/prf.h \
+  sapling/noteencryption.hpp \
+  sapling/address.hpp \
+  sapling/note.hpp \
+  sapling/zip32.h \
+  sapling/saplingscriptpubkeyman.h
 
 .PHONY: FORCE check-symbols check-security
-# sapphire core #
+# nestegg core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   addrdb.h \
@@ -128,6 +189,7 @@ BITCOIN_CORE_H = \
   invalid_serials.json.h \
   legacy/stakemodifier.h \
   kernel.h \
+	swifttx.h \
   key.h \
   key_io.h \
   keystore.h \
@@ -191,6 +253,7 @@ BITCOIN_CORE_H = \
   guiinterface.h \
   guiinterfaceutil.h \
   uint256.h \
+	sapling/uint252.h \
   uint512.h \
   blob_uint256.h \
   undo.h \
@@ -227,7 +290,7 @@ obj/build.h: FORCE
 	  "$(abs_top_srcdir)"
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between sapphired and sapphire-qt
+# server: shared between nesteggd and nestegg-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -272,6 +335,7 @@ libbitcoin_server_a_SOURCES = \
   validationinterface.cpp \
   zpivchain.cpp \
   $(BITCOIN_CORE_H)
+  $(LIBEGGLING_H)
 
 if ENABLE_ZMQ
 libbitcoin_zmq_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(ZMQ_CFLAGS)
@@ -282,7 +346,7 @@ libbitcoin_zmq_a_SOURCES = \
   zmq/zmqpublishnotifier.cpp
 endif
 
-# wallet: shared between sapphired and sapphire-qt, but only linked
+# wallet: shared between nesteggd and nestegg-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -294,6 +358,7 @@ libbitcoin_wallet_a_SOURCES = \
   addressbook.cpp \
   crypter.cpp \
   key_io.cpp \
+	swifttx.cpp \
   masternode.cpp \
   masternode-budget.cpp \
   masternode-payments.cpp \
@@ -320,6 +385,7 @@ libbitcoin_wallet_a_SOURCES = \
   zpiv/zpivmodule.cpp \
   zpiv/zpos.cpp \
   $(BITCOIN_CORE_H)
+  $(LIBEGGLING_H)
 
 # crypto primitives library
 crypto_libbitcoin_crypto_a_CPPFLAGS = $(AM_CPPFLAGS) $(PIC_FLAGS)
@@ -412,7 +478,7 @@ if USE_NUM_OPENSSL
   libzerocoin_libbitcoin_zerocoin_a_SOURCES += libzerocoin/bignum_openssl.cpp
 endif
 
-# common: shared between sapphired, and sapphire-qt and non-server tools
+# common: shared between nesteggd, and nestegg-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -448,6 +514,7 @@ libbitcoin_common_a_SOURCES = \
   spork.cpp \
   sporkdb.cpp \
   $(BITCOIN_CORE_H)
+  $(LIBEGGLING_H)
 
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
@@ -477,36 +544,57 @@ libbitcoin_util_a_SOURCES = \
   utilstrencodings.cpp \
   utiltime.cpp \
   $(BITCOIN_CORE_H)
+	$(LIBEGGLING_H)
 
 if GLIBC_BACK_COMPAT
 libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 AM_LDFLAGS += $(COMPAT_LDFLAGS)
 endif
+# sapling protocol primitives #
+libsapling_a_CPPFLAGS = $(AM_CPPFLAGS) $(PIC_FLAGS) $(BITCOIN_INCLUDES)
+libsapling_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libsapling_a_SOURCES = \
+  bech32.cpp \
+  sapling/util.cpp \
+  sapling/key_io_sapling.cpp \
+  sapling/prf.cpp \
+  sapling/noteencryption.cpp \
+  sapling/address.cpp \
+  sapling/note.cpp \
+  sapling/zip32.cpp \
+  sapling/crypter_sapling.cpp \
+  sapling/saplingscriptpubkeyman.cpp
+
+if GLIBC_BACK_COMPAT
+libsapling_a_SOURCES += compat/glibc_compat.cpp
+AM_LDFLAGS += $(COMPAT_LDFLAGS)
+endif
 
 if GLIBC_BACK_COMPAT
 AM_LDFLAGS += $(COMPAT_LDFLAGS)
 endif
 
-# cli: shared between sapphire-cli and sapphire-qt
+# cli: shared between nestegg-cli and nestegg-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
   rpc/client.cpp \
   $(BITCOIN_CORE_H)
+	$(LIBEGGLING_H)
 
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# sapphired binary #
-sapphired_SOURCES = pivxd.cpp
-sapphired_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-sapphired_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-sapphired_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# nesteggd binary #
+nesteggd_SOURCES = pivxd.cpp
+nesteggd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+nesteggd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+nesteggd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-sapphired_SOURCES += pivxd-res.rc
+nesteggd_SOURCES += pivxd-res.rc
 endif
-sapphired_LDADD = \
+nesteggd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
@@ -515,51 +603,60 @@ sapphired_LDADD = \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_ZMQ) \
   $(LIBBITCOIN_CRYPTO) \
+	$(LIBEGGLING) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
+	$(LIBRUSTZCASH) \
+  $(LIBZCASH_LIBS)
 
-sapphired_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+nesteggd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# sapphire-cli binary #
-sapphire_cli_SOURCES = pivx-cli.cpp
-sapphire_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-sapphire_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-sapphire_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# nestegg-cli binary #
+nestegg_cli_SOURCES = pivx-cli.cpp
+nestegg_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+nestegg_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+nestegg_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-sapphire_cli_SOURCES += pivx-cli-res.rc
+nestegg_cli_SOURCES += pivx-cli-res.rc
 endif
 
-sapphire_cli_LDADD = \
+nestegg_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
-  $(LIBBITCOIN_CRYPTO)
+  $(LIBBITCOIN_CRYPTO) \
+	$(LIBEGGLING) \
+  $(LIBRUSTZCASH) \
+  $(LIBZCASH_LIBS)
 
-sapphire_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+nestegg_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# sapphire-tx binary #
-sapphire_tx_SOURCES = pivx-tx.cpp
-sapphire_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-sapphire_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-sapphire_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# nestegg-tx binary #
+nestegg_tx_SOURCES = pivx-tx.cpp
+nestegg_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+nestegg_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+nestegg_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-sapphire_tx_SOURCES += pivx-tx-res.rc
+nestegg_tx_SOURCES += pivx-tx-res.rc
 endif
 
-sapphire_tx_LDADD = \
+nestegg_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
+	$(LIBEGGLING) \
+  $(LIBRUSTZCASH) \
+  $(LIBZCASH_LIBS)
 
-sapphire_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+nestegg_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #

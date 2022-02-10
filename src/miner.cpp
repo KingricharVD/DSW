@@ -238,10 +238,10 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     unsigned int nBlockMaxSizeSpork = (unsigned int)sporkManager.GetSporkValue(SPORK_105_MAX_BLOCK_SIZE);
 
     nBlockMaxSize = std::max(
-        (unsigned int)1000, 
-        std::min( 
-            nBlockMaxSizeSpork, 
-            nBlockMaxSize 
+        (unsigned int)1000,
+        std::min(
+            nBlockMaxSizeSpork,
+            nBlockMaxSize
         )
     );
 
@@ -276,8 +276,8 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             if (tx.IsCoinBase() || tx.IsCoinStake() || !IsFinalTx(tx, nHeight)){
                 continue;
             }
-            if(tx.ContainsZerocoins()){
-                continue;
+            if(sporkManager.IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE) && tx.ContainsZerocoins()){
+              continue;
             }
 
             COrphan* porphan = NULL;

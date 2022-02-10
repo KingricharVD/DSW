@@ -516,6 +516,12 @@ CMasternode* CMasternodeMan::GetNextMasternodeInQueueForPayment(int nBlockHeight
         //it's in the list (up to 8 entries ahead of current block to allow propagation) -- so let's skip it
         if (masternodePayments.IsScheduled(mn, nBlockHeight)) continue;
 
+        if (sporkManager.IsSporkActive(SPORK_20_UPGRADE_CYCLE_FACTOR))
+                {
+                    if (fFilterSigTime && mn.sigTime + (nMnCount * 1.0 * 60) > GetAdjustedTime()) continue;
+                }
+                else
+                {
         //it's too new, wait for a cycle
         if (Params().GetConsensus().NetworkUpgradeActive(chainActive.Tip()->nHeight, Consensus::UPGRADE_STAKE_MODIFIER_V2)) {
             if (fFilterSigTime && mn.sigTime + (nMnCount * 60) > GetAdjustedTime()) continue;
@@ -589,7 +595,7 @@ int CMasternodeMan::GetMasternodeRank(const CTxIn& vin, int64_t nBlockHeight, in
     int64_t nMasternode_Min_Age = MN_WINNER_MINIMUM_AGE;
     int64_t nMasternode_Age = 0;
     bool masternodeRankV2 = Params().GetConsensus().NetworkUpgradeActive(chainActive.Height(), Consensus::UPGRADE_MASTERNODE_RANK_V2);
-    int defaultValue = 
+    int defaultValue =
         masternodeRankV2 ?
         INT_MAX :
         -1;
@@ -612,7 +618,7 @@ int CMasternodeMan::GetMasternodeRank(const CTxIn& vin, int64_t nBlockHeight, in
                 continue;                                                   // Skip masternodes younger than (default) 1 hour
             }
         }
-        
+
         mn.Check();
         if (!mn.IsEnabled()) continue;
 

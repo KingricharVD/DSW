@@ -11,7 +11,7 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both sapphired and sapphire-qt, to make it harder for attackers to
+ * for both nesteggd and nestegg-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
 const std::string CLIENT_NAME("Sapphire Core");

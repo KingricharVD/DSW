@@ -11,7 +11,7 @@ with each other, with the help of a P2P network to check for double-spending.
 
 Setup
 -----
-Unpack the files into a directory and run sapphire-qt.exe.
+Unpack the files into a directory and run nestegg-qt.exe.
 
 Sapphire Core is the original Sapphire client and it builds the backbone of the network.
 However, it downloads and stores the entire history of Sapphire transactions;

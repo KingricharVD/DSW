@@ -19,6 +19,8 @@
 #include "utilstrencodings.h"
 #include "utiltime.h"
 
+#include <librustzcash.h>
+
 #include <stdarg.h>
 #include <thread>
 
@@ -84,8 +86,8 @@
 #include <openssl/crypto.h>
 #include <openssl/rand.h>
 
-const char * const PIVX_CONF_FILENAME = "sapphire.conf";
-const char * const PIVX_PID_FILENAME = "sapphire.pid";
+const char * const PIVX_CONF_FILENAME = "nestegg.conf";
+const char * const PIVX_PID_FILENAME = "nestegg.pid";
 const char * const PIVX_MASTERNODE_CONF_FILENAME = "masternode.conf";
 
 
@@ -95,6 +97,9 @@ bool fMasterNode = false;
 std::string strMasterNodePrivKey = "";
 std::string strMasterNodeAddr = "";
 bool fLiteMode = false;
+// SwiftX
+bool fEnableSwiftTX = true;
+int nSwiftTXDepth = 5;
 
 /** Spork enforcement enabled time */
 int64_t enforceMasternodePaymentsTime = 4085657524;
@@ -266,7 +271,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "sapphire";
+    const char* pszModule = "nestegg";
 #endif
     if (pex)
         return strprintf(
@@ -286,10 +291,10 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 
 fs::path GetDefaultDataDir()
 {
-// Windows < Vista: C:\Documents and Settings\Username\Application Data\sapphire
-// Windows >= Vista: C:\Users\Username\AppData\Roaming\sapphire
-// Mac: ~/Library/Application Support/sapphire
-// Unix: ~/.sapphire
+// Windows < Vista: C:\Documents and Settings\Username\Application Data\nestegg
+// Windows >= Vista: C:\Users\Username\AppData\Roaming\nestegg
+// Mac: ~/Library/Application Support/nestegg
+// Unix: ~/.nestegg
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "Sapphire";
@@ -307,7 +312,7 @@ fs::path GetDefaultDataDir()
     return pathRet / "Sapphire";
 #else
     // Unix
-    return pathRet / ".sapphire";
+    return pathRet / ".nestegg";
 #endif
 #endif
 }
@@ -320,10 +325,10 @@ static RecursiveMutex csPathCached;
 static fs::path ZC_GetBaseParamsDir()
 {
     // Copied from GetDefaultDataDir and adapter for zcash params.
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\sapphireParams
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\sapphireParams
-    // Mac: ~/Library/Application Support/sapphireParams
-    // Unix: ~/.sapphire-params
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\nesteggParams
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\nesteggParams
+    // Mac: ~/Library/Application Support/nesteggParams
+    // Unix: ~/.nestegg-params
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "SapphireParams";
@@ -341,7 +346,7 @@ static fs::path ZC_GetBaseParamsDir()
     return pathRet / "SapphireParams";
 #else
     // Unix
-    return pathRet / ".sapphire-params";
+    return pathRet / ".nestegg-params";
 #endif
 #endif
 }
@@ -373,6 +378,45 @@ const fs::path &ZC_GetParamsDir()
 
     return path;
 }
+
+void initZKSNARKS()
+{
+    const fs::path& path = ZC_GetParamsDir();
+    fs::path sapling_spend = path / "sapling-spend.params";
+    fs::path sapling_output = path / "sapling-output.params";
+    fs::path sprout_groth16 = path / "sprout-groth16.params";
+
+    if (!(fs::exists(sapling_spend) &&
+          fs::exists(sapling_output) &&
+          fs::exists(sprout_groth16)
+    )) {
+        throw std::runtime_error("Sapling params don't exist");
+    }
+
+    static_assert(
+        sizeof(fs::path::value_type) == sizeof(codeunit),
+        "librustzcash not configured correctly");
+    auto sapling_spend_str = sapling_spend.native();
+    auto sapling_output_str = sapling_output.native();
+    auto sprout_groth16_str = sprout_groth16.native();
+
+    //LogPrintf("Loading Sapling (Spend) parameters from %s\n", sapling_spend.string().c_str());
+
+    librustzcash_init_zksnark_params(
+        reinterpret_cast<const codeunit*>(sapling_spend_str.c_str()),
+        sapling_spend_str.length(),
+        "8270785a1a0d0bc77196f000ee6d221c9c9894f55307bd9357c3f0105d31ca63991ab91324160d8f53e2bbd3c2633a6eb8bdf5205d822e7f3f73edac51b2b70c",
+        reinterpret_cast<const codeunit*>(sapling_output_str.c_str()),
+        sapling_output_str.length(),
+        "657e3d38dbb5cb5e7dd2970e8b03d69b4787dd907285b5a7f0790dcc8072f60bf593b32cc2d1c030e00ff5ae64bf84c5c3beb84ddc841d48264b4a171744d028",
+        reinterpret_cast<const codeunit*>(sprout_groth16_str.c_str()),
+        sprout_groth16_str.length(),
+        "e9b238411bd6c0ec4791e9d04245ec350c9c5744f5610dfcce4365d5ca49dfefd5054e371842b3f88fa1b9d7e8e075249b3ebabd167fa8b0f3161292d36c180a"
+    );
+
+    //std::cout << "### Sapling params initialized ###" << std::endl;
+}
+
 
 const fs::path& GetDataDir(bool fNetSpecific)
 {
@@ -425,7 +469,7 @@ void ReadConfigFile(std::map<std::string, std::string>& mapSettingsRet,
 {
     fs::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good()) {
-        // Create empty sapphire.conf if it does not exist
+        // Create empty nestegg.conf if it does not exist
         FILE* configFile = fsbridge::fopen(GetConfigFile(), "a");
         if (configFile != NULL)
             fclose(configFile);
@@ -436,7 +480,7 @@ void ReadConfigFile(std::map<std::string, std::string>& mapSettingsRet,
     setOptions.insert("*");
 
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it) {
-        // Don't overwrite existing settings so command line settings override sapphire.conf
+        // Don't overwrite existing settings so command line settings override nestegg.conf
         std::string strKey = std::string("-") + it->string_key;
         std::string strValue = it->value[0];
         InterpretNegativeSetting(strKey, strValue);

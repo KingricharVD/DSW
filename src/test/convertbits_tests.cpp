@@ -5,6 +5,7 @@
 
 #include <utilstrencodings.h>
 #include <test/test_pivx.h>
+#include "sapling/util.h"
 
 #include <boost/test/unit_test.hpp>
 

@@ -11,8 +11,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between sapphire-cli and sapphired)
- * of a given instance of the sapphire system.
+ * CBaseChainParams defines the base parameters (shared between nestegg-cli and nesteggd)
+ * of a given instance of the nestegg system.
  */
 class CBaseChainParams
 {

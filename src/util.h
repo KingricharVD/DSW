@@ -43,6 +43,8 @@ extern const char * const DEFAULT_DEBUGLOGFILE;
 
 extern bool fMasterNode;
 extern bool fLiteMode;
+extern bool fEnableSwiftTX;
+extern int nSwiftTXDepth;
 extern int64_t enforceMasternodePaymentsTime;
 extern std::string strMasterNodeAddr;
 extern int keysLoaded;
@@ -77,7 +79,10 @@ bool RenameOver(fs::path src, fs::path dest);
 bool TryCreateDirectory(const fs::path& p);
 fs::path GetDefaultDataDir();
 const fs::path &GetDataDir(bool fNetSpecific = true);
+// Sapling network dir
 const fs::path &ZC_GetParamsDir();
+// Init sapling library
+void initZKSNARKS();
 void ClearDatadirCache();
 fs::path GetConfigFile();
 fs::path GetMasternodeConfigFile();
@@ -90,7 +95,6 @@ void ReadConfigFile(std::map<std::string, std::string>& mapSettingsRet, std::map
 fs::path GetSpecialFolderPath(int nFolder, bool fCreate = true);
 #endif
 fs::path GetTempPath();
-
 void runCommand(std::string strCommand);
 
 inline bool IsSwitchChar(char c)
@@ -178,7 +182,7 @@ void SetThreadPriority(int nPriority);
 template <typename Callable>
 void TraceThread(const char* name, Callable func)
 {
-    std::string s = strprintf("sapphire-%s", name);
+    std::string s = strprintf("nestegg-%s", name);
     util::ThreadRename(s.c_str());
     try {
         LogPrintf("%s thread start\n", name);

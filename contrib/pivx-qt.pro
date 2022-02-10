@@ -5,7 +5,7 @@
 DEFINES += ENABLE_WALLET
 
 TEMPLATE = app
-TARGET = 
+TARGET =
 DEPENDPATH += . \
               src \
               src/compat \
@@ -84,6 +84,7 @@ HEADERS += src/activemasternode.h \
            src/ecwrapper.h \
            src/hash.h \
            src/init.h \
+           src/swifttx.h \
            src/keepass.h \
            src/key.h \
            src/keystore.h \
@@ -383,6 +384,7 @@ SOURCES += src/activemasternode.cpp \
            src/editaddressdialog.cpp \
            src/hash.cpp \
            src/init.cpp \
+           src/swifttx.cpp \
            src/keepass.cpp \
            src/key.cpp \
            src/keystore.cpp \

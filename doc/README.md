@@ -13,8 +13,8 @@ The following are some helpful notes on how to run Sapphire Core on your native 
 
 Unpack the files into a directory and run:
 
-- `bin/sapphire-qt` (GUI) or
-- `bin/sapphired` (headless)
+- `bin/nestegg-qt` (GUI) or
+- `bin/nesteggd` (headless)
 
 ### Windows
 
